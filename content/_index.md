@@ -34,7 +34,7 @@ sections:
     id: solutions
     content:
       items:
-     - title: Build your future-proof website
+        - title: Build your future-proof website
           text: As easy as 1, 2, 3!
           feature_icon: check
           features:
@@ -57,7 +57,7 @@ sections:
           image: coffee.jpg
           button:
             text: Join Discord
-            url: https://discord.gg/z8wNYzb       
+            url: https://discord.gg/z8wNYzb
     design:
       # Section background color (CSS class)
       css_class: "bg-gray-100 dark:bg-gray-900"  
