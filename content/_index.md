@@ -30,27 +30,6 @@ sections:
           size: cover
           position: center
           parallax: false
-  - block: stats
-    content:
-      items:
-        - statistic: "NN"
-          description: |
-            Proyectos  
-            financiados
-        - statistic: "+1500"
-          description: |
-            personas  
-            formadas
-        - statistic: "+1000"
-          description: |
-            personas en la   
-            comunidad de Slack
-    design:
-      # Section background color (CSS class)
-      css_class: "bg-gray-100 dark:bg-gray-900"
-      # Reduce spacing
-      spacing:
-        padding: ["1rem", 0, "1rem", 0]
   - block: features
     id: features
     content:
@@ -105,7 +84,29 @@ sections:
             url: https://discord.gg/z8wNYzb
     design:
       # Section background color (CSS class)
+      css_class: "bg-gray-100 dark:bg-gray-900"  
+  - block: stats
+    content:
+      items:
+        - statistic: "NN"
+          description: |
+            Proyectos  
+            financiados
+        - statistic: "+1500"
+          description: |
+            personas  
+            formadas
+        - statistic: "+1000"
+          description: |
+            personas en la   
+            comunidad de Slack
+    design:
+      # Section background color (CSS class)
       css_class: "bg-gray-100 dark:bg-gray-900"
+      # Reduce spacing
+      spacing:
+        padding: ["1rem", 0, "1rem", 0]
+
   - block: testimonials
     content:
       title: ""
