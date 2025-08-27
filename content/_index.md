@@ -36,17 +36,13 @@ sections:
       items:
       - title: Somos
           text: Construimos capacidades científicas locales
-    para transformar la ciencia global. Hacemos crecer la
-    ciencia en red, desde América Latina hacia el mundo
           # Upload image to `assets/media/` and reference the filename here
           image: prueba-home2.jpg
           button:
             text: Conócenos
             url: https://discord.gg/z8wNYzb
         - title: Qué hacemos
-          text: Trabajamos para que la producción, la comunicación
-    y la aplicación de saberes científicos
-    y técnicos sean globalmente equitativos.
+          text: Trabajamos para que la producción,
           feature_icon: check
           features:
             - "Future-proof - edit your content in text files"
