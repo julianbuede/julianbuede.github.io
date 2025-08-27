@@ -37,7 +37,6 @@ sections:
         - title: Somos
           text: Construimos capacidades científicas locales para transformar la ciencia global.
 Hacemos crecer la ciencia en red, desde América Latina hacia el mundo
-
           # Upload image to `assets/media/` and reference the filename here
           image: prueba-home2.jpg
           button:
@@ -68,7 +67,6 @@ Hacemos crecer la ciencia en red, desde América Latina hacia el mundo
         - name: Construimos comunidad
           icon: sparkles
           description: One-click deployment to GitHub Pages. Have your new website live within 5 minutes!
-
   - block: stats
     content:
       items:
@@ -90,7 +88,6 @@ Hacemos crecer la ciencia en red, desde América Latina hacia el mundo
       # Reduce spacing
       spacing:
         padding: ["1rem", 0, "1rem", 0]
-
   - block: testimonials
     content:
       title: ""
