@@ -34,15 +34,8 @@ sections:
     id: solutions
     content:
       items:
-      - title: Somos
-          text: Construimos capacidades científicas locales
-          # Upload image to `assets/media/` and reference the filename here
-          image: prueba-home2.jpg
-          button:
-            text: Conócenos
-            url: https://discord.gg/z8wNYzb
-        - title: Qué hacemos
-          text: Trabajamos para que la producción,
+        - title: Build your future-proof website
+          text: As easy as 1, 2, 3!
           feature_icon: check
           features:
             - "Future-proof - edit your content in text files"
@@ -53,7 +46,18 @@ sections:
           button:
             text: Get Started
             url: https://hugoblox.com/templates/
-
+        - title: Large Community
+          text: Join our large community on Discord - ask questions and get live responses
+          feature_icon: bolt
+          features:
+            - "Dedicated support channel"
+            - "3,000+ users on Discord"
+            - "Share your site and get feedback"
+          # Upload image to `assets/media/` and reference the filename here
+          image: coffee.jpg
+          button:
+            text: Join Discord
+            url: https://discord.gg/z8wNYzb
     design:
       # Section background color (CSS class)
       css_class: "bg-gray-100 dark:bg-gray-900"  
