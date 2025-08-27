@@ -35,23 +35,20 @@ sections:
     content:
       items:
         - title: Somos
-          text: Trabajamos para que la producción, la comunicación y la aplicación de saberes científicos y técnicos sean globalmente equitativos.
+          text: Construimos capacidades científicas locales para transformar la ciencia global.
+Hacemos crecer la ciencia en red, desde América Latina hacia el mundo
+
           # Upload image to `assets/media/` and reference the filename here
-          image: build-website.png
+          image: prueba-home2.jpg
           button:
-            text: Get Started
+            text: Conócenos
             url: https://hugoblox.com/templates/
         - title: Qué hacemos
-          text: Join our large community on Discord - ask questions and get live responses
-          feature_icon: bolt
-          features:
-            - "Dedicated support channel"
-            - "3,000+ users on Discord"
-            - "Share your site and get feedback"
+          text: Trabajamos para que la producción, la comunicación y la aplicación de saberes científicos y técnicos sean globalmente equitativos.
           # Upload image to `assets/media/` and reference the filename here
-          image: coffee.jpg
+          image: organigramaMD2025-04.png
           button:
-            text: Join Discord
+            text: Conoce nuestros proyectos
             url: https://discord.gg/z8wNYzb
     design:
       # Section background color (CSS class)
@@ -59,27 +56,19 @@ sections:
   - block: features
     id: features
     content:
-      title: Features
+      title: Nuestros pilares
       text: Build your site with blocks 🧱
       items:
-        - name: Optimized SEO
-          icon: magnifying-glass
-          description: Automatic sitemaps, RSS feeds, and rich metadata take the pain out of SEO and syndication.
-        - name: Fast
+        - name: Impulsamos infraestructura
+          icon: rectangle-group
+          description: Proyectos
+        - name: Formamos a personas investigadoras
           icon: bolt
           description: Super fast page load with Tailwind CSS and super fast site building with Hugo.
-        - name: Easy
+        - name: Construimos comunidad
           icon: sparkles
           description: One-click deployment to GitHub Pages. Have your new website live within 5 minutes!
-        - name: No-Code
-          icon: code-bracket
-          description: Edit and design your site just using rich text (Markdown) and configurable YAML parameters.
-        - name: Highly Rated
-          icon: star
-          description: Rated 5-stars by the community.
-        - name: Swappable Blocks
-          icon: rectangle-group
-          description: Build your pages with blocks - no coding required!
+
   - block: stats
     content:
       items:
