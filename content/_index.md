@@ -10,20 +10,10 @@ design:
 sections:
   - block: hero
     content:
-      title: Build Your Landing Pages with Hugo Blox
-      text: 🧱 EASY. FREE (OPEN SOURCE). NO-CODE  🧱
+      title: Potenciemos a América Latina en el mapa de la investigación global
       primary_action:
-        text: Get Started
-        url: https://hugoblox.com/templates/
-        icon: rocket-launch
-      secondary_action:
-        text: Read the docs
-        url: https://docs.hugoblox.com
-      announcement:
-        text: "Announcing the release of version 1."
-        link:
-          text: "Read more"
-          url: "/blog/"
+        text: Súmate
+        url: https://hugoblox.com/templates/](https://www.metadocencia.org/suscripcion/
     design:
       spacing:
         padding: [0, 0, 0, 0]
@@ -34,7 +24,7 @@ sections:
         color: "navy"
         image:
           # Add your image background to `assets/media/`.
-          filename: bg-triangles.svg
+          filename: prueba-home.jpg
           filters:
             brightness: 0.5
           size: cover
