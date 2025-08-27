@@ -33,18 +33,18 @@ sections:
   - block: stats
     content:
       items:
-        - statistic: "1M+"
+        - statistic: "NN"
           description: |
-            Websites built  
-            with Hugo Blox
-        - statistic: "10k+"
+            Proyectos  
+            financiados
+        - statistic: "+1500"
           description: |
-            GitHub stars  
-            since 2016
-        - statistic: "3k+"
+            personas  
+            formadas
+        - statistic: "+1000"
           description: |
-            Discord community  
-            for support
+            personas en la   
+            comunidad de Slack
     design:
       # Section background color (CSS class)
       css_class: "bg-gray-100 dark:bg-gray-900"
