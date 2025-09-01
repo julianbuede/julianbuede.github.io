@@ -55,16 +55,17 @@ sections:
     id: features
     content:
       title: Nuestros pilares
+      text: Build your site with blocks 🧱
       items:
         - name: Impulsamos infraestructura
           icon: rectangle-group
-          description: [Proyectos](https://www.metadocencia.org/proyectos/) 
+          description: Proyectos
         - name: Formamos a personas investigadoras
           icon: bolt
-          description: [Proyectos](https://www.metadocencia.org/proyectos/) 
+          description: Proyectos
         - name: Construimos comunidad
           icon: sparkles
-          description: [Proyectos](https://www.metadocencia.org/proyectos/) 
+          description: Proyectos
   - block: stats
     content:
       items:
