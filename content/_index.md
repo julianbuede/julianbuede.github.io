@@ -37,14 +37,14 @@ sections:
         - title: Somos
           text: Construimos capacidades científicas locales para transformar la ciencia global. Hacemos crecer la ciencia en red, desde América Latina hacia el mundo
           # Upload image to `assets/media/` and reference the filename here
-          image: 2azulrojo.png
+          image: quienesomos.jpg
           button:
             text: Conócenos
             url: https://hugoblox.com/templates/
         - title: Qué hacemos
           text: Trabajamos para que la producción, la comunicación y la aplicación de saberes científicos y técnicos sean globalmente equitativos.
           # Upload image to `assets/media/` and reference the filename here
-          image: organigramaMD apaisado-05.png
+          image: organigramaapaisado.png
           button:
             text: Conoce nuestros proyectos
             url: https://discord.gg/z8wNYzb
