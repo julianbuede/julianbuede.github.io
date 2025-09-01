@@ -59,20 +59,14 @@ sections:
         - name: Impulsamos infraestructura
           icon: rectangle-group
           description: Proyectos
-           button:
-            text: Conoce nuestros proyectos
-            url: https://discord.gg/z8wNYzb
+          
         - name: Formamos a personas investigadoras
           icon: bolt
-          description: Super fast page load with Tailwind CSS and super fast site building with Hugo.
-               button:
-            text: Conoce nuestros proyectos
+          description: Proyectos
             url: https://discord.gg/z8wNYzb
         - name: Construimos comunidad
           icon: sparkles
-          description: One-click deployment to GitHub Pages. Have your new website live within 5 minutes!
-               button:
-            text: Conoce nuestros proyectos
+           description: Proyectos
             url: https://discord.gg/z8wNYzb
   - block: stats
     content:
