@@ -24,7 +24,7 @@ sections:
         color: "navy"
         image:
           # Add your image background to `assets/media/`.
-          filename: prueba-home.jpg
+          filename: 1naranjaazul.png
           filters:
             brightness: 0.5
           size: cover
