@@ -37,7 +37,7 @@ sections:
         - title: Somos
           text: Construimos capacidades científicas locales para transformar la ciencia global. Hacemos crecer la ciencia en red, desde América Latina hacia el mundo
           # Upload image to `assets/media/` and reference the filename here
-          image: prueba-home2.jpg
+          image: 2azulrojo.png
           button:
             text: Conócenos
             url: https://hugoblox.com/templates/
