@@ -24,7 +24,7 @@ sections:
         color: "navy"
         image:
           # Add your image background to `assets/media/`.
-          filename: 1naranjaazul.png
+          filename: 3azulrojo.png
           filters:
             brightness: 0.5
           size: cover
