@@ -44,7 +44,7 @@ sections:
         - title: Qué hacemos
           text: Trabajamos para que la producción, la comunicación y la aplicación de saberes científicos y técnicos sean globalmente equitativos.
           # Upload image to `assets/media/` and reference the filename here
-          image: organigramaMD2025-04.png
+          image: organigramaMD apaisado-05.png
           button:
             text: Conoce nuestros proyectos
             url: https://discord.gg/z8wNYzb
