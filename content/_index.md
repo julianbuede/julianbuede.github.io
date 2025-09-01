@@ -58,16 +58,13 @@ sections:
       items:
         - name: Impulsamos infraestructura
           icon: rectangle-group
-          description: Proyectos
-          
+          description: [Proyectos](https://www.metadocencia.org/proyectos/) 
         - name: Formamos a personas investigadoras
           icon: bolt
-          description: Proyectos
-            url: https://discord.gg/z8wNYzb
+          description: [Proyectos](https://www.metadocencia.org/proyectos/) 
         - name: Construimos comunidad
           icon: sparkles
-           description: Proyectos
-            url: https://discord.gg/z8wNYzb
+          description: [Proyectos](https://www.metadocencia.org/proyectos/) 
   - block: stats
     content:
       items:
