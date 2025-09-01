@@ -34,7 +34,7 @@ sections:
     id: solutions
     content:
       items:
-        - title: Somos
+        - title: Quiénes somos
           text: Construimos capacidades científicas locales para transformar la ciencia global. Hacemos crecer la ciencia en red, desde América Latina hacia el mundo
           # Upload image to `assets/media/` and reference the filename here
           image: quienesomos.jpg
