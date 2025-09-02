@@ -43,6 +43,11 @@ sections:
             url: https://hugoblox.com/templates/
         - title: Qué hacemos
           text: Trabajamos para que la producción, la comunicación y la aplicación de saberes científicos y técnicos sean globalmente equitativos.
+          feature_icon: check
+          features:
+            - "Impulsamos infraestructura"
+            - "Formamos a personas investigadoras"
+            - "Construimos comunidad"
           # Upload image to `assets/media/` and reference the filename here
           image: organigramaapaisado.png
           button:
@@ -51,21 +56,6 @@ sections:
     design:
       # Section background color (CSS class)
       css_class: "bg-gray-100 dark:bg-gray-900"  
-  - block: features
-    id: features
-    content:
-      title: Nuestros pilares
-      text: 
-      items:
-        - name: Impulsamos infraestructura
-          icon: rectangle-group
-          description: Proyectos
-        - name: Formamos a personas investigadoras
-          icon: bolt
-          description: Proyectos
-        - name: Construimos comunidad
-          icon: sparkles
-          description: Proyectos
   - block: stats
     content:
       items:
