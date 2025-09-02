@@ -82,7 +82,7 @@ sections:
       title: ""
       text: ""
       items:
-        - name: "Julio Zetter"
+        - name: "3 TESTIMONIOS A DEFINIR - Julio Zetter"
           role: " Coordinador en Jefe de la base de datos y hemeroteca virtual SciELO México"
           # Upload image to `assets/media/` and reference the filename here
           image: "juliozetter.jpeg"
