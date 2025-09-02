@@ -35,7 +35,9 @@ sections:
     content:
       items:
         - title: Quiénes somos
-          text: Construimos capacidades científicas locales para transformar la ciencia global. Hacemos crecer la ciencia en red, desde América Latina hacia el mundo
+          text: TEXTO A DEFINIR: MetaDocencia es una organización sin fines de lucro fundada en 2020.
+Nuestra comunidad está formada por personas y organizaciones que trabajan construyendo capacidades científicas locales para transformar la ciencia global.
+Hacemos crecer la ciencia en red, desde América Latina hacia el mundo.
           # Upload image to `assets/media/` and reference the filename here
           image: quienesomos.jpg
           button:
