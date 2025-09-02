@@ -95,18 +95,18 @@ sections:
         - name: "Julio Zetter"
           role: " Coordinador en Jefe de la base de datos y hemeroteca virtual SciELO México"
           # Upload image to `assets/media/` and reference the filename here
-          image: "juliozetter.jpg"
-          text: "Awesome, so easy to use and saved me so much work with the swappable pre-designed sections!"
+          image: "juliozetter.jpeg"
+          text: "No cabe más que agradecer a los instructores que hicieron posible este curso, que sin duda es la semilla de grandes frutos. Gracias por tanto MetaDocencia"
     design:
       spacing:
         # Reduce bottom spacing so the testimonial appears vertically centered between sections
         padding: ["6rem", 0, 0, 0]
   - block: cta-card
     content:
-      title: Build your future-proof website
-      text: As easy as 1, 2, 3!
+      title: Apoya a la ciencia latinoamericana
+      text: Aquí te contamos cómo
       button:
-        text: Get Started
+        text: Súmate
         url: https://hugoblox.com/templates/
     design:
       card:
