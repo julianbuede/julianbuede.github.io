@@ -92,10 +92,10 @@ sections:
       title: ""
       text: ""
       items:
-        - name: "Hugo Smith"
-          role: "Marketing Executive at X"
+        - name: "Julio Zetter"
+          role: " Coordinador en Jefe de la base de datos y hemeroteca virtual SciELO México"
           # Upload image to `assets/media/` and reference the filename here
-          image: "testimonial-1.jpg"
+          image: "juliozetter.jpg"
           text: "Awesome, so easy to use and saved me so much work with the swappable pre-designed sections!"
     design:
       spacing:
