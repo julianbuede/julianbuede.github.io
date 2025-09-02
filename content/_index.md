@@ -55,7 +55,7 @@ sections:
     id: features
     content:
       title: Nuestros pilares
-      text: Build your site with blocks 🧱
+      text: 
       items:
         - name: Impulsamos infraestructura
           icon: rectangle-group
