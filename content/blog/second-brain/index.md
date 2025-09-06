@@ -24,7 +24,7 @@ sections:
         margin: [0, 0, 0, 0]
       background:
         image:
-          filename: 3azulrojo.png
+          filename: quienessomos.jpg
           filters:
             brightness: 0.5
         text_color_light: true
