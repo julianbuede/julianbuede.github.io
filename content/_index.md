@@ -77,9 +77,6 @@ sections:
       # Reduce spacing
       spacing:
         padding: ["1rem", 0, "1rem", 0]
-  {{< spoiler text="👉 Click to view the solution" >}}
-You found me!
-{{< /spoiler >}}
   - block: testimonials
     content:
       title: ""
