@@ -62,6 +62,35 @@ sections:
       # Reduce spacing
       spacing:
         padding: [0, "1rem", 0, "1rem"]
+
+  - block: markdown
+    id: solutions
+    content:
+      title: ""
+      text: |
+        <div class="row g-4 align-items-center">
+          <div class="col-md-6">
+            <img src="/media/quienesomos.jpg" alt="Personas de MetaDocencia colaborando en un taller en línea" class="img-fluid rounded mb-3">
+            <h3>Quiénes somos</h3>
+            <p>MetaDocencia es una organización sin fines de lucro fundada en 2020. Nuestra comunidad construye capacidades científicas locales para transformar la ciencia global. Hacemos crecer la ciencia en red, desde América Latina hacia el mundo.</p>
+            <a class="btn btn-primary" href="/institucional/">Conócenos</a>
+          </div>
+          <div class="col-md-6">
+            <img src="/media/organigramaapaisado.png" alt="Organigrama y líneas de trabajo de MetaDocencia" class="img-fluid rounded mb-3">
+            <h3>Qué hacemos</h3>
+            <p>Trabajamos para que la producción, comunicación y aplicación de saberes científicos y técnicos sean globalmente equitativos.</p>
+            <ul>
+              <li>Impulsamos infraestructura</li>
+              <li>Formamos a personas investigadoras</li>
+              <li>Construimos comunidad</li>
+            </ul>
+            <a class="btn btn-outline-primary" href="/proyectos/">Conoce nuestros proyectos</a>
+          </div>
+        </div>
+    design:
+      background:
+        color: "#f6f7fb"
+
   - block: testimonials
     content:
       title: ""
