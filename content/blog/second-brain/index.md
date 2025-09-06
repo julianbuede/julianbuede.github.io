@@ -1,5 +1,5 @@
 ---
-title: 'about'
+title: 'home'
 date: 2023-10-24
 type: landing
 
