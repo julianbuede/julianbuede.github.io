@@ -1,11 +1,10 @@
 ---
-title: 'home'
-date: 2023-10-24
+title: "Home"
 type: landing
 
 design:
   spacing: "6rem"
-
+  
 sections:
   - block: hero
     content:
