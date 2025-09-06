@@ -50,6 +50,12 @@ sections:
         - statistic: "88"
           description: |
             personas contribuyen a nuestro trabajo
+        - statistic: "+6000"
+          description: |
+            personas conectadas en redes sociales
+        - statistic: "+2600"
+          description: |
+            personas suscriptas a nuestro boletín
     design:
       # Section background color (CSS class)
       css_class: "bg-gray-100 dark:bg-gray-900"
