@@ -43,7 +43,7 @@ sections:
             - "Formamos a personas investigadoras"
             - "Construimos comunidad"
           # Upload image to `assets/media/` and reference the filename here
-          image: organigramaapaisado.png
+          image: {{< youtube w7Ft2ymGmfc >}}
           button:
             text: Conoce nuestros proyectos
             url: https://discord.gg/z8wNYzb
