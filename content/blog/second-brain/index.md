@@ -14,11 +14,7 @@ sections:
         text: Get Started
         url: https://hugoblox.com/templates/
         icon: rocket-launch
-          primary_action:
-        text: Get Started
-        url: https://hugoblox.com/templates/
-        icon: rocket-launch
-          primary_action:
+    primary_action:
         text: Get Started
         url: https://hugoblox.com/templates/
         icon: rocket-launch
