@@ -9,10 +9,7 @@ sections:
   - block: hero
     content:
       title: Quiénes somos
-      text: |
-        <div class="row g-4 align-items-center">
-          <div class="col-md-6">
-<p>MetaDocencia es una organización sin fines de lucro fundada en 2020. Nuestra comunidad construye capacidades científicas locales para transformar la ciencia global. Hacemos crecer la ciencia en red, desde América Latina hacia el mundo.</p>
+      text:MetaDocencia es una organización sin fines de lucro fundada en 2020. Nuestra comunidad construye capacidades científicas locales para transformar la ciencia global. Hacemos crecer la ciencia en red, desde América Latina hacia el mundo.</p>
             <a class="btn btn-primary" href="/institucional/">Conócenos</a>
     design:
       spacing:
