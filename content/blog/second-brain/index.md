@@ -67,7 +67,8 @@ sections:
     id: solutions
     content:
       title: ""
-      text: {{< spoiler text="👉 Click to view the solution" >}}
+      text: |
+{{< spoiler text="👉 Click to view the solution" >}}
 You found me!
 {{< /spoiler >}}
     design:
