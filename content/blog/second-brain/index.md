@@ -9,12 +9,6 @@ sections:
   - block: hero
     content:
       title: Quiénes somos
-     cta:
-        label: Súmate
-        url: /suscripcion/
-     cta:
-        label: Súmate
-        url: /suscripcion/
       text: MetaDocencia es una organización sin fines de lucro fundada en 2020. Nuestra comunidad está formada por personas y organizaciones que trabajan construyendo capacidades científicas locales para transformar la ciencia global. Hacemos crecer la ciencia en red, desde América Latina hacia el mundo.
     design:
       spacing:
