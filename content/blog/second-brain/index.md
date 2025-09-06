@@ -23,8 +23,6 @@ sections:
           filters:
             brightness: 0.3
         text_color_light: true
-    
-sections:
  - block: markdown
     id: solutions
     content:
