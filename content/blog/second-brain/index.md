@@ -8,10 +8,12 @@ design:
 sections:
   - block: hero
     content:
-      title: Potenciemos a América Latina en el mapa de la investigación global
-      cta:
-        label: Súmate
-        url: /suscripcion/
+      title: Quiénes somos
+      text: MetaDocencia es una organización sin fines de lucro fundada en 2020. Nuestra comunidad está formada por personas y organizaciones que trabajan construyendo capacidades científicas locales para transformar la ciencia global. Hacemos crecer la ciencia en red, desde América Latina hacia el mundo.
+      primary_action:
+        text: Get Started
+        url: https://hugoblox.com/templates/
+        icon: rocket-launch
     design:
       spacing:
         padding: [0, 0, 0, 0]
