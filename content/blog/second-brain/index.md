@@ -43,24 +43,19 @@ sections:
       items:
         - statistic: "+1,000"
           description: |
-            personas
-    en Slack
+            personas en Slack
         - statistic: "+40"
           description: |
-            socios y
-    patrocinadores
+            socios y patrocinadores
         - statistic: "88"
           description: |
-            personas contribuyen
-    a nuestro trabajo
+            personas contribuyen a nuestro trabajo
         - statistic: "+6000"
           description: |
-            personas conectadas
-    en redes sociales
+            personas conectadas en redes sociales
          - statistic: "+2600"
           description: |
-            personas suscriptas
-    a nuestro boletín
+            personas suscriptas a nuestro boletín
     design:
       # Section background color (CSS class)
       css_class: "bg-gray-100 dark:bg-gray-900"
