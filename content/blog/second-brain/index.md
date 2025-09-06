@@ -1,29 +1,28 @@
 ---
-title: 'Home'
-date: 2023-10-24
+title: "Home"
 type: landing
 
 design:
-  # Default section spacing
   spacing: "6rem"
 
 sections:
   - block: hero
     content:
-      title: Quiénes somos
-     text: MetaDocencia es una organización sin fines de lucro fundada en 2020. Nuestra comunidad está formada por personas y organizaciones que trabajan construyendo capacidades científicas locales para transformar la ciencia global. Hacemos crecer la ciencia en red, desde América Latina hacia el mundo.
-      # For full-screen, add `min-h-screen` below
-      css_class: "dark"
+      title: Potenciemos a América Latina en el mapa de la investigación global
+      cta:
+        label: Súmate
+        url: /suscripcion/
+    design:
+      spacing:
+        padding: [0, 0, 0, 0]
+        margin: [0, 0, 0, 0]
       background:
-        color: "navy"
         image:
-          # Add your image background to `assets/media/`.
           filename: 3azulrojo.png
           filters:
             brightness: 0.5
-          size: cover
-          position: center
-          parallax: false
+        text_color_light: true
+    
   - block: cta-image-paragraph
     id: solutions
     content:
