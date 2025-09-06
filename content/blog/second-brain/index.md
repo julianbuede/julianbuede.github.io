@@ -28,43 +28,39 @@ sections:
     id: solutions
     content:
       items:
-        - title: Quiénes somos
-          text: TEXTO A DEFINIR. MetaDocencia es una organización sin fines de lucro fundada en 2020. Nuestra comunidad está formada por personas y organizaciones que trabajan construyendo capacidades científicas locales para transformar la ciencia global. Hacemos crecer la ciencia en red, desde América Latina hacia el mundo.
+        - title: Vamos por 5 años más
+          text: Durante nuestros primeros 5 años tejimos lazos entre más de 2,000 profesionales de ciencia y técnica. Lo hicimos trabajando en equipo, de manera colectiva y colaborando con más de 40 comunidades. Gracias por estos primeros 5 años de aprendizaje, colaboración y crecimiento. ¡Vamos por 5 años más!
           # Upload image to `assets/media/` and reference the filename here
           image: quienesomos.jpg
           button:
             text: Conócenos
             url: https://hugoblox.com/templates/
-        - title: Qué hacemos
-          text: Trabajamos para que la producción, la comunicación y la aplicación de saberes científicos y técnicos sean globalmente equitativos.
-          feature_icon: check
-          features:
-            - "Impulsamos infraestructura"
-            - "Formamos a personas investigadoras"
-            - "Construimos comunidad"
-          # Upload image to `assets/media/` and reference the filename here
-          image: {{< youtube w7Ft2ymGmfc >}}
-          button:
-            text: Conoce nuestros proyectos
-            url: https://discord.gg/z8wNYzb
     design:
       # Section background color (CSS class)
       css_class: "bg-gray-100 dark:bg-gray-900"  
   - block: stats
     content:
       items:
-        - statistic: "NN"
+        - statistic: "+1,000"
           description: |
-            Proyectos  
-            financiados
-        - statistic: "+1500"
+            personas
+    en Slack
+        - statistic: "+40"
           description: |
-            personas  
-            formadas
-        - statistic: "+1000"
+            socios y
+    patrocinadores
+        - statistic: "88"
           description: |
-            personas en la   
-            comunidad de Slack
+            personas contribuyen
+    a nuestro trabajo
+        - statistic: "+6000"
+          description: |
+            personas conectadas
+    en redes sociales
+         - statistic: "+2600"
+          description: |
+            personas suscriptas
+    a nuestro boletín
     design:
       # Section background color (CSS class)
       css_class: "bg-gray-100 dark:bg-gray-900"
@@ -98,4 +94,3 @@ sections:
         css_class: "bg-primary-700"
         css_style: ""
 ---
-
