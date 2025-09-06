@@ -13,12 +13,6 @@ sections:
  cta:
         label: Súmate
         url: /suscripcion/
-    cta:
-        label: Súmate
-        url: /suscripcion/
-    cta:
-        label: Súmate
-        url: /suscripcion/
     design:
       spacing:
         padding: [0, 0, 0, 0]
