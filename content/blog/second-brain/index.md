@@ -13,6 +13,12 @@ sections:
     primary_action:
         text: Nuestra Gobernanza
         url: https://hugoblox.com/templates/](https://www.metadocencia.org/suscripcion/
+    primary_action:
+        text: Pautas de Convivencia
+        url: https://hugoblox.com/templates/](https://www.metadocencia.org/suscripcion/
+    primary_action:
+        text: Política de Accesibilidad
+        url: https://hugoblox.com/templates/](https://www.metadocencia.org/suscripcion/
     design:
       spacing:
         padding: [0, 0, 0, 0]
