@@ -35,14 +35,7 @@ sections:
       title: "About This Section"
       subtitle: "More details below"
       text: |
-        ## Welcome
-        
-        This is **markdown content** that you can edit.
-        
-        - Create lists
-        - Add links
-        - Format text
-        
+        {{< youtube D2vj0WcvH5c >}}
         [Learn more](https://example.com)
     design:
       columns: "1"
