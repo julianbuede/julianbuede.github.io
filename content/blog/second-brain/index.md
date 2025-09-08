@@ -90,6 +90,7 @@ sections:
       columns: "3"
       background:
         color: "blue-50"
+    
   - block: features
     content:
       title: "Amazing Features"
@@ -108,6 +109,7 @@ sections:
       columns: "3"
       background:
         color: "gray-50"
+    
   - block: resume-awards
     content:
       username: "admin"
@@ -122,6 +124,7 @@ sections:
       # spacing:
       #   padding: ["6", "6", "6", "6"]
       # columns: "1"
+    
   - block: resume-biography-3
     content:
       username: "admin"
@@ -138,6 +141,7 @@ sections:
       # spacing:
       #   padding: ["6", "6", "6", "6"]
       # columns: "1"
+    
   - block: resume-experience
     content:
       title: "Experience"
@@ -159,6 +163,7 @@ sections:
           description: "Developed web applications using modern technologies"
     design:
       columns: "1"
+    
   - block: cta-image-paragraph
     id: solutions
     content:
@@ -172,7 +177,8 @@ sections:
             url: https://hugoblox.com/templates/
     design:
       # Section background color (CSS class)
-      css_class: "bg-gray-100 dark:bg-gray-900"  
+      css_class: "bg-gray-100 dark:bg-gray-900"
+    
   - block: stats
     content:
       items:
@@ -240,6 +246,7 @@ sections:
       spacing:
         # Reduce bottom spacing so the testimonial appears vertically centered between sections
         padding: ["6rem", 0, 0, 0]
+    
   - block: cta-card
     content:
       title: Apoya a la ciencia latinoamericana
