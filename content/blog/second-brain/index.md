@@ -23,6 +23,7 @@ sections:
           filters:
             brightness: 0.3
         text_color_light: true
+    
   - block: markdown
     content:
       title: "Vamos por 5 años más"
@@ -34,6 +35,7 @@ sections:
       columns: "1"
       background:
         color: "white"
+    
  - block: cta-image-paragraph
     content:
       items:
@@ -52,7 +54,6 @@ sections:
       # spacing:
       #   padding: ["6", "6", "6", "6"]
       # columns: "1"
-   sections:
   - block: resume-biography
     content:
       username: "admin"
@@ -88,7 +89,6 @@ sections:
       columns: "3"
       background:
         color: "blue-50"
-    sections:
   - block: features
     content:
       title: "Amazing Features"
@@ -107,7 +107,6 @@ sections:
       columns: "3"
       background:
         color: "gray-50"
-    sections:
   - block: resume-awards
     content:
       username: "admin"
@@ -122,7 +121,6 @@ sections:
       # spacing:
       #   padding: ["6", "6", "6", "6"]
       # columns: "1"
-    sections:
   - block: resume-biography-3
     content:
       username: "admin"
