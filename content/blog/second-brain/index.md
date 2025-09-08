@@ -23,7 +23,17 @@ sections:
           filters:
             brightness: 0.3
         text_color_light: true
-
+  - block: markdown
+    content:
+      title: "Vamos por 5 años más"
+      subtitle: "More details below"
+      text: |
+        {{< youtube D2vj0WcvH5c >}}
+        [Learn more](https://example.com)
+    design:
+      columns: "1"
+      background:
+        color: "white"
   - block: cta-image-paragraph
     id: solutions
     content:
