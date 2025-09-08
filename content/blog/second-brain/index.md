@@ -34,6 +34,132 @@ sections:
       columns: "1"
       background:
         color: "white"
+ - block: cta-image-paragraph
+    content:
+      items:
+        -
+          name: "First Item"
+          description: "Description for first item"
+        -
+          name: "Second Item"
+          description: "Description for second item"
+    design:
+      background:
+        color: ""
+        # gradient_start: "#4f46e5"
+        # gradient_end: "#7c3aed"
+        # text_color_light: true
+      # spacing:
+      #   padding: ["6", "6", "6", "6"]
+      # columns: "1"
+   sections:
+  - block: resume-biography
+    content:
+      username: "admin"
+      text: "This is sample text content for the section."
+      button:
+        text: "Click Here"
+        url: "https://example.com"
+    design:
+      background:
+        color: ""
+        # gradient_start: "#4f46e5"
+        # gradient_end: "#7c3aed"
+        # text_color_light: true
+      # spacing:
+      #   padding: ["6", "6", "6", "6"]
+      # columns: "1"
+    sections:
+  - block: cta-button-list
+    content:
+      title: "Choose Your Path"
+      text: "Multiple ways to get started with our platform"
+      buttons:
+        - text: "For Researchers"
+          url: "/researchers"
+          icon: "academic-cap"
+        - text: "For Businesses"
+          url: "/business"
+          icon: "building-office"
+        - text: "For Students"
+          url: "/students"
+          icon: "book-open"
+    design:
+      columns: "3"
+      background:
+        color: "blue-50"
+    sections:
+  - block: features
+    content:
+      title: "Amazing Features"
+      text: "Discover what makes our platform special"
+      items:
+        - name: "Fast Performance"
+          description: "Lightning-fast load times for better user experience"
+          icon: "bolt"
+        - name: "Easy to Use"
+          description: "Intuitive interface that anyone can master"
+          icon: "heart"
+        - name: "Secure"
+          description: "Enterprise-grade security built-in"
+          icon: "shield-check"
+    design:
+      columns: "3"
+      background:
+        color: "gray-50"
+    sections:
+  - block: resume-awards
+    content:
+      username: "admin"
+      title: "My Section Title"
+      text: "This is sample text content for the section."
+    design:
+      background:
+        color: ""
+        # gradient_start: "#4f46e5"
+        # gradient_end: "#7c3aed"
+        # text_color_light: true
+      # spacing:
+      #   padding: ["6", "6", "6", "6"]
+      # columns: "1"
+    sections:
+  - block: resume-biography-3
+    content:
+      username: "admin"
+      text: "This is sample text content for the section."
+      button:
+        text: "Click Here"
+        url: "https://example.com"
+    design:
+      background:
+        color: ""
+        # gradient_start: "#4f46e5"
+        # gradient_end: "#7c3aed"
+        # text_color_light: true
+      # spacing:
+      #   padding: ["6", "6", "6", "6"]
+      # columns: "1"
+  - block: resume-experience
+    content:
+      title: "Experience"
+      items:
+        - title: "Senior Developer"
+          company: "Tech Company"
+          location: "San Francisco, CA"
+          date_start: "2020-01-01"
+          date_end: ""
+          description: |
+            * Led development of key features
+            * Mentored junior developers
+            * Improved system performance by 40%
+        - title: "Software Engineer"
+          company: "Startup Inc"
+          location: "New York, NY"
+          date_start: "2018-06-01"
+          date_end: "2019-12-31"
+          description: "Developed web applications using modern technologies"
+    design:
+      columns: "1"
   - block: cta-image-paragraph
     id: solutions
     content:
