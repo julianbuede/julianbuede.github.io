@@ -30,6 +30,24 @@ sections:
           size: cover
           position: center
           parallax: false
+  - block: markdown
+    content:
+      title: "About This Section"
+      subtitle: "More details below"
+      text: |
+        ## Welcome
+        
+        This is **markdown content** that you can edit.
+        
+        - Create lists
+        - Add links
+        - Format text
+        
+        [Learn more](https://example.com)
+    design:
+      columns: "1"
+      background:
+        color: "white"
   - block: cta-image-paragraph
     id: solutions
     content:
