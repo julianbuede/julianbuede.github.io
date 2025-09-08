@@ -54,6 +54,7 @@ sections:
       # spacing:
       #   padding: ["6", "6", "6", "6"]
       # columns: "1"
+
   - block: resume-biography
     content:
       username: "admin"
@@ -70,7 +71,7 @@ sections:
       # spacing:
       #   padding: ["6", "6", "6", "6"]
       # columns: "1"
-    sections:
+
   - block: cta-button-list
     content:
       title: "Choose Your Path"
