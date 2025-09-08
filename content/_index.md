@@ -13,7 +13,7 @@ sections:
       title: Potenciemos a América Latina en el mapa de la investigación global
       primary_action:
         text: Súmate
-        url: https://hugoblox.com/templates/](https://www.metadocencia.org/suscripcion/)
+        url: https://hugoblox.com/templates/](https://www.metadocencia.org/suscripcion/
     design:
       spacing:
         padding: [0, 0, 0, 0]
@@ -56,7 +56,7 @@ sections:
     design:
       # Section background color (CSS class)
       css_class: "bg-gray-100 dark:bg-gray-900"  
-- block: stats
+  - block: stats
     content:
       items:
         - statistic: "NN"
