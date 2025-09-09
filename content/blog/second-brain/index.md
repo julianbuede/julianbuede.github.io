@@ -24,134 +24,6 @@ sections:
             brightness: 0.3
         text_color_light: true
     
- - block: cta-image-paragraph
-    content:
-      items:
-        -
-          name: "First Item"
-          description: "Description for first item"
-        -
-          name: "Second Item"
-          description: "Description for second item"
-    design:
-      background:
-        color: ""
-        # gradient_start: "#4f46e5"
-        # gradient_end: "#7c3aed"
-        # text_color_light: true
-      # spacing:
-      #   padding: ["6", "6", "6", "6"]
-      # columns: "1"
-
-  - block: resume-biography
-    content:
-      username: "admin"
-      text: "This is sample text content for the section."
-      button:
-        text: "Click Here"
-        url: "https://example.com"
-    design:
-      background:
-        color: ""
-        # gradient_start: "#4f46e5"
-        # gradient_end: "#7c3aed"
-        # text_color_light: true
-      # spacing:
-      #   padding: ["6", "6", "6", "6"]
-      # columns: "1"
-
-  - block: cta-button-list
-    content:
-      title: "Choose Your Path"
-      text: "Multiple ways to get started with our platform"
-      buttons:
-        - text: "For Researchers"
-          url: "/researchers"
-          icon: "academic-cap"
-        - text: "For Businesses"
-          url: "/business"
-          icon: "building-office"
-        - text: "For Students"
-          url: "/students"
-          icon: "book-open"
-    design:
-      columns: "3"
-      background:
-        color: "blue-50"
-    
-  - block: features
-    content:
-      title: "Amazing Features"
-      text: "Discover what makes our platform special"
-      items:
-        - name: "Fast Performance"
-          description: "Lightning-fast load times for better user experience"
-          icon: "bolt"
-        - name: "Easy to Use"
-          description: "Intuitive interface that anyone can master"
-          icon: "heart"
-        - name: "Secure"
-          description: "Enterprise-grade security built-in"
-          icon: "shield-check"
-    design:
-      columns: "3"
-      background:
-        color: "gray-50"
-    
-  - block: resume-awards
-    content:
-      username: "admin"
-      title: "My Section Title"
-      text: "This is sample text content for the section."
-    design:
-      background:
-        color: ""
-        # gradient_start: "#4f46e5"
-        # gradient_end: "#7c3aed"
-        # text_color_light: true
-      # spacing:
-      #   padding: ["6", "6", "6", "6"]
-      # columns: "1"
-    
-  - block: resume-biography-3
-    content:
-      username: "admin"
-      text: "This is sample text content for the section."
-      button:
-        text: "Click Here"
-        url: "https://example.com"
-    design:
-      background:
-        color: ""
-        # gradient_start: "#4f46e5"
-        # gradient_end: "#7c3aed"
-        # text_color_light: true
-      # spacing:
-      #   padding: ["6", "6", "6", "6"]
-      # columns: "1"
-    
-  - block: resume-experience
-    content:
-      title: "Experience"
-      items:
-        - title: "Senior Developer"
-          company: "Tech Company"
-          location: "San Francisco, CA"
-          date_start: "2020-01-01"
-          date_end: ""
-          description: |
-            * Led development of key features
-            * Mentored junior developers
-            * Improved system performance by 40%
-        - title: "Software Engineer"
-          company: "Startup Inc"
-          location: "New York, NY"
-          date_start: "2018-06-01"
-          date_end: "2019-12-31"
-          description: "Developed web applications using modern technologies"
-    design:
-      columns: "1"
-    
   - block: cta-image-paragraph
     id: solutions
     content:
@@ -192,59 +64,24 @@ sections:
       spacing:
         padding: [0, "1rem", 0, "1rem"]
 
-  - block: markdown
-    id: solutions
-    content:
-      title: ""
-      text: |
-        <div class="row g-4 align-items-center">
-          <div class="col-md-6">
-            <img src="/media/quienesomos.jpg" alt="Personas de MetaDocencia colaborando en un taller en línea" class="img-fluid rounded mb-3">
-            <h3>Quiénes somos</h3>
-            <p>MetaDocencia es una organización sin fines de lucro fundada en 2020. Nuestra comunidad construye capacidades científicas locales para transformar la ciencia global. Hacemos crecer la ciencia en red, desde América Latina hacia el mundo.</p>
-            <a class="btn btn-primary" href="/institucional/">Conócenos</a>
-          </div>
-          <div class="col-md-6">
-            <img src="/media/organigramaapaisado.png" alt="Organigrama y líneas de trabajo de MetaDocencia" class="img-fluid rounded mb-3">
-            <h3>Qué hacemos</h3>
-            <p>Trabajamos para que la producción, comunicación y aplicación de saberes científicos y técnicos sean globalmente equitativos.</p>
-            <ul>
-              <li>Impulsamos infraestructura</li>
-              <li>Formamos a personas investigadoras</li>
-              <li>Construimos comunidad</li>
-            </ul>
-            <a class="btn btn-outline-primary" href="/proyectos/">Conoce nuestros proyectos</a>
-          </div>
-        </div>
-    design:
-      background:
-        color: "#f6f7fb"
 
-  - block: testimonials
+sections:
+  - block: people
     content:
-      title: ""
-      text: ""
-      items:
-        - name: "3 TESTIMONIOS A DEFINIR - Julio Zetter"
-          role: " Coordinador en Jefe de la base de datos y hemeroteca virtual SciELO México"
-          # Upload image to `assets/media/` and reference the filename here
-          image: "juliozetter.jpeg"
-          text: "No cabe más que agradecer a los instructores que hicieron posible este curso, que sin duda es la semilla de grandes frutos. Gracias por tanto MetaDocencia"
+      title: Meet the Team
+      # Choose which groups/teams of users to display.
+      #   Edit `user_groups` in each user's profile to add them to one or more of these groups.
+      user_groups:
+          - Principal Investigators
+          - Researchers
+          - Grad Students
+          - Administration
+          - Visitors
+          - Alumni
+      sort_by: Params.last_name
+      sort_ascending: true
     design:
-      spacing:
-        # Reduce bottom spacing so the testimonial appears vertically centered between sections
-        padding: ["6rem", 0, 0, 0]
-    
-  - block: cta-card
-    content:
-      title: Apoya a la ciencia latinoamericana
-      text: Aquí te contamos cómo
-      button:
-        text: Súmate
-        url: https://hugoblox.com/templates/
-    design:
-      card:
-        # Card background color (CSS class)
-        css_class: "bg-primary-700"
-        css_style: ""
+      show_interests: false
+      show_role: true
+      show_social: true
 ---
