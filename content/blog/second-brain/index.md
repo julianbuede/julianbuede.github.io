@@ -1,7 +1,7 @@
 ---
 title: "Home"
 type: landing
-
+---
 design:
   spacing: "6rem"
   
