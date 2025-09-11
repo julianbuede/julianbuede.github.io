@@ -6,28 +6,28 @@ design:
   spacing: "6rem"
 
 sections:
-- block: hero-cta
-  content:
-    title: Quiénes somos
-    text: MetaDocencia es una organización sin fines de lucro fundada en 2020. Nuestra comunidad construye capacidades científicas locales para transformar la ciencia global. Hacemos crecer la ciencia en red, desde América Latina hacia el mundo.
-    actions:
-      - text: "Nuestra Gobernanza"
-        url: "https://www.metadocencia.org/suscripcion/"
-        style: primary
-      - text: "Pautas de Convivencia"
-        url: "https://www.metadocencia.org/pautas-de-convivencia/"
-        style: secondary
-      - text: "Política de Accesibilidad"
-        url: "https://www.metadocencia.org/accesibilidad/"
-        style: secondary
-  design:
-    spacing:
-      padding: [0, 0, 0, 0]
-      margin: [0, 0, 0, 0]
-    background:
-      image:
-        filename: quienessomos.jpg
-                filters:
+  - block: hero-cta
+    content:
+      title: "Quiénes somos"
+      text: "MetaDocencia es una organización sin fines de lucro fundada en 2020. Nuestra comunidad construye capacidades científicas locales para transformar la ciencia global. Hacemos crecer la ciencia en red, desde América Latina hacia el mundo."
+      actions:
+        - text: "Nuestra Gobernanza"
+          url: "https://www.metadocencia.org/suscripcion/"
+          style: primary
+        - text: "Pautas de Convivencia"
+          url: "https://www.metadocencia.org/pautas-de-convivencia/"
+          style: secondary
+        - text: "Política de Accesibilidad"
+          url: "https://www.metadocencia.org/accesibilidad/"
+          style: secondary
+    design:
+      spacing:
+        padding: [0, 0, 0, 0]
+        margin: [0, 0, 0, 0]
+      background:
+        image:
+          filename: "quienessomos.jpg"
+          filters:
             brightness: 0.3
       text_color_light: true
 
@@ -35,12 +35,12 @@ sections:
     id: solutions
     content:
       items:
-        - title: Vamos por 5 años más
-          text: Durante nuestros primeros 5 años tejimos lazos entre más de 2,000 profesionales de ciencia y técnica. Lo hicimos trabajando en equipo, de manera colectiva y colaborando con más de 40 comunidades. Gracias por estos primeros 5 años de aprendizaje, colaboración y crecimiento. ¡Vamos por 5 años más!
-          image: quienesomos.jpg
+        - title: "Vamos por 5 años más"
+          text: "Durante nuestros primeros 5 años tejimos lazos entre más de 2,000 profesionales de ciencia y técnica. Lo hicimos trabajando en equipo, de manera colectiva y colaborando con más de 40 comunidades. Gracias por estos primeros 5 años de aprendizaje, colaboración y crecimiento. ¡Vamos por 5 años más!"
+          image: "quienessomos.jpg"
           button:
-            text: Conócenos
-            url: https://hugoblox.com/templates/
+            text: "Conócenos"
+            url: "https://hugoblox.com/templates/"
     design:
       css_class: "bg-gray-100 dark:bg-gray-900"
 
@@ -103,7 +103,7 @@ sections:
       text: ""
       items:
         - name: "3 TESTIMONIOS A DEFINIR - Julio Zetter"
-          role: " Coordinador en Jefe de la base de datos y hemeroteca virtual SciELO México"
+          role: "Coordinador en Jefe de la base de datos y hemeroteca virtual SciELO México"
           image: "juliozetter.jpeg"
           text: "No cabe más que agradecer a los instructores que hicieron posible este curso, que sin duda es la semilla de grandes frutos. Gracias por tanto MetaDocencia"
     design:
@@ -112,11 +112,11 @@ sections:
 
   - block: cta-card
     content:
-      title: Apoya a la ciencia latinoamericana
-      text: Aquí te contamos cómo
+      title: "Apoya a la ciencia latinoamericana"
+      text: "Aquí te contamos cómo"
       button:
-        text: Súmate
-        url: https://hugoblox.com/templates/
+        text: "Súmate"
+        url: "https://hugoblox.com/templates/"
     design:
       card:
         css_class: "bg-primary-700"
