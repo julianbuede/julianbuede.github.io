@@ -1,10 +1,8 @@
 ---
 title: "Home"
 type: landing
-
 design:
   spacing: "6rem"
-  
 sections:
   - block: hero
     content:
@@ -76,7 +74,8 @@ sections:
       spacing:
         # Reduce bottom spacing so the testimonial appears vertically centered between sections
         padding: ["6rem", 0, 0, 0]
-  - block: cta-card
+    
+- block: cta-card
     content:
       title: Apoya a la ciencia latinoamericana
       text: Aquí te contamos cómo
@@ -88,4 +87,5 @@ sections:
         # Card background color (CSS class)
         css_class: "bg-primary-700"
         css_style: ""
+  
     ---
