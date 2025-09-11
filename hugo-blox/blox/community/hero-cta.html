@@ -1,0 +1,57 @@
+{{/* hugo-blox/blox/community/hero-cta.html
+     Hero con múltiples botones (actions: [])
+     Soporta background simple y texto claro/oscuro.
+*/}}
+
+{{ $page := .page }}
+{{ $block := .block }}
+{{ $content := $block.content }}
+{{ $design := $block.design }}
+
+{{ $title := $content.title | default "" }}
+{{ $text  := $content.text  | default "" }}
+{{ $actions := $content.actions | default (slice) }}
+
+{{/* Background */}}
+{{ $bg := "" }}
+{{ if and $design (isset $design "background") (isset $design.background "image") (isset $design.background.image "filename") }}
+  {{ $bg = printf "media/%s" $design.background.image.filename }}
+{{ end }}
+
+{{ $light := false }}
+{{ if and $design (isset $design "text_color_light") }}
+  {{ $light = $design.text_color_light }}
+{{ end }}
+
+<section id="{{ $block.id | default (anchorize $title) }}" class="relative overflow-hidden py-16">
+  {{ if $bg }}
+    <div class="absolute inset-0 -z-10">
+      <img src="{{ $bg | relURL }}" alt="" class="w-full h-full object-cover" />
+      {{/* oscurecer si se pide brillo bajo */}}
+      <div class="absolute inset-0 bg-black/40"></div>
+    </div>
+  {{ end }}
+
+  <div class="container mx-auto px-6 text-center {{ if $light }}text-white{{ end }}">
+    {{ if $title }}<h1 class="text-4xl font-extrabold tracking-tight mb-4">{{ $title }}</h1>{{ end }}
+    {{ if $text  }}<p class="mx-auto max-w-3xl text-lg opacity-90 mb-8">{{ $text | markdownify }}</p>{{ end }}
+
+    {{ if gt (len $actions) 0 }}
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        {{ range $actions }}
+          {{ $style := .style | default "primary" }}
+          {{ $isPrimary := eq $style "primary" }}
+          <a href="{{ .url | relURL }}"
+             class="inline-flex items-center justify-center rounded-lg px-5 py-2.5 font-medium transition
+                    {{ if $isPrimary }}
+                      btn btn-primary
+                    {{ else }}
+                      btn btn-secondary border
+                    {{ end }}">
+            {{ .text }}
+          </a>
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>
+</section>
