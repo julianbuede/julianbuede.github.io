@@ -1,13 +1,6 @@
 {{/* hugo-blox/blox/community/people.html
-     Bloque 'people' mínimo para Tailwind que lista autores por user_groups.
-     Uso: en la página YAML:
-       - block: people
-         content:
-           title: "Equipo"
-           text: "Conoce al equipo"
-           user_groups: ["Equipo"]
-         design:
-           columns: 4
+     Bloque 'people' robusto para Tailwind (Hugo Blox).
+     Filtra autores por user_groups si se provee; si no, muestra todos.
 */}}
 
 {{ $page := .page }}
@@ -15,35 +8,54 @@
 {{ $content := $block.content }}
 {{ $design := $block.design }}
 
+{{/* Títulos y texto */}}
 {{ $title := $content.title | default "" }}
 {{ $text  := $content.text  | default "" }}
-{{ $groups := $content.user_groups | default (slice) }}
+
+{{/* Leer grupos desde distintas claves y tolerar ausencia */}}
+{{ $groups := slice }}
+{{ if isset $content "user_groups" }}
+  {{ $groups = $content.user_groups }}
+{{ else if isset $content "groups" }}
+  {{ $groups = $content.groups }}
+{{ end }}
+
+{{/* Normalizar columns (por defecto 4) */}}
+{{ $cols := $design.columns | default 4 }}
+{{ $grid := "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4" }}
+{{ if eq $cols 2 }}{{ $grid = "grid-cols-1 sm:grid-cols-2" }}{{ end }}
+{{ if eq $cols 3 }}{{ $grid = "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" }}{{ end }}
+{{ if eq $cols 5 }}{{ $grid = "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5" }}{{ end }}
 
 <section id="{{ $block.id | default (anchorize $title) }}" class="py-12">
   <div class="container mx-auto px-6">
     {{ if $title }}<h2 class="text-3xl font-bold mb-2">{{ $title }}</h2>{{ end }}
     {{ if $text  }}<div class="text-lg text-gray-600 dark:text-gray-300 mb-8">{{ $text | markdownify }}</div>{{ end }}
 
-    {{/* Recolectar personas por grupo */}}
-    {{ $people := slice }}
-    {{ range site.Pages }}
-      {{ $p := . }}
-      {{ $ug := $p.Params.user_groups }}
-      {{ $match := false }}
-      {{ if $groups }}
-        {{ range $groups }}
-          {{ if in $ug . }}{{ $match = true }}{{ end }}
-        {{ end }}
-      {{ end }}
-      {{ if $match }}
-        {{ $people = $people | append $p }}
-      {{ end }}
-    {{ end }}
-    {{ $people = sort $people "Title" }}
+    {{/* Tomar solo páginas de autores */}}
+    {{ $authors := where site.Pages "Section" "authors" }}
 
-    {{ if gt (len $people) 0 }}
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
-        {{ range $people }}
+    {{/* Filtrado por grupos si se especifican */}}
+    {{ if and $authors (gt (len $groups) 0) }}
+      {{ $filtered := slice }}
+      {{ range $authors }}
+        {{ $ug := .Params.user_groups }}
+        {{ $hit := false }}
+        {{ if $ug }}
+          {{ range $groups }}
+            {{ if in $ug . }}{{ $hit = true }}{{ end }}
+          {{ end }}
+        {{ end }}
+        {{ if $hit }}{{ $filtered = $filtered | append . }}{{ end }}
+      {{ end }}
+      {{ $authors = $filtered }}
+    {{ end }}
+
+    {{ $authors = sort $authors "Title" }}
+
+    {{ if gt (len $authors) 0 }}
+      <div class="grid {{ $grid }} gap-6">
+        {{ range $authors }}
           {{ $p := . }}
           <a class="block group rounded-2xl overflow-hidden border shadow-sm hover:shadow-md transition bg-white dark:bg-gray-900" href="{{ $p.RelPermalink }}">
             <div class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 overflow-hidden">
@@ -68,7 +80,15 @@
         {{ end }}
       </div>
     {{ else }}
-      <div class="text-gray-500 dark:text-gray-400">No se encontraron personas en los grupos: {{ delimit $groups ", " " y " }}.</div>
+      {{ if gt (len $groups) 0 }}
+        <div class="text-gray-500 dark:text-gray-400">
+          No se encontraron personas en los grupos: {{ delimit $groups ", " " y " }}.
+        </div>
+      {{ else }}
+        <div class="text-gray-500 dark:text-gray-400">
+          No se encontraron perfiles de autores. Asegúrate de tener contenido en <code>content/authors/&lt;slug&gt;/_index.md</code>.
+        </div>
+      {{ end }}
     {{ end }}
   </div>
 </section>
