@@ -74,20 +74,6 @@ sections:
       show_interests: false
       columns: 4
 
-  - block: people
-    id: colaboradores
-    content:
-      title: "Colaboradores externos"
-      text: "Profesionales y especialistas que colaboran en proyectos y cursos."
-      user_groups:
-        - "Colaboradores Externos"
-    design:
-      show_role: true
-      show_organizations: true
-      show_social: true
-      show_interests: false
-      columns: 4
-
   - block: testimonials
     content:
       title: ""
