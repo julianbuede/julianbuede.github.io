@@ -1,7 +1,7 @@
 ---
 title: "Home"
 type: landing
----
+
 design:
   spacing: "6rem"
   
@@ -106,4 +106,3 @@ sections:
       show_interests: false
       show_role: true
       show_social: true
----
