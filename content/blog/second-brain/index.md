@@ -60,6 +60,7 @@ sections:
       spacing:
         padding: ["10rem", 0, "10rem", 0]
 
+  # --- EQUIPO (usa el bloque comunitario people.html) ---
   - block: people
     id: equipo
     content:
@@ -70,6 +71,21 @@ sections:
     design:
       show_role: true
       show_organizations: false
+      show_social: true
+      show_interests: false
+      columns: 4
+
+  # --- COLABORADORES EXTERNOS ---
+  - block: people
+    id: colaboradores
+    content:
+      title: "Colaboradores externos"
+      text: "Profesionales y especialistas que colaboran en proyectos y cursos."
+      user_groups:
+        - "Colaboradores Externos"
+    design:
+      show_role: true
+      show_organizations: true
       show_social: true
       show_interests: false
       columns: 4
