@@ -1,7 +1,7 @@
 ---
-title: "About"
+title: "Home"
 type: landing
----
+
 design:
   spacing: "6rem"
   
@@ -23,7 +23,7 @@ sections:
           filters:
             brightness: 0.3
         text_color_light: true
-    
+
   - block: cta-image-paragraph
     id: solutions
     content:
@@ -37,8 +37,7 @@ sections:
             url: https://hugoblox.com/templates/
     design:
       # Section background color (CSS class)
-      css_class: "bg-gray-100 dark:bg-gray-900"
-    
+      css_class: "bg-gray-100 dark:bg-gray-900"  
   - block: stats
     content:
       items:
@@ -62,24 +61,31 @@ sections:
       css_class: "bg-gray-100 dark:bg-gray-900"
       # Reduce spacing
       spacing:
-        padding: [0, "1rem", 0, "1rem"]
-
-  - block: people
+        padding: ["10rem", 0, "10rem", 0]
+  - block: testimonials
     content:
-      title: Meet the Team
-      # Choose which groups/teams of users to display.
-      #   Edit `user_groups` in each user's profile to add them to one or more of these groups.
-      user_groups:
-          - Principal Investigators
-          - Researchers
-          - Grad Students
-          - Administration
-          - Visitors
-          - Alumni
-      sort_by: Params.last_name
-      sort_ascending: true
+      title: ""
+      text: ""
+      items:
+        - name: "3 TESTIMONIOS A DEFINIR - Julio Zetter"
+          role: " Coordinador en Jefe de la base de datos y hemeroteca virtual SciELO México"
+          # Upload image to `assets/media/` and reference the filename here
+          image: "juliozetter.jpeg"
+          text: "No cabe más que agradecer a los instructores que hicieron posible este curso, que sin duda es la semilla de grandes frutos. Gracias por tanto MetaDocencia"
     design:
-      show_interests: false
-      show_role: true
-      show_social: true
+      spacing:
+        # Reduce bottom spacing so the testimonial appears vertically centered between sections
+        padding: ["6rem", 0, 0, 0]
+  - block: cta-card
+    content:
+      title: Apoya a la ciencia latinoamericana
+      text: Aquí te contamos cómo
+      button:
+        text: Súmate
+        url: https://hugoblox.com/templates/
+    design:
+      card:
+        # Card background color (CSS class)
+        css_class: "bg-primary-700"
+        css_style: ""
 ---
