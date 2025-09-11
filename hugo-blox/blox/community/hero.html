@@ -1,0 +1,48 @@
+{{/* hugo-blox/blox/community/hero.html
+     Hero extendido: soporta `actions` (lista de botones) además de los campos clásicos.
+*/}}
+
+{{ $page := .page }}
+{{ $block := .block }}
+{{ $content := $block.content }}
+{{ $design := $block.design }}
+
+{{ $title := $content.title | default "" }}
+{{ $text  := $content.text  | default "" }}
+
+{{/* Botones: preferimos `actions` (lista). Si no hay, caemos a primary/secondary. */}}
+{{ $actions := $content.actions | default (slice) }}
+{{ if and (eq (len $actions) 0) (or (isset $content "primary_action") (isset $content "secondary_action")) }}
+  {{ if isset $content "primary_action" }}
+    {{ $pa := $content.primary_action }}
+    {{ $actions = $actions | append (dict "text" $pa.text "url" $pa.url "style" (or $pa.style "primary")) }}
+  {{ end }}
+  {{ if isset $content "secondary_action" }}
+    {{ $sa := $content.secondary_action }}
+    {{ $actions = $actions | append (dict "text" $sa.text "url" $sa.url "style" (or $sa.style "secondary")) }}
+  {{ end }}
+{{ end }}
+
+<section id="{{ $block.id | default (anchorize $title) }}" class="py-16">
+  <div class="container mx-auto px-6 text-center">
+    {{ if $title }}<h1 class="text-4xl font-extrabold tracking-tight mb-4">{{ $title }}</h1>{{ end }}
+    {{ if $text  }}<p class="mx-auto max-w-3xl text-lg opacity-90 mb-8">{{ $text | markdownify }}</p>{{ end }}
+
+    {{ if gt (len $actions) 0 }}
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        {{ range $actions }}
+          {{ $style := .style | default "primary" }}
+          {{/* Clases básicas; si tu tema define `.btn`, `.btn-primary` etc., se aplican.
+               Si no, usamos utilidades Tailwind genéricas. */}}
+          {{ $isPrimary := eq $style "primary" }}
+          {{ $btn := cond $isPrimary "btn btn-primary" "btn btn-secondary" }}
+          <a href="{{ .url | relURL }}"
+             class="{{ $btn }} inline-flex items-center justify-center rounded-lg px-5 py-2.5 font-medium transition
+                    {{ if not $isPrimary }}border{{ end }}">
+            {{ .text }}
+          </a>
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>
+</section>
