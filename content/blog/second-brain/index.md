@@ -6,28 +6,28 @@ design:
   spacing: "6rem"
 
 sections:
-  - block: hero
-    content:
-      title: Quiénes somos
-      text: MetaDocencia es una organización sin fines de lucro fundada en 2020. Nuestra comunidad construye capacidades científicas locales para transformar la ciencia global. Hacemos crecer la ciencia en red, desde América Latina hacia el mundo.
-      actions:
-        - text: "Nuestra Gobernanza"
-          url: "https://www.metadocencia.org/suscripcion/"
-          style: primary
-        - text: "Pautas de Convivencia"
-          url: "https://www.metadocencia.org/pautas-de-convivencia/"
-          style: secondary
-        - text: "Política de Accesibilidad"
-          url: "https://www.metadocencia.org/accesibilidad/"
-          style: secondary
-    design:
-      spacing:
-        padding: [0, 0, 0, 0]
-        margin: [0, 0, 0, 0]
-      background:
-        image:
-          filename: quienessomos.jpg
-          filters:
+- block: hero-cta
+  content:
+    title: Quiénes somos
+    text: MetaDocencia es una organización sin fines de lucro fundada en 2020. Nuestra comunidad construye capacidades científicas locales para transformar la ciencia global. Hacemos crecer la ciencia en red, desde América Latina hacia el mundo.
+    actions:
+      - text: "Nuestra Gobernanza"
+        url: "https://www.metadocencia.org/suscripcion/"
+        style: primary
+      - text: "Pautas de Convivencia"
+        url: "https://www.metadocencia.org/pautas-de-convivencia/"
+        style: secondary
+      - text: "Política de Accesibilidad"
+        url: "https://www.metadocencia.org/accesibilidad/"
+        style: secondary
+  design:
+    spacing:
+      padding: [0, 0, 0, 0]
+      margin: [0, 0, 0, 0]
+    background:
+      image:
+        filename: quienessomos.jpg
+                filters:
             brightness: 0.3
       text_color_light: true
 
