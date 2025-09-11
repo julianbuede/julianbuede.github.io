@@ -10,9 +10,9 @@ sections:
     content:
       title: Quiénes somos
       text: MetaDocencia es una organización sin fines de lucro fundada en 2020. Nuestra comunidad construye capacidades científicas locales para transformar la ciencia global. Hacemos crecer la ciencia en red, desde América Latina hacia el mundo.
-    primary_action:
+      primary_action:
         text: Nuestra Gobernanza
-        url: https://hugoblox.com/templates/](https://www.metadocencia.org/suscripcion/
+        url: https://www.metadocencia.org/suscripcion/
     design:
       spacing:
         padding: [0, 0, 0, 0]
@@ -30,14 +30,13 @@ sections:
       items:
         - title: Vamos por 5 años más
           text: Durante nuestros primeros 5 años tejimos lazos entre más de 2,000 profesionales de ciencia y técnica. Lo hicimos trabajando en equipo, de manera colectiva y colaborando con más de 40 comunidades. Gracias por estos primeros 5 años de aprendizaje, colaboración y crecimiento. ¡Vamos por 5 años más!
-          # Upload image to `assets/media/` and reference the filename here
           image: quienesomos.jpg
           button:
             text: Conócenos
             url: https://hugoblox.com/templates/
     design:
-      # Section background color (CSS class)
-      css_class: "bg-gray-100 dark:bg-gray-900"  
+      css_class: "bg-gray-100 dark:bg-gray-900"
+
   - block: stats
     content:
       items:
@@ -57,11 +56,38 @@ sections:
           description: |
             personas suscriptas a nuestro boletín
     design:
-      # Section background color (CSS class)
       css_class: "bg-gray-100 dark:bg-gray-900"
-      # Reduce spacing
       spacing:
         padding: ["10rem", 0, "10rem", 0]
+
+  - block: people
+    id: equipo
+    content:
+      title: "Equipo"
+      text: "Conoce al equipo que impulsa el día a día de MetaDocencia."
+      user_groups:
+        - "Equipo"
+    design:
+      show_role: true
+      show_organizations: false
+      show_social: true
+      show_interests: false
+      columns: 4
+
+  - block: people
+    id: colaboradores
+    content:
+      title: "Colaboradores externos"
+      text: "Profesionales y especialistas que colaboran en proyectos y cursos."
+      user_groups:
+        - "Colaboradores Externos"
+    design:
+      show_role: true
+      show_organizations: true
+      show_social: true
+      show_interests: false
+      columns: 4
+
   - block: testimonials
     content:
       title: ""
@@ -69,13 +95,12 @@ sections:
       items:
         - name: "3 TESTIMONIOS A DEFINIR - Julio Zetter"
           role: " Coordinador en Jefe de la base de datos y hemeroteca virtual SciELO México"
-          # Upload image to `assets/media/` and reference the filename here
           image: "juliozetter.jpeg"
           text: "No cabe más que agradecer a los instructores que hicieron posible este curso, que sin duda es la semilla de grandes frutos. Gracias por tanto MetaDocencia"
     design:
       spacing:
-        # Reduce bottom spacing so the testimonial appears vertically centered between sections
         padding: ["6rem", 0, 0, 0]
+
   - block: cta-card
     content:
       title: Apoya a la ciencia latinoamericana
@@ -85,7 +110,6 @@ sections:
         url: https://hugoblox.com/templates/
     design:
       card:
-        # Card background color (CSS class)
         css_class: "bg-primary-700"
         css_style: ""
 ---
