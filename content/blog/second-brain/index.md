@@ -30,7 +30,6 @@ sections:
         filters:
           brightness: 0.3
     text_color_light: true
-
   - block: cta-image-paragraph
     id: solutions
     content:
