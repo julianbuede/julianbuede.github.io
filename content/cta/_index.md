@@ -6,18 +6,18 @@ design:
   spacing: "3rem"
 
 sections:
-  # ---------- Intro compacta (solo texto e imagen, SIN CTAs) ----------
+  # Intro compacta (solo texto e imagen, SIN CTAs)
   - block: cta-image-paragraph
     id: intro
     content:
       items:
         - title: "Súmate y apoya a nuestra comunidad"
           text: "Suscribite al boletín, unite a Slack, conectá con comunidades amigas y apoyá a MetaDocencia. Crecemos la ciencia en red, con recursos abiertos y formación gratuita."
-          image: "quienessomos.jpg"   # ← usa una imagen que ya existe en assets/media/
+          image: "quienessomos.jpg"   # imagen que ya tenés en assets/media/
     design:
       css_class: "bg-gray-50 dark:bg-gray-900"
 
-  # ---------- Boletín (card limpia) ----------
+  # Boletín
   - block: cta-card
     id: boletin
     content:
@@ -30,7 +30,7 @@ sections:
       card:
         css_class: "bg-white dark:bg-gray-900 shadow-sm"
 
-  # ---------- Slack (2 botones, bloque comunitario) ----------
+  # Slack (2 botones) – usa tu partial comunitario cta-duo
   - block: cta-duo
     id: slack
     content:
@@ -43,7 +43,7 @@ sections:
         text: "Cómo sumarme"
         url: "https://zenodo.org/records/10028136"
 
-  # ---------- Comunidades amigas (split 2 columnas: logos izq — texto der) ----------
+  # Comunidades amigas – usa split-logos (comunitario)
   - block: split-logos
     id: comunidades
     content:
@@ -67,7 +67,7 @@ sections:
       compact: true
       css_class: "bg-gray-50 dark:bg-gray-900"
 
-  # ---------- Auspiciantes / Apoya (split 2 columnas: texto izq — logos der) ----------
+  # Auspiciantes – usa split-logos (comunitario)
   - block: split-logos
     id: auspiciantes
     content:
@@ -87,7 +87,7 @@ sections:
       reverse: true
       compact: true
 
-  # ---------- Donar (menos protagonismo) ----------
+  # Donar (menos protagonismo)
   - block: cta-card
     id: dona
     content:
@@ -95,26 +95,26 @@ sections:
       text: "Tu contribución nos ayuda a seguir ofreciendo **formación gratuita**, generando **recursos abiertos** y fortaleciendo la **comunidad**."
       button:
         text: "Formulario de donación"
-        url: "https://www.metadocencia.org/contacto/"   # cambiá si hay otra URL
+        url: "https://www.metadocencia.org/contacto/"
     design:
       card:
         css_class: "bg-white dark:bg-gray-900 border border-gray-200 shadow-none"
 
-  # ---------- Redes (bloque nativo sin íconos locales) ----------
+  # Redes (nativo, sin íconos locales)
   - block: features
     id: redes
     content:
       title: ""
       items:
-        - name: "X (Twitter)"
+        - name: "X (Twitter) →"
           link: "https://twitter.com/metadocencia"
-        - name: "LinkedIn"
+        - name: "LinkedIn →"
           link: "https://www.linkedin.com/company/metadocencia/"
-        - name: "YouTube"
+        - name: "YouTube →"
           link: "https://www.youtube.com/@metadocencia"
-        - name: "Instagram"
+        - name: "Instagram →"
           link: "https://www.instagram.com/metadocencia/"
-        - name: "Mastodon"
+        - name: "Mastodon →"
           link: "https://mastodon.social/@metadocencia"
     design:
       columns: 5
