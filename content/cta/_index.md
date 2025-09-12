@@ -6,18 +6,19 @@ design:
   spacing: "3rem"
 
 sections:
-  # ---------- Intro compacta  ----------
+  # ---------- Intro compacta ----------
   - block: cta-image-paragraph
     id: intro
     content:
       items:
         - title: "Súmate y apoya a nuestra comunidad"
           text: "Suscribite al boletín, unite a Slack, conectá con comunidades amigas y apoyá a MetaDocencia. Crecemos la ciencia en red, con recursos abiertos y formación gratuita."
-          image: "quienessomos.jpg"   # usa una imagen que ya existe en assets/media/
+          image: "quienessomos.jpg"   # imagen existente en assets/media/
     design:
-      css_class: "bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100"
+      # Fondo muy claro (oscuro en dark) + texto con alto contraste
+      css_class: "bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100"
 
-  # ---------- Boletín (card legible sobre blanco) ----------
+  # ---------- Boletín (card legible) ----------
   - block: cta-card
     id: boletin
     content:
@@ -28,7 +29,8 @@ sections:
         url: "https://www.metadocencia.org/contacto/"
     design:
       card:
-        css_class: "bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow-sm"
+        # Card clara (oscura en dark) + texto contrastado
+        css_class: "bg-white text-gray-900 shadow-sm dark:bg-gray-800 dark:text-gray-100"
 
   # ---------- Slack (2 botones) ----------
   - block: cta-duo
@@ -43,22 +45,16 @@ sections:
         text: "Qué es Slack y cómo sumarme"
         url: "https://zenodo.org/records/10028136"
     design:
+      # Nuestro partial aplica bg blanco por defecto; reforzamos contraste del texto
       css_class: "text-gray-900 dark:text-gray-100"
 
-  # ---------- Comunidades amigas (split 2 columnas: logos izq — texto der) ----------
+  # ---------- Comunidades amigas (split 2 columnas) ----------
   - block: split-logos
     id: comunidades
     content:
       title: "Comunidades amigas"
       text: "Amplificamos el trabajo de organizaciones que hacen de la ciencia abierta un esfuerzo global, colectivo y comunitario."
-      logos:
-        # Subí tus logos a assets/media/logos/comunidades/ y ajustá las rutas:
-        - { src: "/media/logos/comunidades/logo1.png", alt: "Comunidad 1", url: "#" }
-        - { src: "/media/logos/comunidades/logo2.png", alt: "Comunidad 2", url: "#" }
-        - { src: "/media/logos/comunidades/logo3.png", alt: "Comunidad 3", url: "#" }
-        - { src: "/media/logos/comunidades/logo4.png", alt: "Comunidad 4", url: "#" }
-        - { src: "/media/logos/comunidades/logo5.png", alt: "Comunidad 5", url: "#" }
-        - { src: "/media/logos/comunidades/logo6.png", alt: "Comunidad 6", url: "#" }
+      logos: []   # mostrará el texto/botones aunque no haya logos aún
       primary_button:
         text: "Sumá tu comunidad"
         url: "mailto:info@metadocencia.org?subject=Sumar%20mi%20comunidad"
@@ -68,31 +64,26 @@ sections:
     design:
       reverse: false
       compact: true
-      css_class: "bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
+      # Fondo blanco (gris muy oscuro en dark) + texto contrastado
+      css_class: "bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100"
 
-  # ---------- Auspiciantes / Apoya (split 2 columnas: texto izq — logos der) ----------
+  # ---------- Auspiciantes / Apoya (split 2 columnas) ----------
   - block: split-logos
     id: auspiciantes
     content:
       title: "Apoya a MetaDocencia"
       text: "Nuestro trabajo es posible gracias al apoyo de instituciones y organizaciones que comparten nuestra misión."
-      logos:
-        # Subí tus logos a assets/media/logos/auspiciantes/ y ajustá las rutas:
-        - { src: "/media/logos/auspiciantes/logo1.png", alt: "Organización 1", url: "#" }
-        - { src: "/media/logos/auspiciantes/logo2.png", alt: "Organización 2", url: "#" }
-        - { src: "/media/logos/auspiciantes/logo3.png", alt: "Organización 3", url: "#" }
-        - { src: "/media/logos/auspiciantes/logo4.png", alt: "Organización 4", url: "#" }
-        - { src: "/media/logos/auspiciantes/logo5.png", alt: "Organización 5", url: "#" }
-        - { src: "/media/logos/auspiciantes/logo6.png", alt: "Organización 6", url: "#" }
+      logos: []   # mostrará texto/botón aunque no haya logos aún
       primary_button:
         text: "Acompañanos"
         url: "https://www.metadocencia.org/contacto/"
     design:
       reverse: true
       compact: true
-      css_class: "bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100"
+      # Alternamos fondo para ritmo visual
+      css_class: "bg-gray-50 text-gray-900 dark:bg-gray-800 dark:text-gray-100"
 
-  # ---------- Donar (muy bajo protagonismo: solo botón suelto) ----------
+  # ---------- Donar (bajísimo protagonismo: solo botón suelto) ----------
   - block: cta-card
     id: dona
     content:
@@ -103,7 +94,8 @@ sections:
         url: "https://www.metadocencia.org/contacto/"
     design:
       card:
-        css_class: "bg-transparent shadow-none border-0 p-0 text-gray-900 dark:text-gray-100"
+        # Transparente y sin sombra, pero con texto legible
+        css_class: "bg-transparent border-0 shadow-none p-0 text-gray-900 dark:text-gray-100"
 
   # ---------- Redes (nativo, sin íconos locales) ----------
   - block: features
@@ -124,5 +116,6 @@ sections:
           link: "https://mastodon.social/@metadocencia"
     design:
       columns: 5
+      # Texto siempre legible
       css_class: "text-gray-900 dark:text-gray-100"
 ---
