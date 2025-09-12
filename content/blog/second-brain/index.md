@@ -64,35 +64,37 @@ sections:
       spacing:
         padding: ["10rem", 0, "10rem", 0]
 
- - block: people
-  id: equipo
-  content:
-    title: "Equipo"
-    text: "Conoce al equipo que impulsa el día a día de MetaDocencia."
-    user_groups: ["Equipo"]
-    collapsible: true       # <- NUEVO
-    start_open: false       # <- opcional (true/false)
-  design:
-    show_role: true
-    show_organizations: false
-    show_social: true
-    show_interests: false
-    columns: 4
+  # --- EQUIPO (bloque comunitario people.html con desplegable) ---
+  - block: people
+    id: equipo
+    content:
+      title: "Equipo"
+      text: "Conoce al equipo que impulsa el día a día de MetaDocencia."
+      user_groups: ["Equipo"]
+      collapsible: true
+      start_open: false
+    design:
+      show_role: true
+      show_organizations: false
+      show_social: true
+      show_interests: false
+      columns: 4
 
-- block: people
-  id: colaboradores
-  content:
-    title: "Colaboradores externos"
-    text: "Profesionales y especialistas que colaboran en proyectos y cursos."
-    user_groups: ["Colaboradores Externos"]
-    collapsible: true       # <- NUEVO
-    start_open: false       # <- opcional
-  design:
-    show_role: true
-    show_organizations: true
-    show_social: true
-    show_interests: false
-    columns: 4
+  # --- COLABORADORES EXTERNOS (desplegable) ---
+  - block: people
+    id: colaboradores
+    content:
+      title: "Colaboradores externos"
+      text: "Profesionales y especialistas que colaboran en proyectos y cursos."
+      user_groups: ["Colaboradores Externos"]
+      collapsible: true
+      start_open: false
+    design:
+      show_role: true
+      show_organizations: true
+      show_social: true
+      show_interests: false
+      columns: 4
 
   - block: testimonials
     content:
