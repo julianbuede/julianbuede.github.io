@@ -1,86 +1,136 @@
 ---
-title: 🎉 Easily create your own simple yet highly customizable blog
-summary: Take full control of your personal brand and privacy by migrating away from the big tech platforms!
-date: 2023-10-27
+title: "Súmate y apoya a nuestra comunidad"
+type: landing
+slug: "cta"         # puedes cambiarlo a lo que prefieras (ruta /cta/)
+design:
+  spacing: "3rem"
 
-# Featured image
-# Place an image named `featured.jpg/png` in this page's folder and customize its options here.
-image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com)'
+sections:
+  # ------------------ HERO ------------------
+  - block: hero
+    content:
+      title: "Súmate y apoya a nuestra comunidad"
+      text: "Recibí nuestras novedades, unite al Slack, sumá tu comunidad, apoyá y ayudanos a hacer crecer la ciencia abierta en red."
+      primary_action:
+        text: "Suscribirme al boletín"
+        url: "https://www.metadocencia.org/contacto/"
+      secondary_action:
+        text: "Unirme al Slack"
+        url: "https://w3id.org/metadocencia/slack"
+    design:
+      spacing:
+        padding: [0, 0, 0, 0]
+        margin: [0, 0, 0, 0]
+      background:
+        image:
+          filename: "quienessomos.jpg"
+          filters: { brightness: 0.35 }
+        text_color_light: true
 
-authors:
-  - admin
-  - Ted
+  # ------------------ BOLETÍN ------------------
+  - block: markdown
+    id: boletin
+    content:
+      title: "Boletín MetaDocencia"
+      text: |
+        Recibí en tu correo nuestras novedades, propuestas de formación, oportunidades y eventos de interés.
 
-tags:
-  - Academic
-  - Hugo Blox
-  - Markdown
+        - 👉 **[Formulario de suscripción](https://www.metadocencia.org/contacto/){.btn .btn-primary}**
+        - 📚 **[Ver ediciones anteriores](https://www.metadocencia.org/boletines/){.btn .btn-outline}**
+
+  # ------------------ SLACK ------------------
+  - block: cta-card
+    id: slack
+    content:
+      title: "Sumate a nuestro Slack"
+      text: "Conectá con más de **+1000 personas** que comparten interés por la educación, la ciencia abierta y la colaboración."
+      button:
+        text: "Unirme al Slack de MetaDocencia"
+        url: "https://w3id.org/metadocencia/slack"
+    design:
+      card:
+        css_class: "bg-primary-700 text-white"
+
+  # ------------------ COMUNIDADES AMIGAS ------------------
+  - block: markdown
+    id: comunidades
+    content:
+      title: "Comunidades amigas"
+      text: |
+        Amplificamos el trabajo de organizaciones que hacen de la ciencia abierta un esfuerzo global, colectivo y comunitario.
+
+        <!-- Reemplazá las imágenes por los logos reales que subas a assets/media/logos/comunidades/ -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center">
+          <img src="/media/logos/comunidades/logo1.png" alt="Comunidad 1">
+          <img src="/media/logos/comunidades/logo2.png" alt="Comunidad 2">
+          <img src="/media/logos/comunidades/logo3.png" alt="Comunidad 3">
+          <img src="/media/logos/comunidades/logo4.png" alt="Comunidad 4">
+        </div>
+
+        <div class="mt-4">
+          <a class="btn btn-outline" href="https://www.metadocencia.org/contacto/">Sumá tu comunidad</a>
+        </div>
+
+  # ------------------ AUSPICIANTES / APOYO ------------------
+  - block: markdown
+    id: auspiciantes
+    content:
+      title: "Apoya a MetaDocencia"
+      text: |
+        Nuestro trabajo es posible gracias al apoyo de instituciones y organizaciones que comparten nuestra misión.
+
+        <!-- Reemplazá por los logos reales en assets/media/logos/auspiciantes/ -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center">
+          <img src="/media/logos/auspiciantes/logo1.png" alt="Auspiciante 1">
+          <img src="/media/logos/auspiciantes/logo2.png" alt="Auspiciante 2">
+          <img src="/media/logos/auspiciantes/logo3.png" alt="Auspiciante 3">
+          <img src="/media/logos/auspiciantes/logo4.png" alt="Auspiciante 4">
+        </div>
+
+        <div class="mt-4">
+          <a class="btn btn-outline" href="https://www.metadocencia.org/contacto/">Acompañanos</a>
+        </div>
+
+  # ------------------ DONAR ------------------
+  - block: cta-card
+    id: dona
+    content:
+      title: "Doná"
+      text: "Tu contribución nos ayuda a seguir ofreciendo formación gratuita, generando recursos abiertos y fortaleciendo la comunidad."
+      button:
+        text: "Quiero donar"
+        url: "https://www.metadocencia.org/contacto/"   # reemplazá por el formulario de donación si tenés otra URL
+    design:
+      card:
+        css_class: "bg-gray-100 dark:bg-gray-900"
+
+  # ------------------ REDES SOCIALES ------------------
+  - block: features
+    id: redes
+    content:
+      title: "Seguí la conversación"
+      text: "Sumate al intercambio en redes sociales."
+      items:
+        - name: "@metadocencia en X (Twitter)"
+          icon: twitter
+          icon_pack: fab
+          description: "Novedades y conversaciones."
+          link: "https://twitter.com/metadocencia"
+        - name: "LinkedIn"
+          icon: linkedin
+          icon_pack: fab
+          description: "Comunidad y oportunidades."
+          link: "https://www.linkedin.com/company/metadocencia/"
+        - name: "YouTube"
+          icon: youtube
+          icon_pack: fab
+          description: "Charlas y recursos."
+          link: "https://www.youtube.com/@metadocencia"
+        - name: "Instagram"
+          icon: instagram
+          icon_pack: fab
+          description: "Historias y comunidad."
+          link: "https://www.instagram.com/metadocencia/"
+    design:
+      columns: 4
 ---
-
-Welcome 👋
-
-{{< toc mobile_only=true is_open=true >}}
-
-## Overview
-
-1. The Hugo Blox website builder for Hugo, along with its starter templates, is designed for professional creators, educators, and teams/organizations - although it can be used to create any kind of site
-2. The template can be modified and customised to suit your needs. It's a good platform for anyone looking to take control of their data and online identity whilst having the convenience to start off with a **no-code solution (write in Markdown and customize with YAML parameters)** and having **flexibility to later add even deeper personalization with HTML and CSS**
-3. You can work with all your favourite tools and apps with hundreds of plugins and integrations to speed up your workflows, interact with your readers, and much more
-
-[//]: # '[![The template is mobile first with a responsive design to ensure that your site looks stunning on every device.](https://raw.githubusercontent.com/HugoBlox/hugo-blox-builder/main/starters/academic-cv/preview.png)](https://hugoblox.com)'
-
-### Get Started
-
-- 👉 [**Create a new site**](https://hugoblox.com/templates/)
-- 📚 [**Personalize your site**](https://docs.hugoblox.com/)
-- 💬 [Chat with the **Hugo Blox community**](https://discord.gg/z8wNYzb) or [**Hugo community**](https://discourse.gohugo.io)
-- 🐦 Twitter: [@GetResearchDev](https://twitter.com/GetResearchDev) [@GeorgeCushen](https://twitter.com/GeorgeCushen) #MadeWithHugoBlox
-- 💡 [Request a **feature** or report a **bug** for _Hugo Blox_](https://github.com/HugoBlox/hugo-blox-builder/issues)
-- ⬆️ **Updating Hugo Blox?** View the [Update Guide](https://docs.hugoblox.com/reference/update/) and [Release Notes](https://github.com/HugoBlox/hugo-blox-builder/releases)
-
-## Crowd-funded open-source software
-
-To help us develop this template and software sustainably under the MIT license, we ask all individuals and businesses that use it to help support its ongoing maintenance and development via sponsorship.
-
-### [❤️ Click here to become a sponsor and help support Hugo Blox's future ❤️](https://hugoblox.com/sponsor/)
-
-As a token of appreciation for sponsoring, you can **unlock [these](https://hugoblox.com/sponsor/) awesome rewards and extra features 🦄✨**
-
-## Ecosystem
-
-- **[Bibtex To Markdown](https://github.com/GetRD/academic-file-converter):** Automatically import publications from BibTeX
-
-## Inspiration
-
-[Learn what other **creators**](https://hugoblox.com/creators/) are building with this template.
-
-## Features
-
-- **Page builder** - Create _anything_ with no-code [**blocks**](https://hugoblox.com/blocks/) and [**elements**](https://docs.hugoblox.com/reference/markdown/)
-- **Edit any type of content** - Blog posts, publications, talks, slides, projects, and more!
-- **Create content** in [**Markdown**](https://docs.hugoblox.com/reference/markdown/), [**Jupyter**](https://docs.hugoblox.com/getting-started/cms/), or [**RStudio**](https://docs.hugoblox.com/getting-started/cms/)
-- **Plugin System** - Fully customizable [**color** and **font themes**](https://docs.hugoblox.com/getting-started/customize/)
-- **Display Code and Math** - Code syntax highlighting and LaTeX math supported
-- **Integrations** - [Google Analytics](https://analytics.google.com), [Disqus commenting](https://disqus.com), Maps, Contact Forms, and more!
-- **Beautiful Site** - Simple and refreshing one-page design
-- **Industry-Leading SEO** - Help get your website found on search engines and social media
-- **Media Galleries** - Display your images and videos with captions in a customizable gallery
-- **Mobile Friendly** - Look amazing on every screen with a mobile friendly version of your site
-- **Multi-language** - 35+ language packs including English, 中文, and Português
-- **Multi-user** - Each author gets their own profile page
-- **Privacy Pack** - Assists with GDPR
-- **Stand Out** - Bring your site to life with animation, parallax backgrounds, and scroll effects
-- **One-Click Deployment** - No servers. No databases. Only files.
-
-## Themes
-
-Hugo Blox and its templates come with **automatic day (light) and night (dark) mode** built-in. Visitors can choose their preferred mode by clicking the sun/moon icon in the header.
-
-[Choose a stunning **theme** and **font**](https://docs.hugoblox.com/getting-started/customize/) for your site. Themes are fully customizable.
-
-## License
-
-Copyright 2016-present [George Cushen](https://georgecushen.com).
-
-Released under the [MIT](https://github.com/HugoBlox/hugo-blox-builder/blob/main/LICENSE.md) license.
