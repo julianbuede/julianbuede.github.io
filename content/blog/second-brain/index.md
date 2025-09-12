@@ -2,9 +2,8 @@
 title: "Home"
 type: landing
 
-# ↓ reduce el espacio vertical global entre secciones
 design:
-  spacing: "3rem"
+  spacing: "6rem"
 
 sections:
   - block: hero
@@ -23,7 +22,7 @@ sections:
           filename: "quienessomos.jpg"
           filters:
             brightness: 0.3
-        text_color_light: true   # fuerza texto claro (blanco) sobre la imagen
+        text_color_light: true
 
   - block: cta-image-paragraph
     id: solutions
@@ -37,8 +36,6 @@ sections:
             url: "https://hugoblox.com/templates/"
     design:
       css_class: "bg-gray-100 dark:bg-gray-900"
-      spacing:
-        padding: ["3rem", 0, "3rem", 0]   # ↓ menos padding
 
   - block: stats
     content:
@@ -61,54 +58,9 @@ sections:
     design:
       css_class: "bg-gray-100 dark:bg-gray-900"
       spacing:
-        padding: ["4rem", 0, "4rem", 0]   # ↓ antes estaba en 10rem
+        padding: ["10rem", 0, "10rem", 0]
 
-  # --- AUSPICIANTES (desplegable con lista) ---
-  - block: accordion
-    id: auspiciantes
-    content:
-      title: "Auspiciantes"
-      items:
-        - title: "Auspiciantes"
-          content: |
-            - [Nombre de auspiciante 1](#)
-            - [Nombre de auspiciante 2](#)
-            - [Nombre de auspiciante 3](#)
-    design:
-      css_class: "bg-gray-50 dark:bg-gray-800"
-      spacing:
-        padding: ["2rem", 0, "2rem", 0]
-
-  # --- COMUNIDADES AMIGAS (desplegable con lista) ---
-  - block: accordion
-    id: comunidades-amigas
-    content:
-      title: "Comunidades Amigas"
-      items:
-        - title: "Comunidades Amigas"
-          content: |
-            - [Comunidad 1](#)
-            - [Comunidad 2](#)
-            - [Comunidad 3](#)
-    design:
-      css_class: "bg-gray-50 dark:bg-gray-800"
-      spacing:
-        padding: ["2rem", 0, "2rem", 0]
-
-  # --- CONSEJO ASESOR (desplegable de personas) ---
-  - block: people
-    id: consejo-asesor
-    content:
-      title: "Consejo Asesor"
-      text: "Personas que acompañan estratégicamente a MetaDocencia."
-      user_groups: ["Consejo Asesor"]
-      start_open: false
-    design:
-      columns: 4
-      spacing:
-        padding: ["3rem", 0, "3rem", 0]
-
-  # --- EQUIPO (desplegable de personas) ---
+  # --- EQUIPO (desplegable) ---
   - block: people
     id: equipo
     content:
@@ -118,8 +70,17 @@ sections:
       start_open: false
     design:
       columns: 4
-      spacing:
-        padding: ["3rem", 0, "3rem", 0]
+
+  # --- COLABORADORES EXTERNOS (desplegable) ---
+  - block: people
+    id: colaboradores
+    content:
+      title: "Colaboradores externos"
+      text: "Profesionales y especialistas que colaboran en proyectos y cursos."
+      user_groups: ["Colaboradores Externos"]
+      start_open: false
+    design:
+      columns: 4
 
   - block: testimonials
     content:
@@ -132,7 +93,7 @@ sections:
           text: "No cabe más que agradecer a los instructores que hicieron posible este curso, que sin duda es la semilla de grandes frutos. Gracias por tanto MetaDocencia"
     design:
       spacing:
-        padding: ["3rem", 0, 0, 0]
+        padding: ["6rem", 0, 0, 0]
 
   - block: cta-card
     content:
@@ -145,6 +106,4 @@ sections:
       card:
         css_class: "bg-primary-700"
         css_style: ""
-      spacing:
-        padding: ["3rem", 0, "3rem", 0]
 ---
