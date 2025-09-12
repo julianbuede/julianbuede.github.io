@@ -6,22 +6,18 @@ design:
   spacing: "3rem"
 
 sections:
-  # ---------- Intro compacta (2 botones) ----------
-  - block: cta-duo
+  # ---------- Intro compacta (solo texto e imagen, SIN CTAs) ----------
+  - block: cta-image-paragraph
     id: intro
     content:
-      title: "Súmate y apoya a nuestra comunidad"
-      text: "Suscribite al boletín, unite a Slack, conectá con comunidades amigas y apoyá a MetaDocencia."
-      primary_button:
-        text: "Suscribirme al boletín"
-        url: "https://www.metadocencia.org/contacto/"
-      secondary_button:
-        text: "Unirme al Slack"
-        url: "https://w3id.org/metadocencia/slack"
+      items:
+        - title: "Súmate y apoya a nuestra comunidad"
+          text: "Suscribite al boletín, unite a Slack, conectá con comunidades amigas y apoyá a MetaDocencia. Crecemos la ciencia en red, con recursos abiertos y formación gratuita."
+          image: "cta-intro.jpg"   # subí /assets/media/cta-intro.jpg o cambia la ruta
     design:
-      css_class: ""
+      css_class: "bg-gray-50 dark:bg-gray-900"   # look suave y compacto
 
-  # ---------- Boletín (card limpia, 1 botón + link en texto) ----------
+  # ---------- Boletín (card limpia) ----------
   - block: cta-card
     id: boletin
     content:
@@ -32,9 +28,9 @@ sections:
         url: "https://www.metadocencia.org/contacto/"
     design:
       card:
-        css_class: "bg-gray-100 dark:bg-gray-900"
+        css_class: "bg-white dark:bg-gray-900 shadow-sm"
 
-  # ---------- Slack (2 botones) ----------
+  # ---------- Slack (2 CTAs) ----------
   - block: cta-duo
     id: slack
     content:
@@ -47,7 +43,7 @@ sections:
         text: "Cómo sumarme"
         url: "https://zenodo.org/records/10028136"
 
-  # ---------- Comunidades amigas (split 2 columnas: logos izq — texto der) ----------
+  # ---------- Comunidades amigas (split: logos izq — texto der) ----------
   - block: split-logos
     id: comunidades
     content:
@@ -71,7 +67,7 @@ sections:
       compact: true
       css_class: "bg-gray-50 dark:bg-gray-900"
 
-  # ---------- Auspiciantes / Apoya (split 2 columnas: texto izq — logos der) ----------
+  # ---------- Auspiciantes / Apoya (split: texto izq — logos der) ----------
   - block: split-logos
     id: auspiciantes
     content:
@@ -91,21 +87,20 @@ sections:
       reverse: true
       compact: true
 
-  # ---------- Donar (imagen + párrafo + botón) ----------
-  - block: cta-image-paragraph
+  # ---------- Donar (menos protagonismo) ----------
+  - block: cta-card
     id: dona
     content:
-      items:
-        - title: "Doná"
-          text: "Tu contribución nos ayuda a seguir ofreciendo **formación gratuita**, generando **recursos abiertos** y fortaleciendo la **comunidad**."
-          image: "donar.jpg"   # subí una imagen a assets/media/donar.jpg o cambia la ruta
-          button:
-            text: "Formulario de donación"
-            url: "https://www.metadocencia.org/contacto/"  # reemplazá si tenés otra URL
+      title: "Doná"
+      text: "Tu contribución nos ayuda a seguir ofreciendo **formación gratuita**, generando **recursos abiertos** y fortaleciendo la **comunidad**."
+      button:
+        text: "Formulario de donación"
+        url: "https://www.metadocencia.org/contacto/"   # cambiá si hay otra URL
     design:
-      css_class: "bg-gray-100 dark:bg-gray-900"
+      card:
+        css_class: "bg-white dark:bg-gray-900 border border-gray-200 shadow-none"  # discreto
 
-  # ---------- Redes: sólo íconos pequeños centrados ----------
+  # ---------- Redes (solo iconos pequeños) ----------
   - block: social-icons
     id: redes
     content:
