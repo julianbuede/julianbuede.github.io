@@ -1,0 +1,43 @@
+{{/* Bloque 'stats' centrado y con más espacio entre número y descripción.
+     - Lee content.items (statistic, description)
+     - Centra todo el contenido
+     - Aumenta separación: descripción con mt-2 md:mt-3
+     - Respeta design.css_class y design.spacing.padding si el wrapper no lo aplica
+*/}}
+
+{{ $block := .block }}
+{{ $content := $block.content }}
+{{ $design  := $block.design }}
+{{ $title := $content.title | default "" }}
+{{ $text  := $content.text  | default "" }}
+{{ $items := $content.items | default (slice) }}
+
+{{/* clases utilitarias */}}
+{{ $cssClass := "" }}
+{{ if and $design (isset $design "css_class") }}
+  {{ $cssClass = $design.css_class }}
+{{ end }}
+
+<section id="{{ $block.id | default (anchorize $title) }}" class="py-0 {{ $cssClass }}">
+  <div class="container mx-auto px-6">
+    {{ if $title }}<h2 class="text-3xl font-bold mb-2 text-center">{{ $title }}</h2>{{ end }}
+    {{ if $text  }}<div class="text-lg text-gray-600 dark:text-gray-300 mb-8 text-center">{{ $text | markdownify }}</div>{{ end }}
+
+    {{ if gt (len $items) 0 }}
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center">
+        {{ range $items }}
+          <div class="text-center">
+            {{ with .statistic }}<div class="text-3xl font-extrabold">{{ . }}</div>{{ end }}
+            {{ with .description }}
+              <div class="mt-2 md:mt-3 text-gray-600 dark:text-gray-300 leading-relaxed whitespace-pre-line">
+                {{ . | markdownify }}
+              </div>
+            {{ end }}
+          </div>
+        {{ end }}
+      </div>
+    {{ else }}
+      <div class="text-gray-500 dark:text-gray-400 text-center">No hay datos para mostrar.</div>
+    {{ end }}
+  </div>
+</section>
