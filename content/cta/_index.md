@@ -12,7 +12,7 @@ sections:
     content:
       items:
         - title: "Súmate y apoya a nuestra comunidad"
-          text: "Suscribite al boletín, unite a Slack, conectá con comunidades amigas y apoyá a MetaDocencia. Crecemos la ciencia en red, con recursos abiertos y formación gratuita."
+          text: "Suscribite al boletín, unite a Slack, conectá con comunidades amigas y apoyá a MetaDocencia. Potenciemos a América Latina en el mapa de la investigación global."
           image: "quienessomos.jpg"
     design:
       css_class: "text-gray-900 dark:text-gray-100"
@@ -122,7 +122,7 @@ sections:
     design:
       card:
         css_class: "border-0 shadow-none p-0"
-        css_style: "background-color:transparent;color:#111827;"  # sin caja de color, botón suelto
+        css_style: "background-color:transparent;color:#111827;"
 
   # ---------- Redes (nativo, sin íconos locales) ----------
   - block: features
