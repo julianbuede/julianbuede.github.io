@@ -1,15 +1,6 @@
 {{/* community/split-logos.html
-     Dos columnas: logos (izq) + contenido (der).
-     content:
-       title: string
-       text: string (admite markdown)
-       logos: [ { src, alt, url }, ... ]
-       primary_button: { text, url }     (opcional)
-       secondary_button: { text, url }   (opcional)
-     design:
-       reverse: bool  (si true, texto izquierda y logos derecha)
-       compact: bool  (reduce padding vertical)
-       css_class: string
+     Dos columnas: logos + contenido.
+     Siempre texto legible. Muestra el texto aunque no haya logos.
 */}}
 
 {{ $b := .block }}
@@ -30,66 +21,74 @@
 {{ $pad := "py-10" }}
 {{ if $compact }}{{ $pad = "py-6" }}{{ end }}
 
-<section id="{{ (index $b "id") | default (anchorize $title) }}" class="{{ $pad }} {{ $cls }}">
+<section id="{{ (index $b "id") | default (anchorize $title) }}" class="{{ $pad }}">
   <div class="container mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-      {{ if not $reverse }}
-        <!-- Logos a la izquierda -->
-        <div>
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 justify-items-center">
-            {{ range $logos }}
-              {{ $src := (index . "src") }}
-              {{ $alt := (index . "alt") | default "Logo" }}
-              {{ $url := (index . "url") }}
-              {{ if $url }}
-                <a href="{{ $url }}" target="_blank" rel="noopener" class="opacity-90 hover:opacity-100 transition">
-                  <img src="{{ $src | relURL }}" alt="{{ $alt }}" class="max-h-12 w-auto">
-                </a>
-              {{ else }}
-                <img src="{{ $src | relURL }}" alt="{{ $alt }}" class="max-h-12 w-auto opacity-90">
-              {{ end }}
+    <div class="rounded-2xl p-0 md:p-0 text-gray-900 dark:text-gray-100 {{ $cls }}">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+        {{ if not $reverse }}
+          <!-- Logos -->
+          <div>
+            {{ if gt (len $logos) 0 }}
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 justify-items-center">
+                {{ range $logos }}
+                  {{ $src := (index . "src") }}
+                  {{ $alt := (index . "alt") | default "Logo" }}
+                  {{ $url := (index . "url") }}
+                  {{ if and $src $url }}
+                    <a href="{{ $url }}" target="_blank" rel="noopener" class="opacity-90 hover:opacity-100 transition">
+                      <img src="{{ $src | relURL }}" alt="{{ $alt }}" class="max-h-12 w-auto">
+                    </a>
+                  {{ else if $src }}
+                    <img src="{{ $src | relURL }}" alt="{{ $alt }}" class="max-h-12 w-auto opacity-90">
+                  {{ end }}
+                {{ end }}
+              </div>
+            {{ else }}
+              <div class="text-sm opacity-70">Pronto sumaremos logos aquí.</div>
             {{ end }}
           </div>
-        </div>
-
-        <!-- Texto a la derecha -->
-        <div>
-          {{ if $title }}<h2 class="text-2xl font-bold mb-2">{{ $title }}</h2>{{ end }}
-          {{ if $text }}<div class="text-gray-700 dark:text-gray-300 mb-5">{{ $text | markdownify }}</div>{{ end }}
-          <div class="flex flex-wrap gap-3">
-            {{ with (index $pb "url") }}<a href="{{ . }}" class="btn btn-primary">{{ (index $pb "text") | default "Conocer más" }}</a>{{ end }}
-            {{ with (index $sb "url") }}<a href="{{ . }}" class="btn btn-outline">{{ (index $sb "text") | default "Más info" }}</a>{{ end }}
+          <!-- Texto -->
+          <div>
+            {{ if $title }}<h2 class="text-2xl font-bold mb-2">{{ $title }}</h2>{{ end }}
+            {{ if $text }}<div class="mb-5">{{ $text | markdownify }}</div>{{ end }}
+            <div class="flex flex-wrap gap-3">
+              {{ with (index $pb "url") }}<a href="{{ . }}" class="btn btn-primary">{{ (index $pb "text") | default "Conocer más" }}</a>{{ end }}
+              {{ with (index $sb "url") }}<a href="{{ . }}" class="btn btn-outline">{{ (index $sb "text") | default "Más info" }}</a>{{ end }}
+            </div>
           </div>
-        </div>
-      {{ else }}
-        <!-- Texto a la izquierda -->
-        <div>
-          {{ if $title }}<h2 class="text-2xl font-bold mb-2">{{ $title }}</h2>{{ end }}
-          {{ if $text }}<div class="text-gray-700 dark:text-gray-300 mb-5">{{ $text | markdownify }}</div>{{ end }}
-          <div class="flex flex-wrap gap-3">
-            {{ with (index $pb "url") }}<a href="{{ . }}" class="btn btn-primary">{{ (index $pb "text") | default "Conocer más" }}</a>{{ end }}
-            {{ with (index $sb "url") }}<a href="{{ . }}" class="btn btn-outline">{{ (index $sb "text") | default "Más info" }}</a>{{ end }}
+        {{ else }}
+          <!-- Texto -->
+          <div>
+            {{ if $title }}<h2 class="text-2xl font-bold mb-2">{{ $title }}</h2>{{ end }}
+            {{ if $text }}<div class="mb-5">{{ $text | markdownify }}</div>{{ end }}
+            <div class="flex flex-wrap gap-3">
+              {{ with (index $pb "url") }}<a href="{{ . }}" class="btn btn-primary">{{ (index $pb "text") | default "Conocer más" }}</a>{{ end }}
+              {{ with (index $sb "url") }}<a href="{{ . }}" class="btn btn-outline">{{ (index $sb "text") | default "Más info" }}</a>{{ end }}
+            </div>
           </div>
-        </div>
-
-        <!-- Logos a la derecha -->
-        <div>
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 justify-items-center">
-            {{ range $logos }}
-              {{ $src := (index . "src") }}
-              {{ $alt := (index . "alt") | default "Logo" }}
-              {{ $url := (index . "url") }}
-              {{ if $url }}
-                <a href="{{ $url }}" target="_blank" rel="noopener" class="opacity-90 hover:opacity-100 transition">
-                  <img src="{{ $src | relURL }}" alt="{{ $alt }}" class="max-h-12 w-auto">
-                </a>
-              {{ else }}
-                <img src="{{ $src | relURL }}" alt="{{ $alt }}" class="max-h-12 w-auto opacity-90">
-              {{ end }}
+          <!-- Logos -->
+          <div>
+            {{ if gt (len $logos) 0 }}
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 justify-items-center">
+                {{ range $logos }}
+                  {{ $src := (index . "src") }}
+                  {{ $alt := (index . "alt") | default "Logo" }}
+                  {{ $url := (index . "url") }}
+                  {{ if and $src $url }}
+                    <a href="{{ $url }}" target="_blank" rel="noopener" class="opacity-90 hover:opacity-100 transition">
+                      <img src="{{ $src | relURL }}" alt="{{ $alt }}" class="max-h-12 w-auto">
+                    </a>
+                  {{ else if $src }}
+                    <img src="{{ $src | relURL }}" alt="{{ $alt }}" class="max-h-12 w-auto opacity-90">
+                  {{ end }}
+                {{ end }}
+              </div>
+            {{ else }}
+              <div class="text-sm opacity-70">Pronto sumaremos logos aquí.</div>
             {{ end }}
           </div>
-        </div>
-      {{ end }}
+        {{ end }}
+      </div>
     </div>
   </div>
 </section>
