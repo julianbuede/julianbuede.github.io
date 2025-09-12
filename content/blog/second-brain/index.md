@@ -1,5 +1,5 @@
 ---
-title: "Quienes somos"
+title: "Home"
 type: landing
 
 design:
@@ -24,13 +24,14 @@ sections:
             brightness: 0.3
         text_color_light: true
 
-  - block: cta-image-paragraph
+  # Bloque de VIDEO (reemplaza por completo al cta-image-paragraph)
+  - block: cta-video-paragraph
     id: solutions
     content:
       items:
         - title: "Vamos por 5 años más"
           text: "Durante nuestros primeros 5 años tejimos lazos entre más de 2,000 profesionales de ciencia y técnica. Lo hicimos trabajando en equipo, de manera colectiva y colaborando con más de 40 comunidades. Gracias por estos primeros 5 años de aprendizaje, colaboración y crecimiento. ¡Vamos por 5 años más!"
-          image: "quienessomos.jpg"
+          video_url: "https://youtu.be/Mcq0-4cyGKQ"
           button:
             text: "Conócenos"
             url: "https://hugoblox.com/templates/"
@@ -66,7 +67,7 @@ sections:
     content:
       title: "Auspiciantes"
       text: "Organizaciones que apoyan y hacen posible nuestro trabajo."
-      user_groups: ["Actuales"]
+      user_groups: ["Auspiciantes"]
       start_open: false
     design:
       columns: 4
@@ -90,7 +91,7 @@ sections:
     content:
       title: "Colaboran"
       text: "Profesionales y especialistas que colaboran en proyectos y cursos."
-      user_groups: ["Colaboradores"]  # usa este grupo si ya lo venías usando
+      user_groups: ["Colaboradores Externos"]
       start_open: false
     design:
       columns: 4
@@ -112,7 +113,7 @@ sections:
   - block: people
     id: equipo
     content:
-      title: "Equipo y Consejo Asesor"
+      title: "Equipo"
       text: "Conoce al equipo que impulsa el día a día de MetaDocencia."
       user_groups: ["Equipo"]
       start_open: false
