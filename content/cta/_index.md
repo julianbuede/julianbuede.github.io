@@ -108,22 +108,22 @@ sections:
 
   # ---------- Redes (nativo, sin íconos locales) ----------
   - block: features
-    id: redes
-    content:
-      title: "Seguí la conversación · @metadocencia"
-      text: "Sumate al intercambio en redes sociales."
-      items:
-        - name: "X (Twitter) →"
-          link: "https://twitter.com/metadocencia"
-        - name: "LinkedIn →"
-          link: "https://www.linkedin.com/company/metadocencia/"
-        - name: "YouTube →"
-          link: "https://www.youtube.com/@metadocencia"
-        - name: "Instagram →"
-          link: "https://www.instagram.com/metadocencia/"
-        - name: "Mastodon →"
-          link: "https://mastodon.social/@metadocencia"
-    design:
-      columns: 5
-      css_class: "text-gray-900 dark:text-gray-100"
+  id: redes
+  content:
+    title: "Seguí la conversación"
+    text: "@metadocencia · Sumate al intercambio en redes sociales."
+    items:
+      - name: "X (Twitter) →"
+        link: "https://twitter.com/metadocencia"
+      - name: "LinkedIn →"
+        link: "https://www.linkedin.com/company/metadocencia/"
+      - name: "YouTube →"
+        link: "https://www.youtube.com/@metadocencia"
+      - name: "Instagram →"
+        link: "https://www.instagram.com/metadocencia/"
+      - name: "Mastodon →"
+        link: "https://mastodon.social/@metadocencia"
+  design:
+    columns: 5
+    css_class: "text-gray-900 dark:text-gray-100"
 ---
