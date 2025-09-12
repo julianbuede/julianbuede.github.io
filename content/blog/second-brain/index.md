@@ -22,7 +22,7 @@ sections:
           filename: "quienessomos.jpg"
           filters:
             brightness: 0.3
-      text_color_light: true
+        text_color_light: true
 
   - block: cta-image-paragraph
     id: solutions
@@ -60,19 +60,19 @@ sections:
       spacing:
         padding: ["4rem", 0, "4rem", 0]
 
-  # --- AUSPCIANTES ---
+  # --- AUSPCIANTES (desplegable, compacto) ---
   - block: people
     id: auspiciantes
     content:
       title: "Auspiciantes"
       text: "Organizaciones que apoyan y hacen posible nuestro trabajo."
-      user_groups: ["Auspiciantes", "Actuales"]   # incluye ambos por si en autores usaste uno u otro
+      user_groups: ["Actuales"]
       start_open: false
     design:
       columns: 4
       compact: true
 
-  # --- COMUNIDADES AMIGAS ---
+  # --- COMUNIDADES AMIGAS (desplegable, compacto) ---
   - block: people
     id: comunidades-amigas
     content:
@@ -84,19 +84,19 @@ sections:
       columns: 4
       compact: true
 
-  # --- COLABORAN ---
+  # --- COLABORAN (desplegable, compacto) ---
   - block: people
     id: colaboran
     content:
       title: "Colaboran"
       text: "Profesionales y especialistas que colaboran en proyectos y cursos."
-      user_groups: ["Colaboradores"]
+      user_groups: ["Colaboradores"]  # usa este grupo si ya lo venías usando
       start_open: false
     design:
       columns: 4
       compact: true
 
-  # --- CONSEJO ASESOR ---
+  # --- CONSEJO ASESOR (desplegable, compacto) ---
   - block: people
     id: consejo-asesor
     content:
@@ -108,11 +108,11 @@ sections:
       columns: 4
       compact: true
 
-  # --- EQUIPO ---
+  # --- EQUIPO (desplegable, compacto) ---
   - block: people
     id: equipo
     content:
-      title: "Equipo"
+      title: "Equipo y Consejo Asesor"
       text: "Conoce al equipo que impulsa el día a día de MetaDocencia."
       user_groups: ["Equipo"]
       start_open: false
