@@ -1,26 +1,40 @@
-{{/* community/people.html  — versión robusta
-     Filtra por grupos tomados de:
-       1) .block.content.user_groups   (recomendado)
-       2) .block.user_groups           (fallback)
+{{/* community/people.html — bloque People con filtro robusto por grupos
+
+   Lee los grupos desde (en este orden):
+   - .block.content.user_groups  (recomendado)
+   - .block.user_groups          (fallback)
+   - .block.content.group(s)     (fallback)
+   - .block.group(s)             (fallback)
+   Si no se pasó nada, usa el título del bloque como nombre de grupo (fallback).
+
+   Toma autores desde la sección "authors" (incluye bundles con _index.md).
 */}}
 
 {{ $b := .block }}
 {{ $c := (index $b "content") | default dict }}
 {{ $d := (index $b "design")  | default dict }}
 
-{{/* Título y texto (si faltan en content, intenta leer al nivel raíz del block) */}}
+{{/* Título/texto con fallback */}}
 {{ $title := (index $c "title") | default (index $b "title") | default "" }}
 {{ $text  := (index $c "text")  | default (index $b "text")  | default "" }}
 
-{{/* NUEVO: acepta content.user_groups o block.user_groups */}}
+{{/* Grupos solicitados (con múltiples llaves de fallback) */}}
 {{ $wanted := (index $c "user_groups") }}
 {{ if not $wanted }}{{ $wanted = (index $b "user_groups") }}{{ end }}
-{{ if not $wanted }}{{ $wanted = slice }}{{ end }}
+{{ if not $wanted }}{{ $wanted = (index $c "groups") }}{{ end }}
+{{ if not $wanted }}{{ $wanted = (index $b "groups") }}{{ end }}
+{{ if not $wanted }}{{ $wanted = (index $c "group") }}{{ end }}
+{{ if not $wanted }}{{ $wanted = (index $b "group") }}{{ end }}
+
+{{/* Si nada vino, usa el título del bloque como nombre de grupo */}}
+{{ if not $wanted }}
+  {{ $wanted = slice }}
+  {{ if $title }}{{ $wanted = (slice $title) }}{{ end }}
+{{ end }}
 
 {{ $startOpen := (index $c "start_open") | default (index $b "start_open") | default false }}
-
-{{ $columns := (index $d "columns") | default 4 }}
-{{ $compact := (index $d "compact")  | default false }}
+{{ $columns   := (index $d "columns") | default 4 }}
+{{ $compact   := (index $d "compact")  | default false }}
 
 {{ $pad := cond $compact "py-6" "py-10" }}
 {{ $colsClass := printf "md:grid-cols-%d" $columns }}
@@ -36,7 +50,7 @@
         <span class="text-sm opacity-70 group-open:rotate-180 transition">▾</span>
       </summary>
 
-      {{/* Autores */}}
+      {{/* Traer autores (incluye bundles) */}}
       {{ $all := where site.Pages "Section" "authors" }}
 
       {{/* Filtrar por intersección con grupos pedidos */}}
@@ -58,6 +72,9 @@
               <h3 class="font-semibold text-lg">{{ .Title }}</h3>
               {{ with .Params.role }}
                 <p class="text-sm opacity-80 mt-1">{{ . }}</p>
+              {{ end }}
+              {{ with .Params.organizations }}
+                <p class="text-sm opacity-80 mt-1">{{ delimit . ", " }}</p>
               {{ end }}
             </article>
           {{ end }}
