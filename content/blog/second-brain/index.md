@@ -18,14 +18,14 @@ sections:
         color: "gray-900"
         text_color_light: true
 
-  # Bloque de VIDEO (usa el bloque comunitario)
-  - block: cta-video-paragraph
-    id: video
+  # Bloque con IMAGEN (reemplaza al de video)
+  - block: cta-image-paragraph
+    id: intro
     content:
       items:
         - title: "Vamos por 5 años más"
           text: "Durante nuestros primeros 5 años tejimos lazos entre más de 2,000 profesionales de ciencia y técnica. Lo hicimos trabajando en equipo, de manera colectiva y colaborando con más de 40 comunidades."
-          video_url: "https://youtu.be/Mcq0-4cyGKQ"
+          image: "quienessomos.jpg"   # <-- debe existir en assets/media/
           button:
             text: "Conócenos"
             url: "https://www.metadocencia.org/suscripcion/"
@@ -52,78 +52,3 @@ sections:
             personas suscriptas a nuestro boletín
     design:
       css_class: "bg-gray-100 dark:bg-gray-900"
-      spacing:
-        padding: ["4rem", 0, "4rem", 0]
-
-  # --- AUSPCIANTES (desplegable, compacto) ---
-  - block: people
-    id: auspiciantes
-    content:
-      title: "Auspiciantes"
-      text: "Organizaciones que apoyan y hacen posible nuestro trabajo."
-      user_groups: ["Auspiciantes"]
-      start_open: false
-    design:
-      columns: 4
-      compact: true
-
-  # --- COMUNIDADES AMIGAS (desplegable, compacto) ---
-  - block: people
-    id: comunidades-amigas
-    content:
-      title: "Comunidades Amigas"
-      text: "Redes y comunidades con las que colaboramos."
-      user_groups: ["Comunidades Amigas"]
-      start_open: false
-    design:
-      columns: 4
-      compact: true
-
-  # --- COLABORAN (desplegable, compacto) ---
-  - block: people
-    id: colaboran
-    content:
-      title: "Colaboran"
-      text: "Profesionales y especialistas que colaboran en proyectos y cursos."
-      user_groups: ["Colaboradores Externos"]
-      start_open: false
-    design:
-      columns: 4
-      compact: true
-
-  # --- CONSEJO ASESOR (desplegable, compacto) ---
-  - block: people
-    id: consejo-asesor
-    content:
-      title: "Consejo Asesor"
-      text: "Personas que orientan estratégicamente nuestro trabajo."
-      user_groups: ["Consejo Asesor"]
-      start_open: false
-    design:
-      columns: 4
-      compact: true
-
-  # --- EQUIPO (desplegable, compacto) ---
-  - block: people
-    id: equipo
-    content:
-      title: "Equipo"
-      text: "Conoce al equipo que impulsa el día a día de MetaDocencia."
-      user_groups: ["Equipo"]
-      start_open: false
-    design:
-      columns: 4
-      compact: true
-
-  - block: cta-card
-    content:
-      title: "Apoya a la ciencia latinoamericana"
-      text: "Aquí te contamos cómo"
-      button:
-        text: "Súmate"
-        url: "https://hugoblox.com/templates/"
-    design:
-      card:
-        css_class: "bg-primary-700"
-        css_style: ""
----
