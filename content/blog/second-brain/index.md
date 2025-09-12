@@ -1,34 +1,39 @@
 ---
-title: "Second Brain"
+title: "Home"
 type: landing
 
 design:
-  spacing: "3rem"
+  spacing: "3rem"   # menos espacio global entre secciones
 
 sections:
   - block: hero
     content:
-      title: "Second Brain"
-      text: "Una mirada a nuestras prácticas y aprendizajes."
+      title: "Quiénes somos"
+      text: "MetaDocencia es una organización sin fines de lucro fundada en 2020. Nuestra comunidad construye capacidades científicas locales para transformar la ciencia global. Hacemos crecer la ciencia en red, desde América Latina hacia el mundo."
+      primary_action:
+        text: "Nuestra Gobernanza"
+        url: "https://www.metadocencia.org/suscripcion/"
     design:
       spacing:
         padding: [0, 0, 0, 0]
         margin: [0, 0, 0, 0]
       background:
-        color: "gray-900"
+        image:
+          filename: "quienessomos.jpg"
+          filters:
+            brightness: 0.3
         text_color_light: true
 
-  # Bloque con IMAGEN (reemplaza al de video)
   - block: cta-image-paragraph
-    id: intro
+    id: solutions
     content:
       items:
         - title: "Vamos por 5 años más"
-          text: "Durante nuestros primeros 5 años tejimos lazos entre más de 2,000 profesionales de ciencia y técnica. Lo hicimos trabajando en equipo, de manera colectiva y colaborando con más de 40 comunidades."
-          image: "quienessomos.jpg"   # <-- debe existir en assets/media/
+          text: "Durante nuestros primeros 5 años tejimos lazos entre más de 2,000 profesionales de ciencia y técnica. Lo hicimos trabajando en equipo, de manera colectiva y colaborando con más de 40 comunidades. Gracias por estos primeros 5 años de aprendizaje, colaboración y crecimiento. ¡Vamos por 5 años más!"
+          image: "quienessomos.jpg"
           button:
             text: "Conócenos"
-            url: "https://www.metadocencia.org/suscripcion/"
+            url: "https://hugoblox.com/templates/"
     design:
       css_class: "bg-gray-100 dark:bg-gray-900"
 
@@ -55,7 +60,7 @@ sections:
       spacing:
         padding: ["4rem", 0, "4rem", 0]
 
-  # --- AUSPICIANTES (desplegable, compacto) ---
+  # --- AUSPCIANTES (desplegable, compacto) ---
   - block: people
     id: auspiciantes
     content:
@@ -85,7 +90,7 @@ sections:
     content:
       title: "Colaboran"
       text: "Profesionales y especialistas que colaboran en proyectos y cursos."
-      user_groups: ["Colaboradores Externos"]
+      user_groups: ["Colaboradores Externos"]  # usa este grupo si ya lo venías usando
       start_open: false
     design:
       columns: 4
