@@ -1,6 +1,8 @@
 {{/* Bloque 'people' SIEMPRE colapsable con <details>/<summary>.
-     - Usa content.start_open (bool) para abrir por defecto.
-     - Filtra por content.user_groups (o content.groups). Si no hay, muestra todos los autores.
+     - content.start_open (bool) abre por defecto.
+     - Filtra por content.user_groups (o content.groups). Si no hay, muestra todos.
+     - design.columns controla columnas (2–5). 
+     - design.compact (bool) reduce el padding vertical del bloque.
 */}}
 
 {{ $page := .page }}
@@ -8,7 +10,7 @@
 {{ $content := $block.content }}
 {{ $design := $block.design }}
 
-{{ $title := $content.title | default "" }}
+{{ $title := $content.title | default "Personas" }}
 {{ $text  := $content.text  | default "" }}
 
 {{/* Grupos */}}
@@ -25,6 +27,10 @@
 {{ if eq $cols 2 }}{{ $grid = "grid-cols-1 sm:grid-cols-2" }}{{ end }}
 {{ if eq $cols 3 }}{{ $grid = "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" }}{{ end }}
 {{ if eq $cols 5 }}{{ $grid = "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5" }}{{ end }}
+
+{{/* Padding vertical (compact reduce) */}}
+{{ $pad := "py-8" }}
+{{ if and (isset $design "compact") $design.compact }}{{ $pad = "py-4" }}{{ end }}
 
 {{/* Autores */}}
 {{ $authors := where site.Pages "Section" "authors" }}
@@ -48,18 +54,18 @@
 {{ $open := false }}
 {{ if isset $content "start_open" }}{{ $open = $content.start_open }}{{ end }}
 
-<section id="{{ $block.id | default (anchorize $title) }}" class="py-12">
+<section id="{{ $block.id | default (anchorize $title) }}" class="{{ $pad }}">
   <div class="container mx-auto px-6">
     <details class="group rounded-2xl border shadow-sm bg-white dark:bg-gray-900" {{ if $open }}open{{ end }}>
-      <summary class="flex items-center justify-between cursor-pointer p-5">
-        <div>
-          {{ if $title }}<h2 class="text-2xl font-bold">{{ $title }}</h2>{{ end }}
-          {{ if $text  }}<div class="text-gray-600 dark:text-gray-300 mt-1">{{ $text | markdownify }}</div>{{ end }}
+      <summary class="flex items-center justify-between cursor-pointer p-4">
+        <div class="min-w-0">
+          <span class="block text-2xl font-bold">{{ $title }}</span>
+          {{ if $text }}<span class="block text-gray-600 dark:text-gray-300 mt-1">{{ $text | markdownify }}</span>{{ end }}
         </div>
         <span aria-hidden="true" class="ml-4 select-none text-xl leading-none">▾</span>
       </summary>
 
-      <div class="px-5 pb-5">
+      <div class="px-4 pb-4">
         {{ if gt (len $authors) 0 }}
           <div class="grid {{ $grid }} gap-6">
             {{ range $authors }}
