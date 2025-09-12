@@ -30,7 +30,7 @@ sections:
     design:
       card:
         css_class: "text-gray-900 dark:text-gray-100"
-        css_style: "background-color:#E01E5A"
+        css_style: "background-color:#C83737"
 
   # ---------- Slack (BLANCO con texto oscuro + link oscuro) ----------
   - block: cta-card
@@ -46,7 +46,7 @@ sections:
     design:
       card:
         css_class: "shadow-sm"
-        css_style: "background-color:#C83737;color:#FFFFFF;"
+        css_style: "background-color:#E01E5A;color:#FFFFFF;"
 
   # ---------- Comunidades amigas (NARANJA #F77B20, logos debajo del texto) ----------
   - block: cta-card
