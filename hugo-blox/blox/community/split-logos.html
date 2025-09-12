@@ -1,0 +1,95 @@
+{{/* community/split-logos.html
+     Dos columnas: logos (izq) + contenido (der).
+     content:
+       title: string
+       text: string (admite markdown)
+       logos: [ { src, alt, url }, ... ]
+       primary_button: { text, url }     (opcional)
+       secondary_button: { text, url }   (opcional)
+     design:
+       reverse: bool  (si true, texto izquierda y logos derecha)
+       compact: bool  (reduce padding vertical)
+       css_class: string
+*/}}
+
+{{ $b := .block }}
+{{ $c := (index $b "content") | default dict }}
+{{ $d := (index $b "design")  | default dict }}
+
+{{ $title := (index $c "title") | default "" }}
+{{ $text  := (index $c "text")  | default "" }}
+{{ $logos := (index $c "logos") | default (slice) }}
+
+{{ $pb := (index $c "primary_button") | default dict }}
+{{ $sb := (index $c "secondary_button") | default dict }}
+
+{{ $reverse := (index $d "reverse") | default false }}
+{{ $compact := (index $d "compact") | default false }}
+{{ $cls := (index $d "css_class") | default "" }}
+
+{{ $pad := "py-10" }}
+{{ if $compact }}{{ $pad = "py-6" }}{{ end }}
+
+<section id="{{ (index $b "id") | default (anchorize $title) }}" class="{{ $pad }} {{ $cls }}">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      {{ if not $reverse }}
+        <!-- Logos a la izquierda -->
+        <div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 justify-items-center">
+            {{ range $logos }}
+              {{ $src := (index . "src") }}
+              {{ $alt := (index . "alt") | default "Logo" }}
+              {{ $url := (index . "url") }}
+              {{ if $url }}
+                <a href="{{ $url }}" target="_blank" rel="noopener" class="opacity-90 hover:opacity-100 transition">
+                  <img src="{{ $src | relURL }}" alt="{{ $alt }}" class="max-h-12 w-auto">
+                </a>
+              {{ else }}
+                <img src="{{ $src | relURL }}" alt="{{ $alt }}" class="max-h-12 w-auto opacity-90">
+              {{ end }}
+            {{ end }}
+          </div>
+        </div>
+
+        <!-- Texto a la derecha -->
+        <div>
+          {{ if $title }}<h2 class="text-2xl font-bold mb-2">{{ $title }}</h2>{{ end }}
+          {{ if $text }}<div class="text-gray-700 dark:text-gray-300 mb-5">{{ $text | markdownify }}</div>{{ end }}
+          <div class="flex flex-wrap gap-3">
+            {{ with (index $pb "url") }}<a href="{{ . }}" class="btn btn-primary">{{ (index $pb "text") | default "Conocer más" }}</a>{{ end }}
+            {{ with (index $sb "url") }}<a href="{{ . }}" class="btn btn-outline">{{ (index $sb "text") | default "Más info" }}</a>{{ end }}
+          </div>
+        </div>
+      {{ else }}
+        <!-- Texto a la izquierda -->
+        <div>
+          {{ if $title }}<h2 class="text-2xl font-bold mb-2">{{ $title }}</h2>{{ end }}
+          {{ if $text }}<div class="text-gray-700 dark:text-gray-300 mb-5">{{ $text | markdownify }}</div>{{ end }}
+          <div class="flex flex-wrap gap-3">
+            {{ with (index $pb "url") }}<a href="{{ . }}" class="btn btn-primary">{{ (index $pb "text") | default "Conocer más" }}</a>{{ end }}
+            {{ with (index $sb "url") }}<a href="{{ . }}" class="btn btn-outline">{{ (index $sb "text") | default "Más info" }}</a>{{ end }}
+          </div>
+        </div>
+
+        <!-- Logos a la derecha -->
+        <div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 justify-items-center">
+            {{ range $logos }}
+              {{ $src := (index . "src") }}
+              {{ $alt := (index . "alt") | default "Logo" }}
+              {{ $url := (index . "url") }}
+              {{ if $url }}
+                <a href="{{ $url }}" target="_blank" rel="noopener" class="opacity-90 hover:opacity-100 transition">
+                  <img src="{{ $src | relURL }}" alt="{{ $alt }}" class="max-h-12 w-auto">
+                </a>
+              {{ else }}
+                <img src="{{ $src | relURL }}" alt="{{ $alt }}" class="max-h-12 w-auto opacity-90">
+              {{ end }}
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
