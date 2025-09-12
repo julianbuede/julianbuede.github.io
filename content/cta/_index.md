@@ -29,8 +29,8 @@ sections:
         url: "https://www.metadocencia.org/contacto/"
     design:
       card:
-        css_class: "shadow-sm"
-        css_style: "background-color:#C83737;color:#FFFFFF;"
+        css_class: "text-gray-900 dark:text-gray-100"
+        css_style: "background-color:#E01E5A"
 
   # ---------- Slack (BLANCO con texto oscuro + link oscuro) ----------
   - block: cta-card
