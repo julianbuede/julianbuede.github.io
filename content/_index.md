@@ -22,8 +22,7 @@ sections:
       background:
         color: "navy"
         image:
-          # Colocá el archivo en assets/media/3azulrojo.png
-          filename: "3azulrojo.png"
+          filename: "quienesomos.jpg"
           filters:
             brightness: 0.5
           size: cover
