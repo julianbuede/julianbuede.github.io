@@ -1,0 +1,40 @@
+{{/* community/cta-duo.html
+     Card compacto con título, texto y 2 botones.
+     content:
+       title: string
+       text: string (admite markdown)
+       primary_button: { text, url }
+       secondary_button: { text, url }   (opcional)
+     design:
+       css_class: string (opcional)
+*/}}
+
+{{ $b := .block }}
+{{ $c := (index $b "content") | default dict }}
+{{ $d := (index $b "design")  | default dict }}
+
+{{ $title := (index $c "title") | default "" }}
+{{ $text  := (index $c "text")  | default "" }}
+
+{{ $pb := (index $c "primary_button") | default dict }}
+{{ $sb := (index $c "secondary_button") | default dict }}
+
+{{ $cls := (index $d "css_class") | default "" }}
+
+<section id="{{ (index $b "id") | default (anchorize $title) }}" class="py-6">
+  <div class="container mx-auto px-6">
+    <div class="rounded-2xl border shadow-sm bg-white dark:bg-gray-900 p-6 sm:p-8 {{ $cls }}">
+      {{ if $title }}<h2 class="text-2xl font-bold mb-2">{{ $title }}</h2>{{ end }}
+      {{ if $text }}<div class="text-gray-700 dark:text-gray-300 mb-5">{{ $text | markdownify }}</div>{{ end }}
+
+      <div class="flex flex-wrap gap-3">
+        {{ with (index $pb "url") }}
+          <a href="{{ . }}" class="btn btn-primary">{{ (index $pb "text") | default "Ver más" }}</a>
+        {{ end }}
+        {{ with (index $sb "url") }}
+          <a href="{{ . }}" class="btn btn-outline">{{ (index $sb "text") | default "Más info" }}</a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
