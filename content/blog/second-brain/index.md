@@ -64,18 +64,18 @@ sections:
   - block: people
     id: equipo
     content:
-      title: "Equipo"
+      title: "Equipo"                        # ← título del desplegable
       text: "Conoce al equipo que impulsa el día a día de MetaDocencia."
       user_groups: ["Equipo"]
       start_open: false
     design:
       columns: 4
 
-  # --- COLABORADORES EXTERNOS (desplegable) ---
+  # --- COLABORAN (desplegable) ---
   - block: people
     id: colaboradores
     content:
-      title: "Colaboradores externos"
+      title: "Colaboran"                     # ← cambiado desde "Colaboradores externos"
       text: "Profesionales y especialistas que colaboran en proyectos y cursos."
       user_groups: ["Colaboradores Externos"]
       start_open: false
