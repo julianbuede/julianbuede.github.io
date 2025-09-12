@@ -1,8 +1,6 @@
-{{/* Bloque 'people' SIEMPRE colapsable con <details>/<summary>.
-     - content.start_open (bool) abre por defecto.
-     - Filtra por content.user_groups (o content.groups). Si no hay, muestra todos.
-     - design.columns controla columnas (2–5). 
-     - design.compact (bool) reduce el padding vertical del bloque.
+{{/* Bloque 'people' colapsable.
+     FIX: Lee correctamente content.title y content.text (con fallback),
+     de modo que no aparezca "Personas" si definís tus títulos.
 */}}
 
 {{ $page := .page }}
@@ -10,29 +8,38 @@
 {{ $content := $block.content }}
 {{ $design := $block.design }}
 
-{{ $title := $content.title | default "Personas" }}
-{{ $text  := $content.text  | default "" }}
+{{/* ---- Título y texto: robustos con Scratch ---- */}}
+{{ $sc := newScratch }}
+{{ $sc.Set "title" "Personas" }}
+{{ with $content.title }}{{ $sc.Set "title" . }}{{ end }}
+{{ with $block.title }}{{ $sc.Set "title" . }}{{ end }}
+{{ $title := $sc.Get "title" }}
 
-{{/* Grupos */}}
+{{ $sc.Set "text" "" }}
+{{ with $content.text }}{{ $sc.Set "text" . }}{{ end }}
+{{ with $content.subtitle }}{{ $sc.Set "text" . }}{{ end }}
+{{ with $content.description }}{{ $sc.Set "text" . }}{{ end }}
+{{ $text := $sc.Get "text" }}
+
+{{/* ---- Grupos ---- */}}
 {{ $groups := slice }}
-{{ if isset $content "user_groups" }}
-  {{ $groups = $content.user_groups }}
-{{ else if isset $content "groups" }}
+{{ with $content.user_groups }}{{ $groups = . }}{{ end }}
+{{ if and (eq (len $groups) 0) (isset $content "groups") }}
   {{ $groups = $content.groups }}
 {{ end }}
 
-{{/* Columnas */}}
+{{/* ---- Columnas ---- */}}
 {{ $cols := $design.columns | default 4 }}
 {{ $grid := "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4" }}
 {{ if eq $cols 2 }}{{ $grid = "grid-cols-1 sm:grid-cols-2" }}{{ end }}
 {{ if eq $cols 3 }}{{ $grid = "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" }}{{ end }}
 {{ if eq $cols 5 }}{{ $grid = "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5" }}{{ end }}
 
-{{/* Padding vertical (compact reduce) */}}
+{{/* ---- Compact (reduce padding vertical del bloque) ---- */}}
 {{ $pad := "py-8" }}
 {{ if and (isset $design "compact") $design.compact }}{{ $pad = "py-4" }}{{ end }}
 
-{{/* Autores */}}
+{{/* ---- Autores ---- */}}
 {{ $authors := where site.Pages "Section" "authors" }}
 {{ if and $authors (gt (len $groups) 0) }}
   {{ $filtered := slice }}
@@ -50,9 +57,9 @@
 {{ end }}
 {{ $authors = sort $authors "Title" }}
 
-{{/* Apertura por defecto */}}
+{{/* ---- Abierto por defecto ---- */}}
 {{ $open := false }}
-{{ if isset $content "start_open" }}{{ $open = $content.start_open }}{{ end }}
+{{ with $content.start_open }}{{ $open = . }}{{ end }}
 
 <section id="{{ $block.id | default (anchorize $title) }}" class="{{ $pad }}">
   <div class="container mx-auto px-6">
@@ -77,7 +84,7 @@
                   {{ else }}
                     {{ with $p.Params.image }}
                       <img class="w-full h-full object-cover group-hover:scale-[1.02] transition" loading="lazy" src="{{ . | relURL }}" alt="{{ $p.Title }}">
-                    {{ end }}
+                      {{ end }}
                   {{ end }}
                 </div>
                 <div class="p-4">
