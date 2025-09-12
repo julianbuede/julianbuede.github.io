@@ -3,7 +3,7 @@ title: "Home"
 type: landing
 
 design:
-  spacing: "2rem"   # ↓ menos espacio global entre secciones
+  spacing: "3rem"   # menos espacio global entre secciones
 
 sections:
   - block: hero
@@ -58,7 +58,55 @@ sections:
     design:
       css_class: "bg-gray-100 dark:bg-gray-900"
       spacing:
-        padding: ["3rem", 0, "3rem", 0]   # ↓ un poco más compacto
+        padding: ["4rem", 0, "4rem", 0]
+
+  # --- AUSPCIANTES (desplegable, compacto) ---
+  - block: people
+    id: auspiciantes
+    content:
+      title: "Auspiciantes"
+      text: "Organizaciones que apoyan y hacen posible nuestro trabajo."
+      user_groups: ["Auspiciantes"]
+      start_open: false
+    design:
+      columns: 4
+      compact: true
+
+  # --- COMUNIDADES AMIGAS (desplegable, compacto) ---
+  - block: people
+    id: comunidades-amigas
+    content:
+      title: "Comunidades Amigas"
+      text: "Redes y comunidades con las que colaboramos."
+      user_groups: ["Comunidades Amigas"]
+      start_open: false
+    design:
+      columns: 4
+      compact: true
+
+  # --- COLABORAN (desplegable, compacto) ---
+  - block: people
+    id: colaboran
+    content:
+      title: "Colaboran"
+      text: "Profesionales y especialistas que colaboran en proyectos y cursos."
+      user_groups: ["Colaboradores Externos"]  # usa este grupo si ya lo venías usando
+      start_open: false
+    design:
+      columns: 4
+      compact: true
+
+  # --- CONSEJO ASESOR (desplegable, compacto) ---
+  - block: people
+    id: consejo-asesor
+    content:
+      title: "Consejo Asesor"
+      text: "Personas que orientan estratégicamente nuestro trabajo."
+      user_groups: ["Consejo Asesor"]
+      start_open: false
+    design:
+      columns: 4
+      compact: true
 
   # --- EQUIPO (desplegable, compacto) ---
   - block: people
@@ -67,18 +115,6 @@ sections:
       title: "Equipo"
       text: "Conoce al equipo que impulsa el día a día de MetaDocencia."
       user_groups: ["Equipo"]
-      start_open: false
-    design:
-      columns: 4
-      compact: true
-
-  # --- COLABORAN (desplegable, compacto) ---
-  - block: people
-    id: colaboradores
-    content:
-      title: "Colaboran"
-      text: "Profesionales y especialistas que colaboran en proyectos y cursos."
-      user_groups: ["Colaboradores Externos"]
       start_open: false
     design:
       columns: 4
@@ -95,7 +131,7 @@ sections:
           text: "No cabe más que agradecer a los instructores que hicieron posible este curso, que sin duda es la semilla de grandes frutos. Gracias por tanto MetaDocencia"
     design:
       spacing:
-        padding: ["2rem", 0, 0, 0]
+        padding: ["3rem", 0, 0, 0]
 
   - block: cta-card
     content:
