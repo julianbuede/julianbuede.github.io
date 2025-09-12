@@ -3,7 +3,7 @@ title: "Home"
 type: landing
 
 design:
-  spacing: "3rem"   # menos espacio global entre secciones
+  spacing: "3rem"
 
 sections:
   - block: hero
@@ -24,13 +24,13 @@ sections:
             brightness: 0.3
         text_color_light: true
 
-  - block: cta-image-paragraph
+  - block: cta-video-paragraph   # ← usamos el bloque nuevo
     id: solutions
     content:
       items:
         - title: "Vamos por 5 años más"
-          text: "Durante nuestros primeros 5 años tejimos lazos entre más de 2,000 profesionales de ciencia y técnica..."
-          video_url: "https://youtu.be/Mcq0-4cyGKQ"
+          text: "Durante nuestros primeros 5 años tejimos lazos entre más de 2,000 profesionales de ciencia y técnica. Lo hicimos trabajando en equipo, de manera colectiva y colaborando con más de 40 comunidades. Gracias por estos primeros 5 años de aprendizaje, colaboración y crecimiento. ¡Vamos por 5 años más!"
+          video_url: "https://youtu.be/Mcq0-4cyGKQ/"
           button:
             text: "Conócenos"
             url: "https://hugoblox.com/templates/"
@@ -60,7 +60,6 @@ sections:
       spacing:
         padding: ["4rem", 0, "4rem", 0]
 
-  # --- AUSPICIANTES (desplegable, compacto) ---
   - block: people
     id: auspiciantes
     content:
@@ -72,7 +71,6 @@ sections:
       columns: 4
       compact: true
 
-  # --- COMUNIDADES AMIGAS (desplegable, compacto) ---
   - block: people
     id: comunidades-amigas
     content:
@@ -84,7 +82,6 @@ sections:
       columns: 4
       compact: true
 
-  # --- COLABORAN (desplegable, compacto) ---
   - block: people
     id: colaboran
     content:
@@ -96,7 +93,6 @@ sections:
       columns: 4
       compact: true
 
-  # --- CONSEJO ASESOR (desplegable, compacto) ---
   - block: people
     id: consejo-asesor
     content:
@@ -108,7 +104,6 @@ sections:
       columns: 4
       compact: true
 
-  # --- EQUIPO (desplegable, compacto) ---
   - block: people
     id: equipo
     content:
