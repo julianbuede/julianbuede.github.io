@@ -100,14 +100,32 @@ sections:
       card:
         css_class: "bg-white dark:bg-gray-900 border border-gray-200 shadow-none"  # discreto
 
-  # ---------- Redes (solo iconos pequeños) ----------
-  - block: social-icons
+   # ---------- Redes: bloque nativo (sin partial) ----------
+  - block: features
     id: redes
     content:
+      title: ""
       items:
-        - { url: "https://twitter.com/metadocencia",                          image: "/media/icons/x.svg",         alt: "X (Twitter)" }
-        - { url: "https://www.linkedin.com/company/metadocencia/",           image: "/media/icons/linkedin.svg",   alt: "LinkedIn" }
-        - { url: "https://www.youtube.com/@metadocencia",                    image: "/media/icons/youtube.svg",    alt: "YouTube" }
-        - { url: "https://www.instagram.com/metadocencia/",                  image: "/media/icons/instagram.svg",  alt: "Instagram" }
-        - { url: "https://mastodon.social/@metadocencia",                    image: "/media/icons/mastodon.svg",   alt: "Mastodon" }
+        - name: ""
+          icon: twitter
+          icon_pack: fab
+          link: "https://twitter.com/metadocencia"
+        - name: ""
+          icon: linkedin
+          icon_pack: fab
+          link: "https://www.linkedin.com/company/metadocencia/"
+        - name: ""
+          icon: youtube
+          icon_pack: fab
+          link: "https://www.youtube.com/@metadocencia"
+        - name: ""
+          icon: instagram
+          icon_pack: fab
+          link: "https://www.instagram.com/metadocencia/"
+        - name: ""
+          icon: mastodon
+          icon_pack: fab
+          link: "https://mastodon.social/@metadocencia"
+    design:
+      columns: 5
 ---
