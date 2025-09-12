@@ -2,8 +2,9 @@
 title: "Home"
 type: landing
 
+# ↓ reduce el espacio vertical global entre secciones
 design:
-  spacing: "6rem"
+  spacing: "3rem"
 
 sections:
   - block: hero
@@ -22,7 +23,7 @@ sections:
           filename: "quienessomos.jpg"
           filters:
             brightness: 0.3
-        text_color_light: true
+        text_color_light: true   # fuerza texto claro (blanco) sobre la imagen
 
   - block: cta-image-paragraph
     id: solutions
@@ -36,6 +37,8 @@ sections:
             url: "https://hugoblox.com/templates/"
     design:
       css_class: "bg-gray-100 dark:bg-gray-900"
+      spacing:
+        padding: ["3rem", 0, "3rem", 0]   # ↓ menos padding
 
   - block: stats
     content:
@@ -58,7 +61,7 @@ sections:
     design:
       css_class: "bg-gray-100 dark:bg-gray-900"
       spacing:
-        padding: ["10rem", 0, "10rem", 0]
+        padding: ["4rem", 0, "4rem", 0]   # ↓ antes estaba en 10rem
 
   # --- AUSPICIANTES (desplegable con lista) ---
   - block: accordion
@@ -73,6 +76,8 @@ sections:
             - [Nombre de auspiciante 3](#)
     design:
       css_class: "bg-gray-50 dark:bg-gray-800"
+      spacing:
+        padding: ["2rem", 0, "2rem", 0]
 
   # --- COMUNIDADES AMIGAS (desplegable con lista) ---
   - block: accordion
@@ -87,10 +92,59 @@ sections:
             - [Comunidad 3](#)
     design:
       css_class: "bg-gray-50 dark:bg-gray-800"
+      spacing:
+        padding: ["2rem", 0, "2rem", 0]
 
   # --- CONSEJO ASESOR (desplegable de personas) ---
   - block: people
     id: consejo-asesor
     content:
       title: "Consejo Asesor"
-      text: "Personas que acompañan e
+      text: "Personas que acompañan estratégicamente a MetaDocencia."
+      user_groups: ["Consejo Asesor"]
+      start_open: false
+    design:
+      columns: 4
+      spacing:
+        padding: ["3rem", 0, "3rem", 0]
+
+  # --- EQUIPO (desplegable de personas) ---
+  - block: people
+    id: equipo
+    content:
+      title: "Equipo"
+      text: "Conoce al equipo que impulsa el día a día de MetaDocencia."
+      user_groups: ["Equipo"]
+      start_open: false
+    design:
+      columns: 4
+      spacing:
+        padding: ["3rem", 0, "3rem", 0]
+
+  - block: testimonials
+    content:
+      title: ""
+      text: ""
+      items:
+        - name: "3 TESTIMONIOS A DEFINIR - Julio Zetter"
+          role: "Coordinador en Jefe de la base de datos y hemeroteca virtual SciELO México"
+          image: "juliozetter.jpeg"
+          text: "No cabe más que agradecer a los instructores que hicieron posible este curso, que sin duda es la semilla de grandes frutos. Gracias por tanto MetaDocencia"
+    design:
+      spacing:
+        padding: ["3rem", 0, 0, 0]
+
+  - block: cta-card
+    content:
+      title: "Apoya a la ciencia latinoamericana"
+      text: "Aquí te contamos cómo"
+      button:
+        text: "Súmate"
+        url: "https://hugoblox.com/templates/"
+    design:
+      card:
+        css_class: "bg-primary-700"
+        css_style: ""
+      spacing:
+        padding: ["3rem", 0, "3rem", 0]
+---
