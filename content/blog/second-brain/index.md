@@ -24,7 +24,7 @@ sections:
             brightness: 0.3
         text_color_light: true
 
-  # Bloque con VIDEO (reemplaza al cta-image-paragraph)
+  # Bloque de VIDEO (reemplaza por completo al cta-image-paragraph)
   - block: cta-video-paragraph
     id: solutions
     content:
@@ -61,6 +61,7 @@ sections:
       spacing:
         padding: ["4rem", 0, "4rem", 0]
 
+  # --- AUSPCIANTES (desplegable, compacto) ---
   - block: people
     id: auspiciantes
     content:
@@ -72,6 +73,7 @@ sections:
       columns: 4
       compact: true
 
+  # --- COMUNIDADES AMIGAS (desplegable, compacto) ---
   - block: people
     id: comunidades-amigas
     content:
@@ -83,6 +85,7 @@ sections:
       columns: 4
       compact: true
 
+  # --- COLABORAN (desplegable, compacto) ---
   - block: people
     id: colaboran
     content:
@@ -94,6 +97,7 @@ sections:
       columns: 4
       compact: true
 
+  # --- CONSEJO ASESOR (desplegable, compacto) ---
   - block: people
     id: consejo-asesor
     content:
@@ -105,26 +109,9 @@ sections:
       columns: 4
       compact: true
 
+  # --- EQUIPO (desplegable, compacto) ---
   - block: people
     id: equipo
     content:
       title: "Equipo"
-      text: "Conoce al equipo que impulsa el día a día de MetaDocencia."
-      user_groups: ["Equipo"]
-      start_open: false
-    design:
-      columns: 4
-      compact: true
-
-  - block: cta-card
-    content:
-      title: "Apoya a la ciencia latinoamericana"
-      text: "Aquí te contamos cómo"
-      button:
-        text: "Súmate"
-        url: "https://hugoblox.com/templates/"
-    design:
-      card:
-        css_class: "bg-primary-700"
-        css_style: ""
----
+      text: "Conoce al equipo que i
