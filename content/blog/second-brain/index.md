@@ -3,7 +3,7 @@ title: "Home"
 type: landing
 
 design:
-  spacing: "6rem"
+  spacing: "3rem"   # antes: 6rem
 
 sections:
   - block: hero
@@ -58,29 +58,31 @@ sections:
     design:
       css_class: "bg-gray-100 dark:bg-gray-900"
       spacing:
-        padding: ["10rem", 0, "10rem", 0]
+        padding: ["4rem", 0, "4rem", 0]   # antes: 10rem
 
-  # --- EQUIPO (desplegable) ---
+  # --- EQUIPO (desplegable, compacto) ---
   - block: people
     id: equipo
     content:
-      title: "Equipo"                        # ← título del desplegable
+      title: "Equipo"
       text: "Conoce al equipo que impulsa el día a día de MetaDocencia."
       user_groups: ["Equipo"]
       start_open: false
     design:
       columns: 4
+      compact: true
 
-  # --- COLABORAN (desplegable) ---
+  # --- COLABORAN (desplegable, compacto) ---
   - block: people
     id: colaboradores
     content:
-      title: "Colaboran"                     # ← cambiado desde "Colaboradores externos"
+      title: "Colaboran"
       text: "Profesionales y especialistas que colaboran en proyectos y cursos."
       user_groups: ["Colaboradores Externos"]
       start_open: false
     design:
       columns: 4
+      compact: true
 
   - block: testimonials
     content:
@@ -93,7 +95,7 @@ sections:
           text: "No cabe más que agradecer a los instructores que hicieron posible este curso, que sin duda es la semilla de grandes frutos. Gracias por tanto MetaDocencia"
     design:
       spacing:
-        padding: ["6rem", 0, 0, 0]
+        padding: ["3rem", 0, 0, 0]
 
   - block: cta-card
     content:
