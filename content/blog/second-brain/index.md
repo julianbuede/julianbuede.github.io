@@ -24,18 +24,18 @@ sections:
             brightness: 0.3
         text_color_light: true
 
-  - block: cta-video-paragraph
-    id: solutions
-    content:
-      items:
-        - title: "Vamos por 5 años más"
-          text: "Durante nuestros primeros 5 años tejimos lazos entre más de 2,000 profesionales de ciencia y técnica. Lo hicimos trabajando en equipo, de manera colectiva y colaborando con más de 40 comunidades. Gracias por estos primeros 5 años de aprendizaje, colaboración y crecimiento. ¡Vamos por 5 años más!"
-          video_url: "https://youtu.be/Mcq0-4cyGKQ/"
-          button:
-            text: "Conócenos"
-            url: "https://hugoblox.com/templates/"
-    design:
-      css_class: "bg-gray-100 dark:bg-gray-900"
+- block: cta-video-paragraph
+  id: solutions
+  content:
+    items:
+      - title: "Vamos por 5 años más"
+        text: "Durante nuestros primeros 5 años tejimos lazos entre más de 2,000 profesionales de ciencia y técnica. Lo hicimos trabajando en equipo, de manera colectiva y colaborando con más de 40 comunidades. Gracias por estos primeros 5 años de aprendizaje, colaboración y crecimiento. ¡Vamos por 5 años más!"
+        video_url: "https://youtu.be/Mcq0-4cyGKQ"
+        button:
+          text: "Conócenos"
+          url: "https://hugoblox.com/templates/"
+  design:
+    css_class: "bg-gray-100 dark:bg-gray-900"
 
   - block: stats
     content:
