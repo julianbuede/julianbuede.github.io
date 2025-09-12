@@ -6,7 +6,7 @@ design:
   spacing: "3rem"
 
 sections:
-  # --------- Intro concisa (sin hero grande) ----------
+  # ---------- Intro compacta (2 botones) ----------
   - block: cta-duo
     id: intro
     content:
@@ -21,20 +21,20 @@ sections:
     design:
       css_class: ""
 
-  # --------- Boletín ----------
-  - block: cta-duo
+  # ---------- Boletín (card limpia, 1 botón + link en texto) ----------
+  - block: cta-card
     id: boletin
     content:
       title: "Boletín MetaDocencia"
-      text: "Recibí en tu correo nuestras novedades, propuestas de formación, oportunidades y eventos de interés."
-      primary_button:
+      text: "Recibí en tu correo nuestras novedades, propuestas de formación, oportunidades y eventos de interés. **[Ver ediciones anteriores](https://www.metadocencia.org/boletines/)**"
+      button:
         text: "Formulario de suscripción"
         url: "https://www.metadocencia.org/contacto/"
-      secondary_button:
-        text: "Ver ediciones anteriores"
-        url: "https://www.metadocencia.org/boletines/"
+    design:
+      card:
+        css_class: "bg-gray-100 dark:bg-gray-900"
 
-  # --------- Slack (con botón de 'cómo sumarme') ----------
+  # ---------- Slack (2 botones) ----------
   - block: cta-duo
     id: slack
     content:
@@ -47,7 +47,7 @@ sections:
         text: "Cómo sumarme"
         url: "https://zenodo.org/records/10028136"
 
-  # --------- Comunidades amigas (split logos) ----------
+  # ---------- Comunidades amigas (split 2 columnas: logos izq — texto der) ----------
   - block: split-logos
     id: comunidades
     content:
@@ -67,47 +67,52 @@ sections:
         text: "Contacto"
         url: "https://www.metadocencia.org/contacto/"
     design:
-      reverse: false     # poné true si querés texto a la izquierda y logos a la derecha
+      reverse: false
       compact: true
+      css_class: "bg-gray-50 dark:bg-gray-900"
 
-  # --------- Auspiciantes / Apoya (split logos) ----------
+  # ---------- Auspiciantes / Apoya (split 2 columnas: texto izq — logos der) ----------
   - block: split-logos
     id: auspiciantes
     content:
       title: "Apoya a MetaDocencia"
       text: "Nuestro trabajo es posible gracias al apoyo de instituciones y organizaciones que comparten nuestra misión."
       logos:
-        - { src: "/media/logos/auspiciantes/logo1.png", alt: "Org 1", url: "#" }
-        - { src: "/media/logos/auspiciantes/logo2.png", alt: "Org 2", url: "#" }
-        - { src: "/media/logos/auspiciantes/logo3.png", alt: "Org 3", url: "#" }
-        - { src: "/media/logos/auspiciantes/logo4.png", alt: "Org 4", url: "#" }
-        - { src: "/media/logos/auspiciantes/logo5.png", alt: "Org 5", url: "#" }
-        - { src: "/media/logos/auspiciantes/logo6.png", alt: "Org 6", url: "#" }
+        - { src: "/media/logos/auspiciantes/logo1.png", alt: "Organización 1", url: "#" }
+        - { src: "/media/logos/auspiciantes/logo2.png", alt: "Organización 2", url: "#" }
+        - { src: "/media/logos/auspiciantes/logo3.png", alt: "Organización 3", url: "#" }
+        - { src: "/media/logos/auspiciantes/logo4.png", alt: "Organización 4", url: "#" }
+        - { src: "/media/logos/auspiciantes/logo5.png", alt: "Organización 5", url: "#" }
+        - { src: "/media/logos/auspiciantes/logo6.png", alt: "Organización 6", url: "#" }
       primary_button:
         text: "Acompañanos"
         url: "https://www.metadocencia.org/contacto/"
     design:
-      reverse: true      # logos a la derecha, texto a la izquierda
+      reverse: true
       compact: true
 
-  # --------- Donar ----------
-  - block: cta-duo
+  # ---------- Donar (imagen + párrafo + botón) ----------
+  - block: cta-image-paragraph
     id: dona
     content:
-      title: "Doná"
-      text: "Tu contribución nos ayuda a seguir ofreciendo **formación gratuita**, generando **recursos abiertos** y fortaleciendo la **comunidad**."
-      primary_button:
-        text: "Formulario de donación"
-        url: "https://www.metadocencia.org/contacto/"   # reemplazá si tenés otra URL
+      items:
+        - title: "Doná"
+          text: "Tu contribución nos ayuda a seguir ofreciendo **formación gratuita**, generando **recursos abiertos** y fortaleciendo la **comunidad**."
+          image: "donar.jpg"   # subí una imagen a assets/media/donar.jpg o cambia la ruta
+          button:
+            text: "Formulario de donación"
+            url: "https://www.metadocencia.org/contacto/"  # reemplazá si tenés otra URL
+    design:
+      css_class: "bg-gray-100 dark:bg-gray-900"
 
-  # --------- Redes: solo íconos pequeños ----------
+  # ---------- Redes: sólo íconos pequeños centrados ----------
   - block: social-icons
     id: redes
     content:
       items:
-        - { url: "https://twitter.com/metadocencia",  image: "/media/icons/x.svg",         alt: "X (Twitter)" }
-        - { url: "https://www.linkedin.com/company/metadocencia/", image: "/media/icons/linkedin.svg", alt: "LinkedIn" }
-        - { url: "https://www.youtube.com/@metadocencia", image: "/media/icons/youtube.svg",  alt: "YouTube" }
-        - { url: "https://www.instagram.com/metadocencia/", image: "/media/icons/instagram.svg", alt: "Instagram" }
-        - { url: "https://mastodon.social/@metadocencia", image: "/media/icons/mastodon.svg", alt: "Mastodon" }
+        - { url: "https://twitter.com/metadocencia",                          image: "/media/icons/x.svg",         alt: "X (Twitter)" }
+        - { url: "https://www.linkedin.com/company/metadocencia/",           image: "/media/icons/linkedin.svg",   alt: "LinkedIn" }
+        - { url: "https://www.youtube.com/@metadocencia",                    image: "/media/icons/youtube.svg",    alt: "YouTube" }
+        - { url: "https://www.instagram.com/metadocencia/",                  image: "/media/icons/instagram.svg",  alt: "Instagram" }
+        - { url: "https://mastodon.social/@metadocencia",                    image: "/media/icons/mastodon.svg",   alt: "Mastodon" }
 ---
