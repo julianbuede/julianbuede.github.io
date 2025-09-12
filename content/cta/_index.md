@@ -6,7 +6,7 @@ design:
   spacing: "3rem"
 
 sections:
-  # ---------- Intro compacta (solo texto e imagen, SIN CTAs) ----------
+  # ---------- Intro compacta  ----------
   - block: cta-image-paragraph
     id: intro
     content:
