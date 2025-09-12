@@ -46,7 +46,7 @@ sections:
     design:
       card:
         css_class: "shadow-sm"
-        css_style: "background-color:#FFFFFF;color:#C83737;"  # gris muy oscuro para máxima legibilidad
+        css_style: "background-color:#FFFFFF;color:#C83737;"
 
   # ---------- Comunidades amigas (NARANJA #F77B20, logos debajo del texto) ----------
   - block: cta-card
