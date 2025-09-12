@@ -1,8 +1,6 @@
-{{/* Bloque 'stats' centrado y con más espacio entre número y descripción.
-     - Lee content.items (statistic, description)
-     - Centra todo el contenido
-     - Aumenta separación: descripción con mt-2 md:mt-3
-     - Respeta design.css_class y design.spacing.padding si el wrapper no lo aplica
+{{/* Bloque 'stats' centrado y con más espacio entre filas (flex-wrap).
+     - 5 items: en sm → 3 arriba + 2 abajo, todos centrados.
+     - Más distancia entre filas con gap-y-10 (ajustable).
 */}}
 
 {{ $block := .block }}
@@ -12,7 +10,6 @@
 {{ $text  := $content.text  | default "" }}
 {{ $items := $content.items | default (slice) }}
 
-{{/* clases utilitarias */}}
 {{ $cssClass := "" }}
 {{ if and $design (isset $design "css_class") }}
   {{ $cssClass = $design.css_class }}
@@ -24,12 +21,14 @@
     {{ if $text  }}<div class="text-lg text-gray-600 dark:text-gray-300 mb-8 text-center">{{ $text | markdownify }}</div>{{ end }}
 
     {{ if gt (len $items) 0 }}
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center">
+      <!-- Usamos flex-wrap + justify-center para centrar la última fila -->
+      <div class="flex flex-wrap justify-center gap-x-10 gap-y-10">
         {{ range $items }}
-          <div class="text-center">
+          <!-- 2 por fila en xs, 3 por fila en sm, 5 por fila en lg -->
+          <div class="basis-1/2 sm:basis-1/3 lg:basis-1/5 text-center">
             {{ with .statistic }}<div class="text-3xl font-extrabold">{{ . }}</div>{{ end }}
             {{ with .description }}
-              <div class="mt-2 md:mt-3 text-gray-600 dark:text-gray-300 leading-relaxed whitespace-pre-line">
+              <div class="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed whitespace-pre-line">
                 {{ . | markdownify }}
               </div>
             {{ end }}
