@@ -17,9 +17,6 @@ sections:
         - text: "Pautas de Convivencia"
           url: "https://www.metadocencia.org/pautas-de-convivencia/"
           style: secondary
-        - text: "Política de Accesibilidad"
-          url: "https://www.metadocencia.org/accesibilidad/"
-          style: secondary
     design:
       spacing:
         padding: [0, 0, 0, 0]
