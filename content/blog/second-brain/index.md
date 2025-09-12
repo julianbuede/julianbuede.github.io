@@ -13,9 +13,6 @@ sections:
       primary_action:
         text: "Nuestra Gobernanza"
         url: "https://www.metadocencia.org/suscripcion/"
-      secondary_action:
-        text: "Pautas de Convivencia"
-        url: "https://www.metadocencia.org/pautas-de-convivencia/"
     design:
       spacing:
         padding: [0, 0, 0, 0]
@@ -25,7 +22,7 @@ sections:
           filename: "quienessomos.jpg"
           filters:
             brightness: 0.3
-        text_color_light: true   # ← mueve aquí para texto blanco
+        text_color_light: true
 
   - block: cta-image-paragraph
     id: solutions
@@ -63,24 +60,52 @@ sections:
       spacing:
         padding: ["10rem", 0, "10rem", 0]
 
-  # --- EQUIPO (desplegable) ---
+  # --- AUSPICIANTES (desplegable con lista) ---
+  - block: accordion
+    id: auspiciantes
+    content:
+      title: "Auspiciantes"
+      items:
+        - title: "Auspiciantes"
+          content: |
+            - [Nombre de auspiciante 1](#)
+            - [Nombre de auspiciante 2](#)
+            - [Nombre de auspiciante 3](#)
+    design:
+      css_class: "bg-gray-50 dark:bg-gray-800"
+
+  # --- COMUNIDADES AMIGAS (desplegable con lista) ---
+  - block: accordion
+    id: comunidades-amigas
+    content:
+      title: "Comunidades Amigas"
+      items:
+        - title: "Comunidades Amigas"
+          content: |
+            - [Comunidad 1](#)
+            - [Comunidad 2](#)
+            - [Comunidad 3](#)
+    design:
+      css_class: "bg-gray-50 dark:bg-gray-800"
+
+  # --- CONSEJO ASESOR (desplegable de personas) ---
+  - block: people
+    id: consejo-asesor
+    content:
+      title: "Consejo Asesor"
+      text: "Personas que acompañan estratégicamente a MetaDocencia."
+      user_groups: ["Consejo Asesor"]
+      start_open: false
+    design:
+      columns: 4
+
+  # --- EQUIPO (desplegable de personas) ---
   - block: people
     id: equipo
     content:
       title: "Equipo"
       text: "Conoce al equipo que impulsa el día a día de MetaDocencia."
       user_groups: ["Equipo"]
-      start_open: false      # abrir/cerrar por defecto
-    design:
-      columns: 4
-
-  # --- COLABORADORES EXTERNOS (desplegable) ---
-  - block: people
-    id: colaboradores
-    content:
-      title: "Colaboradores externos"
-      text: "Profesionales y especialistas que colaboran en proyectos y cursos."
-      user_groups: ["Colaboradores Externos"]
       start_open: false
     design:
       columns: 4
