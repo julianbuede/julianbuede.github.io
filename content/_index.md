@@ -22,7 +22,7 @@ sections:
       background:
         color: "navy"
         image:
-          filename: "quienesomos.jpg"
+          filename: "3azulrojo.png"
           filters:
             brightness: 0.5
           size: cover
@@ -35,11 +35,10 @@ sections:
       items:
         - title: "Quiénes somos"
           text: "TEXTO A DEFINIR. MetaDocencia es una organización sin fines de lucro fundada en 2020. Nuestra comunidad está formada por personas y organizaciones que trabajan construyendo capacidades científicas locales para transformar la ciencia global. Hacemos crecer la ciencia en red, desde América Latina hacia el mundo."
-          # Colocá el archivo en assets/media/quienessomos.jpg
-          image: "quienessomos.jpg"
+          image: "quienesomos.jpg"
           button:
             text: "Conócenos"
-            url: "https://julianbuede.github.io/blog/second-brain/"
+            url: "https://julianbuede.github.io/blog/project-management/"
         - title: "Qué hacemos"
           text: "Trabajamos para que la producción, la comunicación y la aplicación de saberes científicos y técnicos sean globalmente equitativos."
           feature_icon: check
