@@ -114,4 +114,22 @@ sections:
     id: equipo
     content:
       title: "Equipo"
-      text: "Conoce al equipo que i
+      text: "Conoce al equipo que impulsa el día a día de MetaDocencia."
+      user_groups: ["Equipo"]
+      start_open: false
+    design:
+      columns: 4
+      compact: true
+
+  - block: cta-card
+    content:
+      title: "Apoya a la ciencia latinoamericana"
+      text: "Aquí te contamos cómo"
+      button:
+        text: "Súmate"
+        url: "https://hugoblox.com/templates/"
+    design:
+      card:
+        css_class: "bg-primary-700"
+        css_style: ""
+---
