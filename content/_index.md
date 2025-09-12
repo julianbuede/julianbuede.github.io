@@ -13,7 +13,7 @@ sections:
       title: "Potenciemos a América Latina en el mapa de la investigación global"
       primary_action:
         text: "Súmate"
-        url: "https://www.metadocencia.org/suscripcion/"
+        url: "https://julianbuede.github.io/cta/"
     design:
       spacing:
         padding: [0, 0, 0, 0]
@@ -93,7 +93,7 @@ sections:
       text: "Aquí te contamos cómo"
       button:
         text: "Súmate"
-        url: "https://www.metadocencia.org/suscripcion/"
+        url: "https://julianbuede.github.io/cta/"
     design:
       card:
         css_class: "bg-primary-700"
