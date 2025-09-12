@@ -12,7 +12,7 @@ sections:
     content:
       items:
         - title: "Súmate y apoya a nuestra comunidad"
-          text: "Suscribite al boletín, unite a Slack, conectá con comunidades amigas y apoyá a MetaDocencia. Potenciemos a América Latina en el mapa de la investigación global."
+          text: "Suscríbete al boletín, únete a Slack, conecta con comunidades amigas y apoya a MetaDocencia. Potenciemos a América Latina en el mapa de la investigación global."
           image: "quienessomos.jpg"
     design:
       css_class: "text-gray-900 dark:text-gray-100"
