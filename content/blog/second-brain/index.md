@@ -24,7 +24,7 @@ sections:
             brightness: 0.3
         text_color_light: true
 
-  - block: cta-video-paragraph   # ← usamos el bloque nuevo
+  - block: cta-video-paragraph
     id: solutions
     content:
       items:
