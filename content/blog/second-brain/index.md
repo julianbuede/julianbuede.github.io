@@ -93,45 +93,4 @@ sections:
     id: consejo-asesor
     content:
       title: "Consejo Asesor"
-      text: "Personas que acompañan estratégicamente a MetaDocencia."
-      user_groups: ["Consejo Asesor"]
-      start_open: false
-    design:
-      columns: 4
-
-  # --- EQUIPO (desplegable de personas) ---
-  - block: people
-    id: equipo
-    content:
-      title: "Equipo"
-      text: "Conoce al equipo que impulsa el día a día de MetaDocencia."
-      user_groups: ["Equipo"]
-      start_open: false
-    design:
-      columns: 4
-
-  - block: testimonials
-    content:
-      title: ""
-      text: ""
-      items:
-        - name: "3 TESTIMONIOS A DEFINIR - Julio Zetter"
-          role: "Coordinador en Jefe de la base de datos y hemeroteca virtual SciELO México"
-          image: "juliozetter.jpeg"
-          text: "No cabe más que agradecer a los instructores que hicieron posible este curso, que sin duda es la semilla de grandes frutos. Gracias por tanto MetaDocencia"
-    design:
-      spacing:
-        padding: ["6rem", 0, 0, 0]
-
-  - block: cta-card
-    content:
-      title: "Apoya a la ciencia latinoamericana"
-      text: "Aquí te contamos cómo"
-      button:
-        text: "Súmate"
-        url: "https://hugoblox.com/templates/"
-    design:
-      card:
-        css_class: "bg-primary-700"
-        css_style: ""
----
+      text: "Personas que acompañan e
