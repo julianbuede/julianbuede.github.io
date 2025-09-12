@@ -1,28 +1,27 @@
-{{/* community/people.html
-     Bloque "people" filtrado por content.user_groups.
-     Espera:
-       - .block.content.user_groups: [ "Equipo", "Consejo Asesor", ... ]
-       - .block.content.title, .block.content.text (opcional)
-       - .block.content.start_open (bool, opcional)
-       - .block.design.columns (int, opcional - default 4)
-       - .block.design.compact (bool, opcional)
-     Los perfiles deben estar en la sección "authors" con front matter:
-       user_groups: ["Equipo", ...]
+{{/* community/people.html  — versión robusta
+     Filtra por grupos tomados de:
+       1) .block.content.user_groups   (recomendado)
+       2) .block.user_groups           (fallback)
 */}}
 
 {{ $b := .block }}
 {{ $c := (index $b "content") | default dict }}
 {{ $d := (index $b "design")  | default dict }}
 
-{{ $title      := (index $c "title") | default "" }}
-{{ $text       := (index $c "text")  | default "" }}
-{{ $wanted     := (index $c "user_groups") | default (slice) }}
-{{ $startOpen  := (index $c "start_open") | default false }}
+{{/* Título y texto (si faltan en content, intenta leer al nivel raíz del block) */}}
+{{ $title := (index $c "title") | default (index $b "title") | default "" }}
+{{ $text  := (index $c "text")  | default (index $b "text")  | default "" }}
 
-{{ $columns    := (index $d "columns") | default 4 }}
-{{ $compact    := (index $d "compact")  | default false }}
+{{/* NUEVO: acepta content.user_groups o block.user_groups */}}
+{{ $wanted := (index $c "user_groups") }}
+{{ if not $wanted }}{{ $wanted = (index $b "user_groups") }}{{ end }}
+{{ if not $wanted }}{{ $wanted = slice }}{{ end }}
 
-{{/* Clases utilitarias */}}
+{{ $startOpen := (index $c "start_open") | default (index $b "start_open") | default false }}
+
+{{ $columns := (index $d "columns") | default 4 }}
+{{ $compact := (index $d "compact")  | default false }}
+
 {{ $pad := cond $compact "py-6" "py-10" }}
 {{ $colsClass := printf "md:grid-cols-%d" $columns }}
 
@@ -37,11 +36,10 @@
         <span class="text-sm opacity-70 group-open:rotate-180 transition">▾</span>
       </summary>
 
-      {{/* Obtener todas las páginas de autores */}}
+      {{/* Autores */}}
       {{ $all := where site.Pages "Section" "authors" }}
 
-      {{/* Filtrar por intersección de grupos */}}
-      {{ $filtered := slice }}
+      {{/* Filtrar por intersección con grupos pedidos */}}
       {{ $sc := newScratch }}
       {{ $sc.Set "filtered" (slice) }}
       {{ range $all }}
@@ -51,7 +49,7 @@
           {{ $sc.Add "filtered" (slice .) }}
         {{ end }}
       {{ end }}
-      {{ $filtered = $sc.Get "filtered" }}
+      {{ $filtered := $sc.Get "filtered" }}
 
       {{ if gt (len $filtered) 0 }}
         <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 {{ $colsClass }} gap-6">
@@ -61,11 +59,6 @@
               {{ with .Params.role }}
                 <p class="text-sm opacity-80 mt-1">{{ . }}</p>
               {{ end }}
-              {{/* Podés agregar más campos si querés:
-                    - .Params.organizations
-                    - .Params.interests
-                    - .Params.social (links)
-                 */}}
             </article>
           {{ end }}
         </div>
