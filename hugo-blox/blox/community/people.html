@@ -1,118 +1,80 @@
-{{/* Bloque 'people' colapsable (details/summary) – robusto para title/text.
-     - Lee content.title (o block.title) y content.text/subtitle/description.
-     - Filtra por content.user_groups (o content.groups). Si no hay, lista todos.
-     - start_open: bool para abrir por defecto.
-     - design.columns: 2–5 columnas. design.compact: reduce padding vertical.
+{{/* community/people.html
+     Bloque "people" filtrado por content.user_groups.
+     Espera:
+       - .block.content.user_groups: [ "Equipo", "Consejo Asesor", ... ]
+       - .block.content.title, .block.content.text (opcional)
+       - .block.content.start_open (bool, opcional)
+       - .block.design.columns (int, opcional - default 4)
+       - .block.design.compact (bool, opcional)
+     Los perfiles deben estar en la sección "authors" con front matter:
+       user_groups: ["Equipo", ...]
 */}}
 
 {{ $b := .block }}
-{{ $content := (index $b "content") | default dict }}
-{{ $design  := (index $b "design")  | default dict }}
+{{ $c := (index $b "content") | default dict }}
+{{ $d := (index $b "design")  | default dict }}
 
-{{/* ---- Título y texto robustos ---- */}}
-{{ $sc := newScratch }}
-{{ $sc.Set "title" "Personas" }}
-{{ with (index $content "title") }}{{ $sc.Set "title" . }}{{ end }}
-{{ with (index $b "title") }}{{ $sc.Set "title" . }}{{ end }}
-{{ $title := $sc.Get "title" }}
+{{ $title      := (index $c "title") | default "" }}
+{{ $text       := (index $c "text")  | default "" }}
+{{ $wanted     := (index $c "user_groups") | default (slice) }}
+{{ $startOpen  := (index $c "start_open") | default false }}
 
-{{ $sc.Set "text" "" }}
-{{ with (index $content "text") }}{{ $sc.Set "text" . }}{{ end }}
-{{ with (index $content "subtitle") }}{{ $sc.Set "text" . }}{{ end }}
-{{ with (index $content "description") }}{{ $sc.Set "text" . }}{{ end }}
-{{ $text := $sc.Get "text" }}
+{{ $columns    := (index $d "columns") | default 4 }}
+{{ $compact    := (index $d "compact")  | default false }}
 
-{{/* ---- Grupos ---- */}}
-{{ $groups := slice }}
-{{ with (index $content "user_groups") }}{{ $groups = . }}{{ end }}
-{{ if and (eq (len $groups) 0) (isset $content "groups") }}
-  {{ $groups = (index $content "groups") }}
-{{ end }}
-
-{{/* ---- Columnas / padding ---- */}}
-{{ $cols := (index $design "columns") | default 4 }}
-{{ $grid := "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4" }}
-{{ if eq $cols 2 }}{{ $grid = "grid-cols-1 sm:grid-cols-2" }}{{ end }}
-{{ if eq $cols 3 }}{{ $grid = "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" }}{{ end }}
-{{ if eq $cols 5 }}{{ $grid = "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5" }}{{ end }}
-
-{{ $pad := "py-8" }}
-{{ if and (isset $design "compact") (index $design "compact") }}{{ $pad = "py-4" }}{{ end }}
-
-{{/* ---- Autores ---- */}}
-{{ $authors := where site.Pages "Section" "authors" }}
-{{ if and $authors (gt (len $groups) 0) }}
-  {{ $filtered := slice }}
-  {{ range $authors }}
-    {{ $ug := .Params.user_groups }}
-    {{ $hit := false }}
-    {{ if $ug }}
-      {{ range $groups }}
-        {{ if in $ug . }}{{ $hit = true }}{{ end }}
-      {{ end }}
-    {{ end }}
-    {{ if $hit }}{{ $filtered = $filtered | append . }}{{ end }}
-  {{ end }}
-  {{ $authors = $filtered }}
-{{ end }}
-{{ $authors = sort $authors "Title" }}
-
-{{/* ---- Abierto por defecto ---- */}}
-{{ $open := false }}
-{{ with (index $content "start_open") }}{{ $open = . }}{{ end }}
+{{/* Clases utilitarias */}}
+{{ $pad := cond $compact "py-6" "py-10" }}
+{{ $colsClass := printf "md:grid-cols-%d" $columns }}
 
 <section id="{{ (index $b "id") | default (anchorize $title) }}" class="{{ $pad }}">
-  <div class="container mx-auto px-6">
-    <details class="group rounded-2xl border shadow-sm bg-white dark:bg-gray-900" {{ if $open }}open{{ end }}>
-      <summary class="flex items-center justify-between cursor-pointer p-4">
-        <div class="min-w-0">
-          <span class="block text-2xl font-bold">{{ $title }}</span>
-          {{ if $text }}
-            <span class="block text-gray-600 dark:text-gray-300 mt-1">{{ $text | markdownify }}</span>
-          {{ end }}
+  <div class="container mx-auto px-6 text-gray-900 dark:text-gray-100">
+    <details {{ if $startOpen }}open{{ end }} class="group">
+      <summary class="cursor-pointer select-none flex items-center justify-between gap-4 py-3">
+        <div>
+          {{ if $title }}<h2 class="text-2xl font-bold">{{ $title }}</h2>{{ end }}
+          {{ if $text }}<div class="mt-1 opacity-80">{{ $text | markdownify }}</div>{{ end }}
         </div>
-        <span aria-hidden="true" class="ml-4 select-none text-xl leading-none">▾</span>
+        <span class="text-sm opacity-70 group-open:rotate-180 transition">▾</span>
       </summary>
 
-      <div class="px-4 pb-4">
-        {{ if gt (len $authors) 0 }}
-          <div class="grid {{ $grid }} gap-6">
-            {{ range $authors }}
-              {{ $p := . }}
-              <a class="block group rounded-2xl overflow-hidden border shadow-sm hover:shadow-md transition bg-white dark:bg-gray-900" href="{{ $p.RelPermalink }}">
-                <div class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 overflow-hidden">
-                  {{ with $p.Resources.GetMatch "avatar*" }}
-                    <img class="w-full h-full object-cover group-hover:scale-[1.02] transition" loading="lazy" src="{{ .RelPermalink }}" alt="{{ $p.Title }}">
-                  {{ else }}
-                    {{ with $p.Params.image }}
-                      <img class="w-full h-full object-cover group-hover:scale-[1.02] transition" loading="lazy" src="{{ . | relURL }}" alt="{{ $p.Title }}">
-                    {{ end }}
-                  {{ end }}
-                </div>
-                <div class="p-4">
-                  <div class="font-semibold">{{ $p.Title }}</div>
-                  {{ with $p.Params.role }}<div class="text-sm opacity-70">{{ . }}</div>{{ end }}
-                  {{ with (index $p.Params "organizations") }}
-                    {{ with (index . 0) }}
-                      {{ with .name }}<div class="text-sm opacity-70">{{ . }}</div>{{ end }}
-                    {{ end }}
-                  {{ end }}
-                </div>
-              </a>
-            {{ end }}
-          </div>
-        {{ else }}
-          {{ if gt (len $groups) 0 }}
-            <div class="text-gray-500 dark:text-gray-400">
-              No se encontraron personas en los grupos: {{ delimit $groups ", " " y " }}.
-            </div>
-          {{ else }}
-            <div class="text-gray-500 dark:text-gray-400">
-              No se encontraron perfiles de autores. Verifica <code>content/authors/&lt;slug&gt;/_index.md</code>.
-            </div>
-          {{ end }}
+      {{/* Obtener todas las páginas de autores */}}
+      {{ $all := where site.Pages "Section" "authors" }}
+
+      {{/* Filtrar por intersección de grupos */}}
+      {{ $filtered := slice }}
+      {{ $sc := newScratch }}
+      {{ $sc.Set "filtered" (slice) }}
+      {{ range $all }}
+        {{ $ug := .Params.user_groups | default (slice) }}
+        {{ $common := intersect $ug $wanted }}
+        {{ if gt (len $common) 0 }}
+          {{ $sc.Add "filtered" (slice .) }}
         {{ end }}
-      </div>
+      {{ end }}
+      {{ $filtered = $sc.Get "filtered" }}
+
+      {{ if gt (len $filtered) 0 }}
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 {{ $colsClass }} gap-6">
+          {{ range sort $filtered "Title" }}
+            <article class="rounded-xl border border-gray-200/60 dark:border-gray-700/60 p-4">
+              <h3 class="font-semibold text-lg">{{ .Title }}</h3>
+              {{ with .Params.role }}
+                <p class="text-sm opacity-80 mt-1">{{ . }}</p>
+              {{ end }}
+              {{/* Podés agregar más campos si querés:
+                    - .Params.organizations
+                    - .Params.interests
+                    - .Params.social (links)
+                 */}}
+            </article>
+          {{ end }}
+        </div>
+      {{ else }}
+        <div class="mt-4 text-sm opacity-80">
+          No se encontraron personas en los grupos:
+          <code>{{ delimit $wanted ", " }}</code>.
+        </div>
+      {{ end }}
     </details>
   </div>
 </section>
