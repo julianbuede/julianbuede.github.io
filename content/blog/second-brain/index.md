@@ -1,40 +1,34 @@
 ---
-title: "Home"
+title: "Second Brain"
 type: landing
 
 design:
-  spacing: "3rem"   # menos espacio global entre secciones
+  spacing: "3rem"
 
 sections:
   - block: hero
     content:
-      title: "Quiénes somos"
-      text: "MetaDocencia es una organización sin fines de lucro fundada en 2020. Nuestra comunidad construye capacidades científicas locales para transformar la ciencia global. Hacemos crecer la ciencia en red, desde América Latina hacia el mundo."
-      primary_action:
-        text: "Nuestra Gobernanza"
-        url: "https://www.metadocencia.org/suscripcion/"
+      title: "Second Brain"
+      text: "Una mirada a nuestras prácticas y aprendizajes."
     design:
       spacing:
         padding: [0, 0, 0, 0]
         margin: [0, 0, 0, 0]
       background:
-        image:
-          filename: "quienessomos.jpg"
-          filters:
-            brightness: 0.3
+        color: "gray-900"
         text_color_light: true
 
-  # Bloque de VIDEO (reemplaza por completo al cta-image-paragraph)
+  # Bloque de VIDEO (usa el bloque comunitario)
   - block: cta-video-paragraph
-    id: solutions
+    id: video
     content:
       items:
         - title: "Vamos por 5 años más"
-          text: "Durante nuestros primeros 5 años tejimos lazos entre más de 2,000 profesionales de ciencia y técnica. Lo hicimos trabajando en equipo, de manera colectiva y colaborando con más de 40 comunidades. Gracias por estos primeros 5 años de aprendizaje, colaboración y crecimiento. ¡Vamos por 5 años más!"
+          text: "Durante nuestros primeros 5 años tejimos lazos entre más de 2,000 profesionales de ciencia y técnica. Lo hicimos trabajando en equipo, de manera colectiva y colaborando con más de 40 comunidades."
           video_url: "https://youtu.be/Mcq0-4cyGKQ"
           button:
             text: "Conócenos"
-            url: "https://hugoblox.com/templates/"
+            url: "https://www.metadocencia.org/suscripcion/"
     design:
       css_class: "bg-gray-100 dark:bg-gray-900"
 
