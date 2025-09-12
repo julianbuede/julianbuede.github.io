@@ -1,7 +1,6 @@
-{{/* hugo-blox/blox/community/people.html
-     Bloque 'people' con soporte de colapsables (details/summary).
-     - Activalo con content.collapsible: true
-     - Abrir por defecto con content.start_open: true
+{{/* Bloque 'people' SIEMPRE colapsable con <details>/<summary>.
+     - Usa content.start_open (bool) para abrir por defecto.
+     - Filtra por content.user_groups (o content.groups). Si no hay, muestra todos los autores.
 */}}
 
 {{ $page := .page }}
@@ -9,17 +8,10 @@
 {{ $content := $block.content }}
 {{ $design := $block.design }}
 
-{{/* Títulos y texto */}}
 {{ $title := $content.title | default "" }}
 {{ $text  := $content.text  | default "" }}
 
-{{/* Parámetros de colapsable */}}
-{{ $collapsible := false }}
-{{ if isset $content "collapsible" }}{{ $collapsible = $content.collapsible }}{{ end }}
-{{ $startOpen := false }}
-{{ if isset $content "start_open" }}{{ $startOpen = $content.start_open }}{{ end }}
-
-{{/* Grupos (user_groups o groups) */}}
+{{/* Grupos */}}
 {{ $groups := slice }}
 {{ if isset $content "user_groups" }}
   {{ $groups = $content.user_groups }}
@@ -27,16 +19,15 @@
   {{ $groups = $content.groups }}
 {{ end }}
 
-{{/* Columnas (por defecto 4) */}}
+{{/* Columnas */}}
 {{ $cols := $design.columns | default 4 }}
 {{ $grid := "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4" }}
 {{ if eq $cols 2 }}{{ $grid = "grid-cols-1 sm:grid-cols-2" }}{{ end }}
 {{ if eq $cols 3 }}{{ $grid = "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" }}{{ end }}
 {{ if eq $cols 5 }}{{ $grid = "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5" }}{{ end }}
 
-{{/* Recolectar autores */}}
+{{/* Autores */}}
 {{ $authors := where site.Pages "Section" "authors" }}
-
 {{ if and $authors (gt (len $groups) 0) }}
   {{ $filtered := slice }}
   {{ range $authors }}
@@ -51,100 +42,62 @@
   {{ end }}
   {{ $authors = $filtered }}
 {{ end }}
-
 {{ $authors = sort $authors "Title" }}
+
+{{/* Apertura por defecto */}}
+{{ $open := false }}
+{{ if isset $content "start_open" }}{{ $open = $content.start_open }}{{ end }}
 
 <section id="{{ $block.id | default (anchorize $title) }}" class="py-12">
   <div class="container mx-auto px-6">
+    <details class="group rounded-2xl border shadow-sm bg-white dark:bg-gray-900" {{ if $open }}open{{ end }}>
+      <summary class="flex items-center justify-between cursor-pointer p-5">
+        <div>
+          {{ if $title }}<h2 class="text-2xl font-bold">{{ $title }}</h2>{{ end }}
+          {{ if $text  }}<div class="text-gray-600 dark:text-gray-300 mt-1">{{ $text | markdownify }}</div>{{ end }}
+        </div>
+        <span aria-hidden="true" class="ml-4 select-none text-xl leading-none">▾</span>
+      </summary>
 
-    {{ if $collapsible }}
-      <details class="group rounded-2xl border shadow-sm bg-white dark:bg-gray-900" {{ if $startOpen }}open{{ end }}>
-        <summary class="flex items-center justify-between cursor-pointer p-5">
-          <div>
-            {{ if $title }}<h2 class="text-2xl font-bold">{{ $title }}</h2>{{ end }}
-            {{ if $text  }}<div class="text-gray-600 dark:text-gray-300 mt-1">{{ $text | markdownify }}</div>{{ end }}
+      <div class="px-5 pb-5">
+        {{ if gt (len $authors) 0 }}
+          <div class="grid {{ $grid }} gap-6">
+            {{ range $authors }}
+              {{ $p := . }}
+              <a class="block group rounded-2xl overflow-hidden border shadow-sm hover:shadow-md transition bg-white dark:bg-gray-900" href="{{ $p.RelPermalink }}">
+                <div class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 overflow-hidden">
+                  {{ with $p.Resources.GetMatch "avatar*" }}
+                    <img class="w-full h-full object-cover group-hover:scale-[1.02] transition" loading="lazy" src="{{ .RelPermalink }}" alt="{{ $p.Title }}">
+                  {{ else }}
+                    {{ with $p.Params.image }}
+                      <img class="w-full h-full object-cover group-hover:scale-[1.02] transition" loading="lazy" src="{{ . | relURL }}" alt="{{ $p.Title }}">
+                    {{ end }}
+                  {{ end }}
+                </div>
+                <div class="p-4">
+                  <div class="font-semibold">{{ $p.Title }}</div>
+                  {{ with $p.Params.role }}<div class="text-sm opacity-70">{{ . }}</div>{{ end }}
+                  {{ with (index $p.Params "organizations") }}
+                    {{ with (index . 0) }}
+                      {{ with .name }}<div class="text-sm opacity-70">{{ . }}</div>{{ end }}
+                    {{ end }}
+                  {{ end }}
+                </div>
+              </a>
+            {{ end }}
           </div>
-          <span aria-hidden="true" class="ml-4 select-none text-xl leading-none">▾</span>
-          {{/* Nota: si tu Tailwind soporta group-open, podés reemplazar el símbolo por un SVG que rote con group-open:rotate-180 */}}
-        </summary>
-
-        <div class="px-5 pb-5">
-          {{ if gt (len $authors) 0 }}
-            <div class="grid {{ $grid }} gap-6">
-              {{ range $authors }}
-                {{ $p := . }}
-                <a class="block group rounded-2xl overflow-hidden border shadow-sm hover:shadow-md transition bg-white dark:bg-gray-900" href="{{ $p.RelPermalink }}">
-                  <div class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 overflow-hidden">
-                    {{ with $p.Resources.GetMatch "avatar*" }}
-                      <img class="w-full h-full object-cover group-hover:scale-[1.02] transition" loading="lazy" src="{{ .RelPermalink }}" alt="{{ $p.Title }}">
-                    {{ else }}
-                      {{ with $p.Params.image }}
-                        <img class="w-full h-full object-cover group-hover:scale-[1.02] transition" loading="lazy" src="{{ . | relURL }}" alt="{{ $p.Title }}">
-                      {{ end }}
-                    {{ end }}
-                  </div>
-                  <div class="p-4">
-                    <div class="font-semibold">{{ $p.Title }}</div>
-                    {{ with $p.Params.role }}<div class="text-sm opacity-70">{{ . }}</div>{{ end }}
-                    {{ with (index $p.Params "organizations") }}
-                      {{ with (index . 0) }}
-                        {{ with .name }}<div class="text-sm opacity-70">{{ . }}</div>{{ end }}
-                      {{ end }}
-                    {{ end }}
-                  </div>
-                </a>
-              {{ end }}
+        {{ else }}
+          {{ if gt (len $groups) 0 }}
+            <div class="text-gray-500 dark:text-gray-400">
+              No se encontraron personas en los grupos: {{ delimit $groups ", " " y " }}.
             </div>
           {{ else }}
-            {{ if gt (len $groups) 0 }}
-              <div class="text-gray-500 dark:text-gray-400">
-                No se encontraron personas en los grupos: {{ delimit $groups ", " " y " }}.
-              </div>
-            {{ else }}
-              <div class="text-gray-500 dark:text-gray-400">
-                No se encontraron perfiles de autores. Verifica <code>content/authors/&lt;slug&gt;/_index.md</code>.
-              </div>
-            {{ end }}
+            <div class="text-gray-500 dark:text-gray-400">
+              No se encontraron perfiles de autores. Verifica <code>content/authors/&lt;slug&gt;/_index.md</code>.
+            </div>
           {{ end }}
-        </div>
-      </details>
-
-    {{ else }}
-      {{ if $title }}<h2 class="text-3xl font-bold mb-2">{{ $title }}</h2>{{ end }}
-      {{ if $text  }}<div class="text-lg text-gray-600 dark:text-gray-300 mb-8">{{ $text | markdownify }}</div>{{ end }}
-
-      {{ if gt (len $authors) 0 }}
-        <div class="grid {{ $grid }} gap-6">
-          {{ range $authors }}
-            {{ $p := . }}
-            <a class="block group rounded-2xl overflow-hidden border shadow-sm hover:shadow-md transition bg-white dark:bg-gray-900" href="{{ $p.RelPermalink }}">
-              <div class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 overflow-hidden">
-                {{ with $p.Resources.GetMatch "avatar*" }}
-                  <img class="w-full h-full object-cover group-hover:scale-[1.02] transition" loading="lazy" src="{{ .RelPermalink }}" alt="{{ $p.Title }}">
-                {{ else }}
-                  {{ with $p.Params.image }}
-                    <img class="w-full h-full object-cover group-hover:scale-[1.02] transition" loading="lazy" src="{{ . | relURL }}" alt="{{ $p.Title }}">
-                  {{ end }}
-                {{ end }}
-              </div>
-              <div class="p-4">
-                <div class="font-semibold">{{ $p.Title }}</div>
-                {{ with $p.Params.role }}<div class="text-sm opacity-70">{{ . }}</div>{{ end }}
-                {{ with (index $p.Params "organizations") }}
-                  {{ with (index . 0) }}
-                    {{ with .name }}<div class="text-sm opacity-70">{{ . }}</div>{{ end }}
-                  {{ end }}
-                {{ end }}
-              </div>
-            </a>
-          {{ end }}
-        </div>
-      {{ else }}
-        <div class="text-gray-500 dark:text-gray-400">
-          No se encontraron perfiles de autores.
-        </div>
-      {{ end }}
-    {{ end }}
-
+        {{ end }}
+      </div>
+    </details>
   </div>
 </section>
