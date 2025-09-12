@@ -1,5 +1,5 @@
 ---
-title: "Home"
+title: "Quienes somos"
 type: landing
 
 design:
