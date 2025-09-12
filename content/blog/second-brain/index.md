@@ -3,7 +3,7 @@ title: "Home"
 type: landing
 
 design:
-  spacing: "3rem"   # antes: 6rem
+  spacing: "2rem"   # ↓ menos espacio global entre secciones
 
 sections:
   - block: hero
@@ -58,7 +58,7 @@ sections:
     design:
       css_class: "bg-gray-100 dark:bg-gray-900"
       spacing:
-        padding: ["4rem", 0, "4rem", 0]   # antes: 10rem
+        padding: ["3rem", 0, "3rem", 0]   # ↓ un poco más compacto
 
   # --- EQUIPO (desplegable, compacto) ---
   - block: people
@@ -95,7 +95,7 @@ sections:
           text: "No cabe más que agradecer a los instructores que hicieron posible este curso, que sin duda es la semilla de grandes frutos. Gracias por tanto MetaDocencia"
     design:
       spacing:
-        padding: ["3rem", 0, 0, 0]
+        padding: ["2rem", 0, 0, 0]
 
   - block: cta-card
     content:
