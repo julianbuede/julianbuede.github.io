@@ -10,13 +10,12 @@ sections:
     content:
       title: "Quiénes somos"
       text: "MetaDocencia es una organización sin fines de lucro fundada en 2020. Nuestra comunidad construye capacidades científicas locales para transformar la ciencia global. Hacemos crecer la ciencia en red, desde América Latina hacia el mundo."
-      actions:
-        - text: "Nuestra Gobernanza"
-          url: "https://www.metadocencia.org/suscripcion/"
-          style: primary
-        - text: "Pautas de Convivencia"
-          url: "https://www.metadocencia.org/pautas-de-convivencia/"
-          style: secondary
+      primary_action:
+        text: "Nuestra Gobernanza"
+        url: "https://www.metadocencia.org/suscripcion/"
+      secondary_action:
+        text: "Pautas de Convivencia"
+        url: "https://www.metadocencia.org/pautas-de-convivencia/"
     design:
       spacing:
         padding: [0, 0, 0, 0]
@@ -26,7 +25,7 @@ sections:
           filename: "quienessomos.jpg"
           filters:
             brightness: 0.3
-      text_color_light: true
+        text_color_light: true   # ← mueve aquí para texto blanco
 
   - block: cta-image-paragraph
     id: solutions
@@ -64,20 +63,15 @@ sections:
       spacing:
         padding: ["10rem", 0, "10rem", 0]
 
-  # --- EQUIPO (bloque comunitario people.html con desplegable) ---
+  # --- EQUIPO (desplegable) ---
   - block: people
     id: equipo
     content:
       title: "Equipo"
       text: "Conoce al equipo que impulsa el día a día de MetaDocencia."
       user_groups: ["Equipo"]
-      collapsible: true
-      start_open: false
+      start_open: false      # abrir/cerrar por defecto
     design:
-      show_role: true
-      show_organizations: false
-      show_social: true
-      show_interests: false
       columns: 4
 
   # --- COLABORADORES EXTERNOS (desplegable) ---
@@ -87,13 +81,8 @@ sections:
       title: "Colaboradores externos"
       text: "Profesionales y especialistas que colaboran en proyectos y cursos."
       user_groups: ["Colaboradores Externos"]
-      collapsible: true
       start_open: false
     design:
-      show_role: true
-      show_organizations: true
-      show_social: true
-      show_interests: false
       columns: 4
 
   - block: testimonials
