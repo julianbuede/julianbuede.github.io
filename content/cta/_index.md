@@ -15,9 +15,10 @@ sections:
           text: "Suscribite al boletín, unite a Slack, conectá con comunidades amigas y apoyá a MetaDocencia. Crecemos la ciencia en red, con recursos abiertos y formación gratuita."
           image: "quienessomos.jpg"   # imagen existente en assets/media/
     design:
-      css_class: "bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100"
+      css_class: "text-gray-900 dark:text-gray-100"
+      css_style: "background-color:#F9FAFB;"  # gris muy claro
 
-  # ---------- Boletín (roja con letras blancas) ----------
+  # ---------- Boletín (ROJO #C83737, texto blanco) ----------
   - block: cta-card
     id: boletin
     content:
@@ -28,9 +29,10 @@ sections:
         url: "https://www.metadocencia.org/contacto/"
     design:
       card:
-        css_class: "bg-red-600 text-white shadow-sm dark:bg-red-700 dark:text-white"
+        css_class: "shadow-sm"
+        css_style: "background-color:#C83737;color:#FFFFFF;"
 
-  # ---------- Slack (funcional, 1 botón + link en el texto) ----------
+  # ---------- Slack (fondo BLANCO, letras GRISES) ----------
   - block: cta-card
     id: slack
     content:
@@ -41,9 +43,10 @@ sections:
         url: "https://w3id.org/metadocencia/slack"
     design:
       card:
-        css_class: "bg-white text-gray-900 shadow-sm dark:bg-gray-800 dark:text-gray-100"
+        css_class: "shadow-sm"
+        css_style: "background-color:#FFFFFF;color:#374151;"  # gris-700
 
-  # ---------- Comunidades amigas (funcional, sin logos obligatorios) ----------
+  # ---------- Comunidades amigas (NARANJA #F77B20, texto blanco) ----------
   - block: cta-card
     id: comunidades
     content:
@@ -54,9 +57,10 @@ sections:
         url: "mailto:info@metadocencia.org?subject=Sumar%20mi%20comunidad"
     design:
       card:
-        css_class: "bg-gray-50 text-gray-900 shadow-sm dark:bg-gray-900 dark:text-gray-100"
+        css_class: "shadow-sm"
+        css_style: "background-color:#F77B20;color:#FFFFFF;"
 
-  # ---------- Auspiciantes / Apoya (funcional, sin logos obligatorios) ----------
+  # ---------- Auspiciantes / Apoya (AZUL #00506F, texto blanco) ----------
   - block: cta-card
     id: auspiciantes
     content:
@@ -67,9 +71,10 @@ sections:
         url: "https://www.metadocencia.org/contacto/"
     design:
       card:
-        css_class: "bg-white text-gray-900 shadow-sm dark:bg-gray-800 dark:text-gray-100"
+        css_class: "shadow-sm"
+        css_style: "background-color:#00506F;color:#FFFFFF;"
 
-  # ---------- Doná (solo botón, estilo primario = azul en la mayoría de temas) ----------
+  # ---------- Doná (solo botón, bloque ROJO #C83737) ----------
   - block: cta-card
     id: dona
     content:
@@ -80,7 +85,8 @@ sections:
         url: "https://www.metadocencia.org/contacto/"
     design:
       card:
-        css_class: "bg-transparent border-0 shadow-none p-0 text-gray-900 dark:text-gray-100"
+        css_class: "shadow-none border-0"
+        css_style: "background-color:#C83737;color:#FFFFFF;"  # botón sobre tarjeta roja
 
   # ---------- Redes (nativo, sin íconos locales) ----------
   - block: features
