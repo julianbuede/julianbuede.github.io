@@ -1,43 +1,43 @@
-{{/* Bloque 'people' colapsable.
-     FIX: Lee correctamente content.title y content.text (con fallback),
-     de modo que no aparezca "Personas" si definís tus títulos.
+{{/* Bloque 'people' colapsable (details/summary) – robusto para title/text.
+     - Lee content.title (o block.title) y content.text/subtitle/description.
+     - Filtra por content.user_groups (o content.groups). Si no hay, lista todos.
+     - start_open: bool para abrir por defecto.
+     - design.columns: 2–5 columnas. design.compact: reduce padding vertical.
 */}}
 
-{{ $page := .page }}
-{{ $block := .block }}
-{{ $content := $block.content }}
-{{ $design := $block.design }}
+{{ $b := .block }}
+{{ $content := (index $b "content") | default dict }}
+{{ $design  := (index $b "design")  | default dict }}
 
-{{/* ---- Título y texto: robustos con Scratch ---- */}}
+{{/* ---- Título y texto robustos ---- */}}
 {{ $sc := newScratch }}
 {{ $sc.Set "title" "Personas" }}
-{{ with $content.title }}{{ $sc.Set "title" . }}{{ end }}
-{{ with $block.title }}{{ $sc.Set "title" . }}{{ end }}
+{{ with (index $content "title") }}{{ $sc.Set "title" . }}{{ end }}
+{{ with (index $b "title") }}{{ $sc.Set "title" . }}{{ end }}
 {{ $title := $sc.Get "title" }}
 
 {{ $sc.Set "text" "" }}
-{{ with $content.text }}{{ $sc.Set "text" . }}{{ end }}
-{{ with $content.subtitle }}{{ $sc.Set "text" . }}{{ end }}
-{{ with $content.description }}{{ $sc.Set "text" . }}{{ end }}
+{{ with (index $content "text") }}{{ $sc.Set "text" . }}{{ end }}
+{{ with (index $content "subtitle") }}{{ $sc.Set "text" . }}{{ end }}
+{{ with (index $content "description") }}{{ $sc.Set "text" . }}{{ end }}
 {{ $text := $sc.Get "text" }}
 
 {{/* ---- Grupos ---- */}}
 {{ $groups := slice }}
-{{ with $content.user_groups }}{{ $groups = . }}{{ end }}
+{{ with (index $content "user_groups") }}{{ $groups = . }}{{ end }}
 {{ if and (eq (len $groups) 0) (isset $content "groups") }}
-  {{ $groups = $content.groups }}
+  {{ $groups = (index $content "groups") }}
 {{ end }}
 
-{{/* ---- Columnas ---- */}}
-{{ $cols := $design.columns | default 4 }}
+{{/* ---- Columnas / padding ---- */}}
+{{ $cols := (index $design "columns") | default 4 }}
 {{ $grid := "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4" }}
 {{ if eq $cols 2 }}{{ $grid = "grid-cols-1 sm:grid-cols-2" }}{{ end }}
 {{ if eq $cols 3 }}{{ $grid = "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" }}{{ end }}
 {{ if eq $cols 5 }}{{ $grid = "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5" }}{{ end }}
 
-{{/* ---- Compact (reduce padding vertical del bloque) ---- */}}
 {{ $pad := "py-8" }}
-{{ if and (isset $design "compact") $design.compact }}{{ $pad = "py-4" }}{{ end }}
+{{ if and (isset $design "compact") (index $design "compact") }}{{ $pad = "py-4" }}{{ end }}
 
 {{/* ---- Autores ---- */}}
 {{ $authors := where site.Pages "Section" "authors" }}
@@ -59,15 +59,17 @@
 
 {{/* ---- Abierto por defecto ---- */}}
 {{ $open := false }}
-{{ with $content.start_open }}{{ $open = . }}{{ end }}
+{{ with (index $content "start_open") }}{{ $open = . }}{{ end }}
 
-<section id="{{ $block.id | default (anchorize $title) }}" class="{{ $pad }}">
+<section id="{{ (index $b "id") | default (anchorize $title) }}" class="{{ $pad }}">
   <div class="container mx-auto px-6">
     <details class="group rounded-2xl border shadow-sm bg-white dark:bg-gray-900" {{ if $open }}open{{ end }}>
       <summary class="flex items-center justify-between cursor-pointer p-4">
         <div class="min-w-0">
           <span class="block text-2xl font-bold">{{ $title }}</span>
-          {{ if $text }}<span class="block text-gray-600 dark:text-gray-300 mt-1">{{ $text | markdownify }}</span>{{ end }}
+          {{ if $text }}
+            <span class="block text-gray-600 dark:text-gray-300 mt-1">{{ $text | markdownify }}</span>
+          {{ end }}
         </div>
         <span aria-hidden="true" class="ml-4 select-none text-xl leading-none">▾</span>
       </summary>
@@ -84,7 +86,7 @@
                   {{ else }}
                     {{ with $p.Params.image }}
                       <img class="w-full h-full object-cover group-hover:scale-[1.02] transition" loading="lazy" src="{{ . | relURL }}" alt="{{ $p.Title }}">
-                      {{ end }}
+                    {{ end }}
                   {{ end }}
                 </div>
                 <div class="p-4">
