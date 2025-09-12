@@ -13,10 +13,10 @@ sections:
       items:
         - title: "Súmate y apoya a nuestra comunidad"
           text: "Suscribite al boletín, unite a Slack, conectá con comunidades amigas y apoyá a MetaDocencia. Crecemos la ciencia en red, con recursos abiertos y formación gratuita."
-          image: "quienessomos.jpg"   # imagen existente en assets/media/
+          image: "quienessomos.jpg"
     design:
       css_class: "text-gray-900 dark:text-gray-100"
-      css_style: "background-color:#F9FAFB;"  # gris muy claro
+      css_style: "background-color:#F9FAFB;"
 
   # ---------- Boletín (ROJO #C83737, texto blanco) ----------
   - block: cta-card
@@ -32,26 +32,52 @@ sections:
         css_class: "shadow-sm"
         css_style: "background-color:#C83737;color:#FFFFFF;"
 
-  # ---------- Slack (fondo BLANCO, letras GRISES) ----------
+  # ---------- Slack (BLANCO con texto oscuro + link oscuro) ----------
   - block: cta-card
     id: slack
     content:
       title: "Sumate a nuestro Slack"
-      text: "Conectá con más de **+1000 personas** que comparten interés por la educación, la ciencia abierta y la colaboración. **[Qué es Slack y cómo puedo sumarme a la conversación](https://zenodo.org/records/10028136)**"
+      text: |
+        Conectá con más de **+1000 personas** que comparten interés por la educación, la ciencia abierta y la colaboración.
+        <a href="https://zenodo.org/records/10028136" style="color:#1F2937;text-decoration:underline;">Qué es Slack y cómo puedo sumarme a la conversación</a>
       button:
         text: "Unirme al espacio de Slack de MetaDocencia"
         url: "https://w3id.org/metadocencia/slack"
     design:
       card:
         css_class: "shadow-sm"
-        css_style: "background-color:#FFFFFF;color:#374151;"  # gris-700
+        css_style: "background-color:#FFFFFF;color:#1F2937;"  # gris muy oscuro para máxima legibilidad
 
-  # ---------- Comunidades amigas (NARANJA #F77B20, texto blanco) ----------
+  # ---------- Comunidades amigas (NARANJA #F77B20, logos debajo del texto) ----------
   - block: cta-card
     id: comunidades
     content:
       title: "Comunidades amigas"
-      text: "Amplificamos el trabajo de organizaciones que hacen de la ciencia abierta un esfuerzo global, colectivo y comunitario."
+      text: |
+        Amplificamos el trabajo de organizaciones que hacen de la ciencia abierta un esfuerzo global, colectivo y comunitario.
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center mt-4">
+          <img src="/media/logos/comunidades/logo01.png" alt="Comunidad 1" class="max-h-10 w-auto opacity-95">
+          <img src="/media/logos/comunidades/logo02.png" alt="Comunidad 2" class="max-h-10 w-auto opacity-95">
+          <img src="/media/logos/comunidades/logo03.png" alt="Comunidad 3" class="max-h-10 w-auto opacity-95">
+          <img src="/media/logos/comunidades/logo04.png" alt="Comunidad 4" class="max-h-10 w-auto opacity-95">
+          <img src="/media/logos/comunidades/logo05.png" alt="Comunidad 5" class="max-h-10 w-auto opacity-95">
+          <img src="/media/logos/comunidades/logo06.png" alt="Comunidad 6" class="max-h-10 w-auto opacity-95">
+          <img src="/media/logos/comunidades/logo07.png" alt="Comunidad 7" class="max-h-10 w-auto opacity-95">
+          <img src="/media/logos/comunidades/logo08.png" alt="Comunidad 8" class="max-h-10 w-auto opacity-95">
+          <img src="/media/logos/comunidades/logo09.png" alt="Comunidad 9" class="max-h-10 w-auto opacity-95">
+          <img src="/media/logos/comunidades/logo10.png" alt="Comunidad 10" class="max-h-10 w-auto opacity-95">
+          <img src="/media/logos/comunidades/logo11.png" alt="Comunidad 11" class="max-h-10 w-auto opacity-95">
+          <img src="/media/logos/comunidades/logo12.png" alt="Comunidad 12" class="max-h-10 w-auto opacity-95">
+          <img src="/media/logos/comunidades/logo13.png" alt="Comunidad 13" class="max-h-10 w-auto opacity-95">
+          <img src="/media/logos/comunidades/logo14.png" alt="Comunidad 14" class="max-h-10 w-auto opacity-95">
+          <img src="/media/logos/comunidades/logo15.png" alt="Comunidad 15" class="max-h-10 w-auto opacity-95">
+          <img src="/media/logos/comunidades/logo16.png" alt="Comunidad 16" class="max-h-10 w-auto opacity-95">
+          <img src="/media/logos/comunidades/logo17.png" alt="Comunidad 17" class="max-h-10 w-auto opacity-95">
+          <img src="/media/logos/comunidades/logo18.png" alt="Comunidad 18" class="max-h-10 w-auto opacity-95">
+          <img src="/media/logos/comunidades/logo19.png" alt="Comunidad 19" class="max-h-10 w-auto opacity-95">
+          <img src="/media/logos/comunidades/logo20.png" alt="Comunidad 20" class="max-h-10 w-auto opacity-95">
+        </div>
       button:
         text: "Sumá tu comunidad"
         url: "mailto:info@metadocencia.org?subject=Sumar%20mi%20comunidad"
@@ -60,12 +86,22 @@ sections:
         css_class: "shadow-sm"
         css_style: "background-color:#F77B20;color:#FFFFFF;"
 
-  # ---------- Auspiciantes / Apoya (AZUL #00506F, texto blanco) ----------
+  # ---------- Auspiciantes / Apoya (AZUL #00506F, logos debajo del texto) ----------
   - block: cta-card
     id: auspiciantes
     content:
       title: "Apoya a MetaDocencia"
-      text: "Nuestro trabajo es posible gracias al apoyo de instituciones y organizaciones que comparten nuestra misión."
+      text: |
+        Nuestro trabajo es posible gracias al apoyo de instituciones y organizaciones que comparten nuestra misión.
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 items-center mt-4">
+          <img src="/media/logos/auspiciantes/logo01.png" alt="Auspiciante 1" class="max-h-10 w-auto opacity-95">
+          <img src="/media/logos/auspiciantes/logo02.png" alt="Auspiciante 2" class="max-h-10 w-auto opacity-95">
+          <img src="/media/logos/auspiciantes/logo03.png" alt="Auspiciante 3" class="max-h-10 w-auto opacity-95">
+          <img src="/media/logos/auspiciantes/logo04.png" alt="Auspiciante 4" class="max-h-10 w-auto opacity-95">
+          <img src="/media/logos/auspiciantes/logo05.png" alt="Auspiciante 5" class="max-h-10 w-auto opacity-95">
+          <img src="/media/logos/auspiciantes/logo06.png" alt="Auspiciante 6" class="max-h-10 w-auto opacity-95">
+        </div>
       button:
         text: "Acompañanos"
         url: "https://www.metadocencia.org/contacto/"
@@ -74,7 +110,7 @@ sections:
         css_class: "shadow-sm"
         css_style: "background-color:#00506F;color:#FFFFFF;"
 
-  # ---------- Doná (solo botón, bloque ROJO #C83737) ----------
+  # ---------- Doná (solo botón, SIN recuadro rojo) ----------
   - block: cta-card
     id: dona
     content:
@@ -85,8 +121,8 @@ sections:
         url: "https://www.metadocencia.org/contacto/"
     design:
       card:
-        css_class: "shadow-none border-0"
-        css_style: "background-color:#C83737;color:#FFFFFF;"  # botón sobre tarjeta roja
+        css_class: "border-0 shadow-none p-0"
+        css_style: "background-color:transparent;color:#111827;"  # sin caja de color, botón suelto
 
   # ---------- Redes (nativo, sin íconos locales) ----------
   - block: features
