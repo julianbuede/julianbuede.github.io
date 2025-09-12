@@ -64,7 +64,6 @@ sections:
       spacing:
         padding: ["10rem", 0, "10rem", 0]
 
-  # --- EQUIPO (usa el bloque comunitario people.html) ---
  - block: people
   id: equipo
   content:
@@ -80,7 +79,6 @@ sections:
     show_interests: false
     columns: 4
 
-# --- COLABORADORES EXTERNOS ---
 - block: people
   id: colaboradores
   content:
