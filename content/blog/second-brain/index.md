@@ -24,18 +24,18 @@ sections:
             brightness: 0.3
         text_color_light: true
 
- - block: cta-image-paragraph
-  id: solutions
-  content:
-    items:
-      - title: "Vamos por 5 años más"
-        text: "Durante nuestros primeros 5 años tejimos lazos entre más de 2,000 profesionales de ciencia y técnica..."
-        video_url: "https://youtu.be/Mcq0-4cyGKQ/"   # ← con o sin barra final, ya lo maneja
-        button:
-          text: "Conócenos"
-          url: "https://hugoblox.com/templates/"
-  design:
-    css_class: "bg-gray-100 dark:bg-gray-900"
+  - block: cta-image-paragraph
+    id: solutions
+    content:
+      items:
+        - title: "Vamos por 5 años más"
+          text: "Durante nuestros primeros 5 años tejimos lazos entre más de 2,000 profesionales de ciencia y técnica..."
+          video_url: "https://youtu.be/Mcq0-4cyGKQ"
+          button:
+            text: "Conócenos"
+            url: "https://hugoblox.com/templates/"
+    design:
+      css_class: "bg-gray-100 dark:bg-gray-900"
 
   - block: stats
     content:
@@ -60,7 +60,7 @@ sections:
       spacing:
         padding: ["4rem", 0, "4rem", 0]
 
-  # --- AUSPCIANTES (desplegable, compacto) ---
+  # --- AUSPICIANTES (desplegable, compacto) ---
   - block: people
     id: auspiciantes
     content:
@@ -120,7 +120,6 @@ sections:
       columns: 4
       compact: true
 
-  # (Bloque testimonials eliminado)
   - block: cta-card
     content:
       title: "Apoya a la ciencia latinoamericana"
