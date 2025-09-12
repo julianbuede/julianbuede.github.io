@@ -66,7 +66,7 @@ sections:
     content:
       title: "Auspiciantes"
       text: "Organizaciones que apoyan y hacen posible nuestro trabajo."
-      user_groups: ["Actuales"]
+      user_groups: ["Auspiciantes", "Actuales"]   # incluye ambos por si en autores usaste uno u otro
       start_open: false
     design:
       columns: 4
