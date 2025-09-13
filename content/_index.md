@@ -38,7 +38,7 @@ sections:
           image: "quienesomos.jpg"
           button:
             text: "Conócenos"
-            url: "https://julianbuede.github.io/blog/project-management/"
+            url: "https://julianbuede.github.io/quienesomos/"
         - title: "Qué hacemos"
           text: "Trabajamos para que la producción, la comunicación y la aplicación de saberes científicos y técnicos sean globalmente equitativos."
           feature_icon: check
@@ -50,7 +50,7 @@ sections:
           image: "organigramaapaisado.png"
           button:
             text: "Conoce nuestros proyectos"
-            url: "https://discord.gg/z8wNYzb"
+            url: "https://julianbuede.github.io/quehacemos"
     design:
       css_class: "bg-gray-100 dark:bg-gray-900"
 
