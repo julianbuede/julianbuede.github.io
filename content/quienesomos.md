@@ -1,5 +1,5 @@
 ---
-title: "Home"
+title: "Quienes somos"
 type: landing
 
 design:
@@ -24,14 +24,13 @@ sections:
             brightness: 0.3
         text_color_light: true
 
-  # Bloque de VIDEO (reemplaza por completo al cta-image-paragraph)
-  - block: cta-video-paragraph
+  - block: cta-image-paragraph
     id: solutions
     content:
       items:
         - title: "Vamos por 5 años más"
           text: "Durante nuestros primeros 5 años tejimos lazos entre más de 2,000 profesionales de ciencia y técnica. Lo hicimos trabajando en equipo, de manera colectiva y colaborando con más de 40 comunidades. Gracias por estos primeros 5 años de aprendizaje, colaboración y crecimiento. ¡Vamos por 5 años más!"
-          video_url: "https://youtu.be/Mcq0-4cyGKQ"
+          image: "quienessomos.jpg"
           button:
             text: "Conócenos"
             url: "https://hugoblox.com/templates/"
@@ -91,7 +90,7 @@ sections:
     content:
       title: "Colaboran"
       text: "Profesionales y especialistas que colaboran en proyectos y cursos."
-      user_groups: ["Colaboradores Externos"]
+      user_groups: ["Colaboradores Externos"]  # usa este grupo si ya lo venías usando
       start_open: false
     design:
       columns: 4
