@@ -1,106 +1,135 @@
 ---
-title: 'Home'
-date: 2023-10-24
+title: "Home"
 type: landing
 
 design:
-  # Default section spacing
-  spacing: "6rem"
+  spacing: "3rem"   # menos espacio global entre secciones
 
 sections:
   - block: hero
     content:
-      title: Quienes somos
+      title: "Quiénes somos"
+      text: "MetaDocencia es una organización sin fines de lucro fundada en 2020. Nuestra comunidad construye capacidades científicas locales para transformar la ciencia global. Hacemos crecer la ciencia en red, desde América Latina hacia el mundo."
       primary_action:
-        text: Súmate
-        url: https://hugoblox.com/templates/](https://www.metadocencia.org/suscripcion/
+        text: "Nuestra Gobernanza"
+        url: "https://www.metadocencia.org/suscripcion/"
     design:
       spacing:
         padding: [0, 0, 0, 0]
         margin: [0, 0, 0, 0]
-      # For full-screen, add `min-h-screen` below
-      css_class: "dark"
       background:
-        color: "navy"
         image:
-          # Add your image background to `assets/media/`.
-          filename: 3azulrojo.png
+          filename: "quienessomos.jpg"
           filters:
-            brightness: 0.5
-          size: cover
-          position: center
-          parallax: false
-  - block: cta-image-paragraph
+            brightness: 0.3
+        text_color_light: true
+
+  # Bloque de VIDEO (reemplaza por completo al cta-image-paragraph)
+  - block: cta-video-paragraph
     id: solutions
     content:
       items:
-        - title: Quiénes somos
-          text: TEXTO A DEFINIR. MetaDocencia es una organización sin fines de lucro fundada en 2020. Nuestra comunidad está formada por personas y organizaciones que trabajan construyendo capacidades científicas locales para transformar la ciencia global. Hacemos crecer la ciencia en red, desde América Latina hacia el mundo.
-          # Upload image to `assets/media/` and reference the filename here
-          image: quienesomos.jpg
+        - title: "Vamos por 5 años más"
+          text: "Durante nuestros primeros 5 años tejimos lazos entre más de 2,000 profesionales de ciencia y técnica. Lo hicimos trabajando en equipo, de manera colectiva y colaborando con más de 40 comunidades. Gracias por estos primeros 5 años de aprendizaje, colaboración y crecimiento. ¡Vamos por 5 años más!"
+          video_url: "https://youtu.be/Mcq0-4cyGKQ"
           button:
-            text: Conócenos
-            url: https://hugoblox.com/templates/
-        - title: Qué hacemos
-          text: Trabajamos para que la producción, la comunicación y la aplicación de saberes científicos y técnicos sean globalmente equitativos.
-          feature_icon: check
-          features:
-            - "Impulsamos infraestructura"
-            - "Formamos a personas investigadoras"
-            - "Construimos comunidad"
-          # Upload image to `assets/media/` and reference the filename here
-          image: organigramaapaisado.png
-          button:
-            text: Conoce nuestros proyectos
-            url: https://discord.gg/z8wNYzb
+            text: "Conócenos"
+            url: "https://hugoblox.com/templates/"
     design:
-      # Section background color (CSS class)
-      css_class: "bg-gray-100 dark:bg-gray-900"  
+      css_class: "bg-gray-100 dark:bg-gray-900"
+
   - block: stats
     content:
       items:
-        - statistic: "NN"
+        - statistic: "+1,000"
           description: |
-            Proyectos  
-            financiados
-        - statistic: "+1500"
+            personas en Slack
+        - statistic: "+40"
           description: |
-            personas  
-            formadas
-        - statistic: "+1000"
+            socios y patrocinadores
+        - statistic: "88"
           description: |
-            personas en la   
-            comunidad de Slack
+            personas contribuyen a nuestro trabajo
+        - statistic: "+6000"
+          description: |
+            personas conectadas en redes sociales
+        - statistic: "+2600"
+          description: |
+            personas suscriptas a nuestro boletín
     design:
-      # Section background color (CSS class)
       css_class: "bg-gray-100 dark:bg-gray-900"
-      # Reduce spacing
       spacing:
-        padding: ["1rem", 0, "1rem", 0]
-  - block: testimonials
+        padding: ["4rem", 0, "4rem", 0]
+
+  # --- AUSPCIANTES (desplegable, compacto) ---
+  - block: people
+    id: auspiciantes
     content:
-      title: ""
-      text: ""
-      items:
-        - name: "3 TESTIMONIOS A DEFINIR - Julio Zetter"
-          role: " Coordinador en Jefe de la base de datos y hemeroteca virtual SciELO México"
-          # Upload image to `assets/media/` and reference the filename here
-          image: "juliozetter.jpeg"
-          text: "No cabe más que agradecer a los instructores que hicieron posible este curso, que sin duda es la semilla de grandes frutos. Gracias por tanto MetaDocencia"
+      title: "Auspiciantes"
+      text: "Organizaciones que apoyan y hacen posible nuestro trabajo."
+      user_groups: ["Auspiciantes"]
+      start_open: false
     design:
-      spacing:
-        # Reduce bottom spacing so the testimonial appears vertically centered between sections
-        padding: ["6rem", 0, 0, 0]
+      columns: 4
+      compact: true
+
+  # --- COMUNIDADES AMIGAS (desplegable, compacto) ---
+  - block: people
+    id: comunidades-amigas
+    content:
+      title: "Comunidades Amigas"
+      text: "Redes y comunidades con las que colaboramos."
+      user_groups: ["Comunidades Amigas"]
+      start_open: false
+    design:
+      columns: 4
+      compact: true
+
+  # --- COLABORAN (desplegable, compacto) ---
+  - block: people
+    id: colaboran
+    content:
+      title: "Colaboran"
+      text: "Profesionales y especialistas que colaboran en proyectos y cursos."
+      user_groups: ["Colaboradores Externos"]
+      start_open: false
+    design:
+      columns: 4
+      compact: true
+
+  # --- CONSEJO ASESOR (desplegable, compacto) ---
+  - block: people
+    id: consejo-asesor
+    content:
+      title: "Consejo Asesor"
+      text: "Personas que orientan estratégicamente nuestro trabajo."
+      user_groups: ["Consejo Asesor"]
+      start_open: false
+    design:
+      columns: 4
+      compact: true
+
+  # --- EQUIPO (desplegable, compacto) ---
+  - block: people
+    id: equipo
+    content:
+      title: "Equipo"
+      text: "Conoce al equipo que impulsa el día a día de MetaDocencia."
+      user_groups: ["Equipo"]
+      start_open: false
+    design:
+      columns: 4
+      compact: true
+
   - block: cta-card
     content:
-      title: Apoya a la ciencia latinoamericana
-      text: Aquí te contamos cómo
+      title: "Apoya a la ciencia latinoamericana"
+      text: "Aquí te contamos cómo"
       button:
-        text: Súmate
-        url: https://hugoblox.com/templates/
+        text: "Súmate"
+        url: "https://hugoblox.com/templates/"
     design:
       card:
-        # Card background color (CSS class)
         css_class: "bg-primary-700"
         css_style: ""
 ---
