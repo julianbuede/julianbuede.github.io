@@ -46,7 +46,7 @@ sections:
       columns: 3
       css_class: "text-gray-900 dark:text-gray-100"
 
-  # Heading centrado
+  # Heading centrado (legible)
   - block: cta-card
     id: heading-proyectos
     content:
@@ -54,7 +54,7 @@ sections:
       text: ""
     design:
       card:
-        css_class: "bg-transparent shadow-none text-center"
+        css_class: "bg-transparent shadow-none text-center text-gray-900 dark:text-gray-100"
 
   # ======================
   #  SECCIÓN: INFRAESTRUCTURA (AZUL)
@@ -69,31 +69,7 @@ sections:
         css_class: "shadow-sm"
         css_style: "background-color:#00506F;color:#FFFFFF;"
 
-  - block: stats
-    content:
-      items:
-        - statistic: "3"
-          description: "servicios/infraestructuras operando"
-        - statistic: "12"
-          description: "integraciones/automatizaciones"
-        - statistic: "99.9%"
-          description: "uptime en los últimos 12 meses"
-    design:
-      css_class: "bg-gray-50 dark:bg-gray-900"
-
-  - block: testimonials
-    content:
-      items:
-        - name: "Testimonio 1"
-          role: "Organización/Proyecto"
-          text: "La infraestructura nos permitió escalar y compartir datos de forma abierta."
-        - name: "Testimonio 2"
-          role: "Investigadora/Equipo"
-          text: "Estándares y procesos nos ahorraron tiempo y mejoraron la calidad."
-    design:
-      spacing:
-        padding: ["2rem", 0, "2rem", 0]
-
+  # PROYECTOS (Infra)
   - block: features
     id: infra-proyectos
     content:
@@ -109,6 +85,31 @@ sections:
     design:
       columns: 3
 
+  # MÉTRICAS (Infra)
+  - block: stats
+    content:
+      items:
+        - statistic: "X"
+          description: "proyectos financiados"
+        - statistic: "+200"
+          description: "documentos en Zenodo"
+    design:
+      css_class: "bg-gray-50 dark:bg-gray-900"
+
+  # TESTIMONIOS (Infra)
+  - block: testimonials
+    content:
+      items:
+        - name: "Testimonio 1"
+          role: "Organización/Proyecto"
+          text: "La infraestructura nos permitió escalar y compartir datos de forma abierta."
+        - name: "Testimonio 2"
+          role: "Investigadora/Equipo"
+          text: "Estándares y procesos nos ahorraron tiempo y mejoraron la calidad."
+    design:
+      spacing:
+        padding: ["2rem", 0, "2rem", 0]
+
   # ======================
   #  SECCIÓN: FORMACIÓN (ROJO)
   # ======================
@@ -122,31 +123,7 @@ sections:
         css_class: "shadow-sm"
         css_style: "background-color:#C83737;color:#FFFFFF;"
 
-  - block: stats
-    content:
-      items:
-        - statistic: "+2,000"
-          description: "personas formadas"
-        - statistic: "40+"
-          description: "comunidades y organizaciones aliadas"
-        - statistic: "85%"
-          description: "aplica lo aprendido en < 3 meses"
-    design:
-      css_class: "bg-gray-50 dark:bg-gray-900"
-
-  - block: testimonials
-    content:
-      items:
-        - name: "Participante 1"
-          role: "Curso X"
-          text: "Contenidos claros y aplicables; comunidad muy activa."
-        - name: "Participante 2"
-          role: "Programa Y"
-          text: "Aprendí herramientas y las apliqué en mi proyecto en semanas."
-    design:
-      spacing:
-        padding: ["2rem", 0, "2rem", 0]
-
+  # PROYECTOS (Formación)
   - block: features
     id: formacion-proyectos
     content:
@@ -162,6 +139,33 @@ sections:
     design:
       columns: 3
 
+  # MÉTRICAS (Formación)
+  - block: stats
+    content:
+      items:
+        - statistic: "94"
+          description: "ediciones (388 horas)"
+        - statistic: "+1500"
+          description: "personas de 33 países formadas"
+        - statistic: "89%"
+          description: "Net Promoter Score"
+    design:
+      css_class: "bg-gray-50 dark:bg-gray-900"
+
+  # TESTIMONIOS (Formación) — ACTUALIZADOS
+  - block: testimonials
+    content:
+      items:
+        - name: "Walter Sosa Escudero"
+          role: ""
+          text: "No se pierdan esto. Es gente hiperprofesional, es buenísimo el trabajo que hacen."
+        - name: "Emmanuel Iarussi"
+          role: ""
+          text: "El curso fue excelente. Me devolvieron el impulso de enseñar. Enseñar en línea puede ser mucho más humano de lo que podría haber imaginado."
+    design:
+      spacing:
+        padding: ["2rem", 0, "2rem", 0]
+
   # ======================
   #  SECCIÓN: COMUNIDAD (NARANJA)
   # ======================
@@ -175,31 +179,7 @@ sections:
         css_class: "shadow-sm"
         css_style: "background-color:#F77B20;color:#FFFFFF;"
 
-  - block: stats
-    content:
-      items:
-        - statistic: "+1,000"
-          description: "personas en Slack"
-        - statistic: "88"
-          description: "personas contribuyentes"
-        - statistic: "+40"
-          description: "socios y patrocinadores"
-    design:
-      css_class: "bg-gray-50 dark:bg-gray-900"
-
-  - block: testimonials
-    content:
-      items:
-        - name: "Miembro de la comunidad"
-          role: "Red/Equipo"
-          text: "Encontré apoyo y colaboración para avanzar en mi línea de trabajo."
-        - name: "Aliada/o"
-          role: "Institución"
-          text: "Las alianzas nos ayudaron a amplificar el impacto regional."
-    design:
-      spacing:
-        padding: ["2rem", 0, "2rem", 0]
-
+  # PROYECTOS (Comunidad)
   - block: features
     id: comunidad-proyectos
     content:
@@ -214,4 +194,31 @@ sections:
           description: "Proyecto a incubar"
     design:
       columns: 3
+
+  # MÉTRICAS (Comunidad)
+  - block: stats
+    content:
+      items:
+        - statistic: "+40"
+          description: "comunidades amigas"
+        - statistic: "54"
+          description: "personas colaboradoras"
+        - statistic: "+1000"
+          description: "personas en Slack"
+    design:
+      css_class: "bg-gray-50 dark:bg-gray-900"
+
+  # TESTIMONIOS (Comunidad) — ACTUALIZADOS
+  - block: testimonials
+    content:
+      items:
+        - name: "Andrés Kamaid"
+          role: "Researcher, Institut Pasteur Montevideo — tras consultoría para Latin American Bioimaging"
+          text: "I want to thank you for the work done so far. In addition to your conceptual and practical contributions, which have enabled us to make significant progress, your warmth and kindness have made this process truly enjoyable. I will miss our meetings."
+        - name: "Verónica Xhardez"
+          role: "ARPHAI"
+          text: "¡Cuánto aprendizaje colectivo por el camino! 🍎 Felicitaciones y gracias por ser un ámbito de coproducción, interdisciplina y cuidado mutuo."
+    design:
+      spacing:
+        padding: ["2rem", 0, "2rem", 0]
 ---
