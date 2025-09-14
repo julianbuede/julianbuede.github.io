@@ -39,8 +39,8 @@ header:
       filename: "logo.svg"
     button:
       enable: true
-      text: "Get Started"
-      url: "https://hugoblox.com/templates/"
+      text: "Súmate"
+      url: "https://julianbuede.github.io/cta/"
     show_search: true
     show_theme_chooser: true
 
