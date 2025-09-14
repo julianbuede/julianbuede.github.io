@@ -50,12 +50,43 @@ sections:
   - block: cta-card
     id: heading-proyectos
     content:
-      title: ""   # dejamos vacío y usamos el texto con HTML para forzar color
+      title: ""
       text: '<h2 class="text-center text-3xl font-bold text-gray-900 dark:text-gray-100">Conocé nuestros proyectos</h2>'
     design:
       card:
         css_class: "bg-transparent shadow-none"
-        css_style: ""   # el color se fuerza en el h2
+        css_style: ""
+
+  # ======================
+  #  PROYECTOS DESTACADOS (tarjetas con etiqueta de pilar + botón)
+  # ======================
+  - block: features
+    id: destacados
+    content:
+      title: "Proyectos destacados"
+      text: ""
+      items:
+        - name: "Formación en Ciencia Abierta"
+          description: |
+            <a href="#formacion" class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-100 no-underline">Formación</a>
+            <br>
+            Talleres y recursos para abrir, compartir y reutilizar conocimiento.
+            <a class="btn btn-outline mt-3 inline-block" href="https://julianbuede.github.io/blog/second-brain/">Ver más</a>
+        - name: "Contextualización"
+          description: |
+            <a href="#infra" class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-100 no-underline">Infraestructura</a>
+            <br>
+            Desarrollamos recursos de calidad en español a partir de material originalmente publicado en otro idioma.
+            <a class="btn btn-outline mt-3 inline-block" href="https://julianbuede.github.io/blog/second-brain/">Ver más</a>
+        - name: "Gobernanza"
+          description: |
+            <a href="#comunidad" class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-100 no-underline">Comunidad</a>
+            <br>
+            Brindamos herramientas y asesoramiento en gobernanza para que personas y organizaciones logren mayor impacto y eficiencia.
+            <a class="btn btn-outline mt-3 inline-block" href="https://julianbuede.github.io/blog/second-brain/">Ver más</a>
+    design:
+      columns: 3
+      css_class: "text-gray-900 dark:text-gray-100"
 
   # ======================
   #  SECCIÓN: INFRAESTRUCTURA (AZUL)
