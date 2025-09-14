@@ -51,7 +51,7 @@ sections:
     id: heading-proyectos
     content:
       title: ""
-      text: '<h2 class="text-center text-3xl font-bold text-gray-900 dark:text-gray-100">Conocé nuestros proyectos</h2>'
+      text: '<h1 class="text-center text-3xl font-bold text-gray-900 dark:text-gray-100">Conocé nuestros proyectos</h2>'
     design:
       card:
         css_class: "bg-transparent shadow-none"
