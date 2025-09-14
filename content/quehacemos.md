@@ -17,7 +17,7 @@ sections:
     design:
       css_class: "bg-gray-100 dark:bg-gray-900"
 
-  # Tres columnas con iconos + CTA "Ver más"
+  # Tres columnas con iconos + CTA "Ver más" que anclan a cada pilar
   - block: features
     id: pilares
     content:
@@ -46,11 +46,11 @@ sections:
       columns: 3
       css_class: "text-gray-900 dark:text-gray-100"
 
-  # Heading centrado (forzado a negro/gris sobre blanco)
+  # Heading centrado (mínimo espaciado y más protagonismo)
   - block: cta-card
     id: heading-proyectos
     content:
-      title: ""   # dejamos vacío y estilizamos con HTML para controlar color/tamaño
+      title: ""
       text: |
         <h2 class="text-center text-4xl md:text-5xl font-extrabold tracking-tight
                    text-gray-900 dark:text-gray-50 underline decoration-[#00506F]
@@ -59,14 +59,12 @@ sections:
         </h2>
     design:
       spacing:
-        padding: ["0.5rem", 0, "0.5rem", 0]   # ↓ menos espacio arriba/abajo
+        padding: ["0rem", 0, "0rem", 0]   # casi sin aire arriba/abajo
       card:
         css_class: "bg-transparent shadow-none p-0 text-center"
         css_style: "margin:0;"
 
-  # ======================
-  #  PROYECTOS DESTACADOS (tarjetas con etiqueta de pilar + botón)
-  # ======================
+  # PROYECTOS DESTACADOS (tarjetas con etiqueta de pilar + botón)
   - block: features
     id: destacados
     content:
@@ -76,21 +74,24 @@ sections:
         - name: "Formación en Ciencia Abierta"
           description: |
             <a href="#formacion" class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-100 no-underline">Formación</a>
-            <br>
+
             Talleres y recursos para abrir, compartir y reutilizar conocimiento.
-            <a class="btn btn-outline mt-3 inline-block" href="https://julianbuede.github.io/blog/second-brain/">Ver más</a>
+
+            <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a>
         - name: "Contextualización"
           description: |
             <a href="#infra" class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-100 no-underline">Infraestructura</a>
-            <br>
+
             Desarrollamos recursos de calidad en español a partir de material originalmente publicado en otro idioma.
-            <a class="btn btn-outline mt-3 inline-block" href="https://julianbuede.github.io/blog/second-brain/">Ver más</a>
+
+            <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a>
         - name: "Gobernanza"
           description: |
             <a href="#comunidad" class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-100 no-underline">Comunidad</a>
-            <br>
+
             Brindamos herramientas y asesoramiento en gobernanza para que personas y organizaciones logren mayor impacto y eficiencia.
-            <a class="btn btn-outline mt-3 inline-block" href="https://julianbuede.github.io/blog/second-brain/">Ver más</a>
+
+            <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a>
     design:
       columns: 3
       css_class: "text-gray-900 dark:text-gray-100"
@@ -118,15 +119,18 @@ sections:
         - name: "Catalyst"
           description: |
             Mejoramos la accesibilidad y la utilidad de la infraestructura en la nube para comunidades globales.
-            <a class="btn btn-outline mt-2 inline-block" href="https://julianbuede.github.io/blog/second-brain/">Ver más</a>
+
+            <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a>
         - name: "Contextualización"
           description: |
             Desarrollamos recursos de calidad en español a partir de material originalmente publicado en otro idioma.
-            <a class="btn btn-outline mt-2 inline-block" href="https://julianbuede.github.io/blog/second-brain/">Ver más</a>
+
+            <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a>
         - name: "Ciencia Abierta y Datos Abiertos en la comunidad latinoamericana de bioimagen"
           description: |
             Proyecto a incubar
-            <a class="btn btn-outline mt-2 inline-block" href="https://julianbuede.github.io/blog/second-brain/">Ver más</a>
+
+            <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a>
     design:
       columns: 3
 
@@ -178,15 +182,18 @@ sections:
         - name: "Formación en Ciencia Abierta"
           description: |
             Talleres y recursos para abrir, compartir y reutilizar conocimiento.
-            <a class="btn btn-outline mt-2 inline-block" href="https://julianbuede.github.io/blog/second-brain/">Ver más</a>
+
+            <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a>
         - name: "Financiamiento"
           description: |
             Herramientas para identificar, postular y gestionar oportunidades.
-            <a class="btn btn-outline mt-2 inline-block" href="https://julianbuede.github.io/blog/second-brain/">Ver más</a>
+
+            <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a>
         - name: "Formación para Formar"
           description: |
             Programa para multiplicar capacidades de enseñanza y mentoría.
-            <a class="btn btn-outline mt-2 inline-block" href="https://julianbuede.github.io/blog/second-brain/">Ver más</a>
+
+            <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a>
     design:
       columns: 3
 
@@ -240,15 +247,18 @@ sections:
         - name: "Gobernanza"
           description: |
             Brindamos herramientas y asesoramiento en gobernanza para que personas y organizaciones logren mayor impacto y eficiencia.
-            <a class="btn btn-outline mt-2 inline-block" href="https://julianbuede.github.io/blog/second-brain/">Ver más</a>
+
+            <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a>
         - name: "Conversatorios"
           description: |
             Organizamos conversatorios y espacios de diálogo para explorar, aprender y compartir conocimiento. Fomentamos la participación y el intercambio de experiencias para fortalecer redes de colaboración y el conocimiento compartido.
-            <a class="btn btn-outline mt-2 inline-block" href="https://julianbuede.github.io/blog/second-brain/">Ver más</a>
+
+            <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a>
         - name: "Mapeo de Ciencia Abierta en Latinoamérica"
           description: |
             Proyecto a incubar
-            <a class="btn btn-outline mt-2 inline-block" href="https://julianbuede.github.io/blog/second-brain/">Ver más</a>
+
+            <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a>
     design:
       columns: 3
 
