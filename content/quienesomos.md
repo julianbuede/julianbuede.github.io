@@ -1,7 +1,7 @@
 ---
 title: "Quienes somos"
 type: landing
-
+slug: "quienes-somos"
 design:
   spacing: "3rem"   # menos espacio global entre secciones
 
