@@ -11,6 +11,6 @@ main:
     url: /que-hacemos/
     weight: 30
 
-  - name: Súmate
-    url: /cta/
+  - name: Blog
+    url: https://www.metadocencia.org/post/
     weight: 40
