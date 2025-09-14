@@ -1,0 +1,18 @@
+/* assets/css/custom.css */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+/* Base */
+html, body {
+  font-family: "Open Sans", ui-sans-serif, system-ui, -apple-system,
+               "Segoe UI", Roboto, Helvetica, Arial,
+               "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* Asegurar Open Sans en contenido tipográfico y UI (sin tocar code/monospace) */
+.prose :where(p, li, blockquote, figcaption, strong, em, a),
+h1, h2, h3, h4, h5, h6,
+nav, .btn, .card, header, footer {
+  font-family: "Open Sans", ui-sans-serif, system-ui, -apple-system,
+               "Segoe UI", Roboto, Helvetica, Arial,
+               "Apple Color Emoji", "Segoe UI Emoji";
+}
