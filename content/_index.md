@@ -38,7 +38,7 @@ sections:
           image: "quienesomos.jpg"
           button:
             text: "Conócenos"
-            url: "https://julianbuede.github.io/quienesomos/"
+            url: "https://julianbuede.github.io/quienes-somos/"
         - title: "Qué hacemos"
           text: "Trabajamos para que la producción, la comunicación y la aplicación de saberes científicos y técnicos sean globalmente equitativos."
           feature_icon: check
