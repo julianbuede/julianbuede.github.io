@@ -1,134 +1,81 @@
 ---
-title: "Quienes somos"
-type: landing
+title: "Diseño colaborativo de la Gobernanza"
+summary: "Cómo encarar, diseñar e implementar modelos de gobernanza transparentes, funcionales y contextualizados para comunidades de práctica."
+date: 2025-09-14
+slug: "diseno-colaborativo-gobernanza"
 
-design:
-  spacing: "3rem"   # menos espacio global entre secciones
+# Imagen destacada (opcional)
+# Colocá un archivo featured.jpg/png en esta carpeta y ajustá la leyenda si querés.
+image:
+  caption: "Crédito: MetaDocencia"
 
-sections:
-  - block: hero
-    content:
-      title: "Quiénes somos"
-      text: "MetaDocencia es una organización sin fines de lucro fundada en 2020. Nuestra comunidad construye capacidades científicas locales para transformar la ciencia global. Hacemos crecer la ciencia en red, desde América Latina hacia el mundo."
-      primary_action:
-        text: "Nuestra Gobernanza"
-        url: "https://www.metadocencia.org/suscripcion/"
-    design:
-      spacing:
-        padding: [0, 0, 0, 0]
-        margin: [0, 0, 0, 0]
-      background:
-        image:
-          filename: "quienessomos.jpg"
-          filters:
-            brightness: 0.3
-        text_color_light: true
+authors:
+  - admin
 
-  - block: cta-image-paragraph
-    id: solutions
-    content:
-      items:
-        - title: "Vamos por 5 años más"
-          text: "Durante nuestros primeros 5 años tejimos lazos entre más de 2,000 profesionales de ciencia y técnica. Lo hicimos trabajando en equipo, de manera colectiva y colaborando con más de 40 comunidades. Gracias por estos primeros 5 años de aprendizaje, colaboración y crecimiento. ¡Vamos por 5 años más!"
-          image: "quienessomos.jpg"
-          button:
-            text: "Conócenos"
-            url: "https://hugoblox.com/templates/"
-    design:
-      css_class: "bg-gray-100 dark:bg-gray-900"
-
-  - block: stats
-    content:
-      items:
-        - statistic: "+1,000"
-          description: |
-            personas en Slack
-        - statistic: "+40"
-          description: |
-            socios y patrocinadores
-        - statistic: "88"
-          description: |
-            personas contribuyen a nuestro trabajo
-        - statistic: "+6000"
-          description: |
-            personas conectadas en redes sociales
-        - statistic: "+2600"
-          description: |
-            personas suscriptas a nuestro boletín
-    design:
-      css_class: "bg-gray-100 dark:bg-gray-900"
-      spacing:
-        padding: ["4rem", 0, "4rem", 0]
-
-  # --- AUSPCIANTES (desplegable, compacto) ---
-  - block: people
-    id: auspiciantes
-    content:
-      title: "Auspiciantes"
-      text: "Organizaciones que apoyan y hacen posible nuestro trabajo."
-      user_groups: ["Auspiciantes"]
-      start_open: false
-    design:
-      columns: 4
-      compact: true
-
-  # --- COMUNIDADES AMIGAS (desplegable, compacto) ---
-  - block: people
-    id: comunidades-amigas
-    content:
-      title: "Comunidades Amigas"
-      text: "Redes y comunidades con las que colaboramos."
-      user_groups: ["Comunidades Amigas"]
-      start_open: false
-    design:
-      columns: 4
-      compact: true
-
-  # --- COLABORAN (desplegable, compacto) ---
-  - block: people
-    id: colaboran
-    content:
-      title: "Colaboran"
-      text: "Profesionales y especialistas que colaboran en proyectos y cursos."
-      user_groups: ["Colaboradores Externos"]  # usa este grupo si ya lo venías usando
-      start_open: false
-    design:
-      columns: 4
-      compact: true
-
-  # --- CONSEJO ASESOR (desplegable, compacto) ---
-  - block: people
-    id: consejo-asesor
-    content:
-      title: "Consejo Asesor"
-      text: "Personas que orientan estratégicamente nuestro trabajo."
-      user_groups: ["Consejo Asesor"]
-      start_open: false
-    design:
-      columns: 4
-      compact: true
-
-  # --- EQUIPO (desplegable, compacto) ---
-  - block: people
-    id: equipo
-    content:
-      title: "Equipo"
-      text: "Conoce al equipo que impulsa el día a día de MetaDocencia."
-      user_groups: ["Equipo"]
-      start_open: false
-    design:
-      columns: 4
-      compact: true
-
-  - block: cta-card
-    content:
-      title: "Apoya a la ciencia latinoamericana"
-      text: "Aquí te contamos cómo"
-      button:
-        text: "Súmate"
-        url: "https://hugoblox.com/templates/"
-    design:
-      card:
-        css_class: "bg-primary-700"
-        css_style: ""
+tags:
+  - Gobernanza
+  - Comunidades
+  - MetaDocencia
+  - Consultoría
 ---
+
+{{< toc mobile_only=true is_open=true >}}
+
+## El problema
+
+En el ecosistema de las comunidades de práctica, la gobernanza cumple un rol esencial: establece un marco regulatorio que orienta la toma de decisiones estratégicas y aporta claridad y transparencia en los procesos.  
+Muchas comunidades surgen de manera orgánica, impulsadas por intereses compartidos y vínculos informales. Esto puede llevar a que su gobernanza sea impracticable o no esté definida, causando ambigüedades que afecten la sostenibilidad y eficacia de la comunidad y el bienestar de sus integrantes.
+
+## Cómo encararlo
+
+La Gobernanza debe atender las particularidades de cada comunidad. Debe ser tan robusta como sea necesario y, al mismo tiempo, lo suficientemente flexible como para adaptarse a la naturaleza de la colaboración entre personas y organizaciones con prioridades y contextos dinámicos.
+
+> “Cualquier grupo de personas que se reúna durante un período de tiempo cualquiera para cualquier propósito inevitablemente se estructurará a sí mismo de alguna manera. (...) Para que todas las personas del grupo tengan la oportunidad de involucrarse y participar en sus actividades, la estructura debe ser explícita, no implícita. Las reglas de toma de decisiones deben estar abiertas y disponibles. Esto solo puede suceder si están formalizadas.”  
+> — Jo Freeman, *La Tiranía de la Falta de Estructuras* (1971)
+
+## El modelo de trabajo
+
+MetaDocencia confía en que trabajar acorde a los valores de comunidad, autonomía y versatilidad apoya su misión de construir capacidades científicas y técnicas en forma responsable y con mirada local.
+
+Por eso, MetaDocencia pone a disposición su experiencia para trabajar en conjunto con la comunidad que busque diseñar e implementar una gobernanza transparente, funcional y que refleje sus prioridades y compromisos.
+
+En el formato de consultoría directa o con financiación conjunta externa, MetaDocencia será la guía para:
+
+- Aprender sobre modelos de gobernanza  
+- Generar un diálogo comunitario para la búsqueda de consensos  
+- Definir valores, misión y visión  
+- Personalizar las pautas de convivencia en los espacios de intercambio  
+- Organizar las pautas de trabajo del equipo y del Consejo Asesor  
+- Explorar modelos para la toma de decisiones y cómo instrumentarla  
+- Diseñar y redactar la gobernanza incluyendo los aprendizajes comunitarios
+
+## Los antecedentes
+
+MetaDocencia completó en 2022 un proceso de aprendizaje y diseño colaborativo de su gobernanza. Se construyó un modelo transparente, centrado en su contexto cultural y regional, para la toma de decisiones estratégicas y el desarrollo de sus actividades.
+
+El proceso incluyó **32 actividades internas** en las que **10 personas** del equipo trabajaron activamente de forma sincrónica durante **más de 55 horas** a lo largo de **4 meses**. Fue acompañado de **8 encuentros abiertos** a la comunidad, en los que **7 referentes** y especialistas de organizaciones de distintos lugares del mundo compartieron sus experiencias.
+
+Todo este proceso culminó en la definición de una nueva forma de trabajo. La implementación de la nueva Gobernanza de MetaDocencia comenzó en **diciembre de 2022** con la redefinición de los equipos de trabajo y la conformación de un **Consejo Asesor (CA)** renovado. Anualmente, desde **2024**, se repiensa, enriquece y actualiza formalmente la documentación de Gobernanza, consolidando así un modelo probado de mejora continua.
+
+MetaDocencia está formada por profesionales con experiencia en disciplinas y ámbitos diversos. Como parte de sus servicios de consultoría (en español e inglés), MetaDocencia apoyó el fortalecimiento de la gobernanza comunitaria de **Latin America Bioimaging (LABI)**.
+
+## Testimonios
+
+> *\<feedback de nuestro proceso de Gobernanza\>*
+
+> *\<feedback de LABI\>*
+
+## Lee más
+
+- **Blogpost:** *Trabajo intercomunidades: la experiencia de apoyo al fortalecimiento de la gobernanza comunitaria de LABI*  
+- **Gobernanza de MetaDocencia:** versión 2.0, versión 1.0 (también en inglés)  
+- **Video:** *El diseño colaborativo de la Gobernanza de MetaDocencia*
+
+## Para seguir leyendo
+
+- *The Tyranny of Structurelessness*, por Jo Freeman — *La tiranía de la falta de estructura* (traducción del Partido Pirata de Argentina)  
+- Win Grant, *Governing The Commons: An Appreciation* (sobre el trabajo de Elinor Ostrom)  
+- **CommunityRule**, “a governance toolkit for great communities”: <https://communityrule.info/>  
+- **Liberating Structures**, formas sencillas de relacionarse que mejoran la construcción colectiva: <https://www.liberatingstructures.com/>  
+- *Elaboración de una guía interactiva para la producción de gobernanzas en comunidades de práctica. — El caso de MetaDocencia.*  
+- Estudiante: **Romina Pendino**
