@@ -25,15 +25,15 @@ sections:
       text: ""
       items:
         - name: "Impulsamos Infraestructura"
-          text: >
+          description: |
             Promovemos infraestructura científica y tecnológica que soporta la producción, gestión y reutilización de conocimiento.  
             <a href="/que-hacemos/infraestructura/" class="btn btn-primary mt-3 inline-block">Ver más</a>
         - name: "Formamos capacidades"
-          text: >
+          description: |
             Creamos programas de aprendizaje colaborativo y basados en evidencia, que convierten conocimientos en acción, impulsando una investigación más abierta, eficiente y sostenible.  
             <a href="/que-hacemos/formacion/" class="btn btn-primary mt-3 inline-block">Ver más</a>
         - name: "Construimos comunidad"
-          text: >
+          description: |
             Fomentamos redes de apoyo y colaboración que trascienden disciplinas, instituciones y países, para crecer y potenciar la ciencia desde América Latina hacia el mundo.  
             <a href="/que-hacemos/comunidad/" class="btn btn-primary mt-3 inline-block">Ver más</a>
     design:
