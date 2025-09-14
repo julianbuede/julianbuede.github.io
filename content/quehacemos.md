@@ -29,32 +29,33 @@ sections:
           icon_pack: "hero"
           description: |
             Promovemos infraestructura científica y tecnológica que soporta la producción, gestión y reutilización de conocimiento.  
-            <a href="/que-hacemos/infraestructura/" class="btn btn-primary mt-3 inline-block">Ver más</a>
+            <a href="#infra" class="btn btn-primary mt-3 inline-block">Ver más</a>
         - name: "Formamos capacidades"
           icon: "academic-cap"
           icon_pack: "hero"
           description: |
             Creamos programas de aprendizaje colaborativo y basados en evidencia, que convierten conocimientos en acción, impulsando una investigación más abierta, eficiente y sostenible.  
-            <a href="/que-hacemos/formacion/" class="btn btn-primary mt-3 inline-block">Ver más</a>
+            <a href="#formacion" class="btn btn-primary mt-3 inline-block">Ver más</a>
         - name: "Construimos comunidad"
           icon: "user-group"
           icon_pack: "hero"
           description: |
             Fomentamos redes de apoyo y colaboración que trascienden disciplinas, instituciones y países, para crecer y potenciar la ciencia desde América Latina hacia el mundo.  
-            <a href="/que-hacemos/comunidad/" class="btn btn-primary mt-3 inline-block">Ver más</a>
+            <a href="#comunidad" class="btn btn-primary mt-3 inline-block">Ver más</a>
     design:
       columns: 3
       css_class: "text-gray-900 dark:text-gray-100"
 
-  # Heading centrado (legible)
+  # Heading centrado (forzado a negro/gris sobre blanco)
   - block: cta-card
     id: heading-proyectos
     content:
-      title: "Conocé nuestros proyectos"
-      text: ""
+      title: ""   # dejamos vacío y usamos el texto con HTML para forzar color
+      text: '<h2 class="text-center text-3xl font-bold text-gray-900 dark:text-gray-100">Conocé nuestros proyectos</h2>'
     design:
       card:
-        css_class: "bg-transparent shadow-none text-center text-gray-900 dark:text-gray-100"
+        css_class: "bg-transparent shadow-none"
+        css_style: ""   # el color se fuerza en el h2
 
   # ======================
   #  SECCIÓN: INFRAESTRUCTURA (AZUL)
@@ -77,11 +78,17 @@ sections:
       text: ""
       items:
         - name: "Catalyst"
-          description: "Mejoramos la accesibilidad y la utilidad de la infraestructura en la nube para comunidades globales."
+          description: |
+            Mejoramos la accesibilidad y la utilidad de la infraestructura en la nube para comunidades globales.
+            <a class="btn btn-outline mt-2 inline-block" href="https://julianbuede.github.io/blog/second-brain/">Ver más</a>
         - name: "Contextualización"
-          description: "Desarrollamos recursos de calidad en español a partir de material originalmente publicado en otro idioma."
+          description: |
+            Desarrollamos recursos de calidad en español a partir de material originalmente publicado en otro idioma.
+            <a class="btn btn-outline mt-2 inline-block" href="https://julianbuede.github.io/blog/second-brain/">Ver más</a>
         - name: "Ciencia Abierta y Datos Abiertos en la comunidad latinoamericana de bioimagen"
-          description: "Proyecto a incubar"
+          description: |
+            Proyecto a incubar
+            <a class="btn btn-outline mt-2 inline-block" href="https://julianbuede.github.io/blog/second-brain/">Ver más</a>
     design:
       columns: 3
 
@@ -131,11 +138,17 @@ sections:
       text: ""
       items:
         - name: "Formación en Ciencia Abierta"
-          description: "Talleres y recursos para abrir, compartir y reutilizar conocimiento."
+          description: |
+            Talleres y recursos para abrir, compartir y reutilizar conocimiento.
+            <a class="btn btn-outline mt-2 inline-block" href="https://julianbuede.github.io/blog/second-brain/">Ver más</a>
         - name: "Financiamiento"
-          description: "Herramientas para identificar, postular y gestionar oportunidades."
+          description: |
+            Herramientas para identificar, postular y gestionar oportunidades.
+            <a class="btn btn-outline mt-2 inline-block" href="https://julianbuede.github.io/blog/second-brain/">Ver más</a>
         - name: "Formación para Formar"
-          description: "Programa para multiplicar capacidades de enseñanza y mentoría."
+          description: |
+            Programa para multiplicar capacidades de enseñanza y mentoría.
+            <a class="btn btn-outline mt-2 inline-block" href="https://julianbuede.github.io/blog/second-brain/">Ver más</a>
     design:
       columns: 3
 
@@ -152,7 +165,7 @@ sections:
     design:
       css_class: "bg-gray-50 dark:bg-gray-900"
 
-  # TESTIMONIOS (Formación) — ACTUALIZADOS
+  # TESTIMONIOS (Formación)
   - block: testimonials
     content:
       items:
@@ -187,11 +200,17 @@ sections:
       text: ""
       items:
         - name: "Gobernanza"
-          description: "Brindamos herramientas y asesoramiento en gobernanza para que personas y organizaciones logren mayor impacto y eficiencia."
+          description: |
+            Brindamos herramientas y asesoramiento en gobernanza para que personas y organizaciones logren mayor impacto y eficiencia.
+            <a class="btn btn-outline mt-2 inline-block" href="https://julianbuede.github.io/blog/second-brain/">Ver más</a>
         - name: "Conversatorios"
-          description: "Organizamos conversatorios y espacios de diálogo para explorar, aprender y compartir conocimiento. Fomentamos la participación y el intercambio de experiencias para fortalecer redes de colaboración y el conocimiento compartido."
+          description: |
+            Organizamos conversatorios y espacios de diálogo para explorar, aprender y compartir conocimiento. Fomentamos la participación y el intercambio de experiencias para fortalecer redes de colaboración y el conocimiento compartido.
+            <a class="btn btn-outline mt-2 inline-block" href="https://julianbuede.github.io/blog/second-brain/">Ver más</a>
         - name: "Mapeo de Ciencia Abierta en Latinoamérica"
-          description: "Proyecto a incubar"
+          description: |
+            Proyecto a incubar
+            <a class="btn btn-outline mt-2 inline-block" href="https://julianbuede.github.io/blog/second-brain/">Ver más</a>
     design:
       columns: 3
 
@@ -208,7 +227,7 @@ sections:
     design:
       css_class: "bg-gray-50 dark:bg-gray-900"
 
-  # TESTIMONIOS (Comunidad) — ACTUALIZADOS
+  # TESTIMONIOS (Comunidad)
   - block: testimonials
     content:
       items:
