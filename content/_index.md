@@ -50,7 +50,7 @@ sections:
           image: "organigramaapaisado.png"
           button:
             text: "Conoce nuestros proyectos"
-            url: "https://julianbuede.github.io/quehacemos"
+            url: "https://julianbuede.github.io/que-hacemos"
     design:
       css_class: "bg-gray-100 dark:bg-gray-900"
 
