@@ -50,12 +50,19 @@ sections:
   - block: cta-card
     id: heading-proyectos
     content:
-      title: ""
-      text: '<h1 class="text-center text-3xl font-bold text-gray-900 dark:text-gray-100">Conocé nuestros proyectos</h2>'
+      title: ""   # dejamos vacío y estilizamos con HTML para controlar color/tamaño
+      text: |
+        <h2 class="text-center text-4xl md:text-5xl font-extrabold tracking-tight
+                   text-gray-900 dark:text-gray-50 underline decoration-[#00506F]
+                   decoration-4 underline-offset-8 my-0">
+          Conocé nuestros proyectos
+        </h2>
     design:
+      spacing:
+        padding: ["0.5rem", 0, "0.5rem", 0]   # ↓ menos espacio arriba/abajo
       card:
-        css_class: "bg-transparent shadow-none"
-        css_style: ""
+        css_class: "bg-transparent shadow-none p-0 text-center"
+        css_style: "margin:0;"
 
   # ======================
   #  PROYECTOS DESTACADOS (tarjetas con etiqueta de pilar + botón)
