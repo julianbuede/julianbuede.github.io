@@ -25,7 +25,7 @@ sections:
       text: ""
       items:
         - name: "Impulsamos Infraestructura"
-          icon: "server"
+          icon: "cloud"   # ← icono de nube (Heroicons)
           icon_pack: "hero"
           description: |
             Promovemos infraestructura científica y tecnológica que soporta la producción, gestión y reutilización de conocimiento.  
@@ -46,7 +46,7 @@ sections:
       columns: 3
       css_class: "text-gray-900 dark:text-gray-100"
 
-  # Heading centrado (mínimo espaciado y más protagonismo)
+  # Heading centrado (mínimo espaciado y protagonismo)
   - block: cta-card
     id: heading-proyectos
     content:
@@ -59,7 +59,7 @@ sections:
         </h2>
     design:
       spacing:
-        padding: ["0rem", 0, "0rem", 0]   # casi sin aire arriba/abajo
+        padding: ["0rem", 0, "0rem", 0]
       card:
         css_class: "bg-transparent shadow-none p-0 text-center"
         css_style: "margin:0;"
@@ -73,25 +73,28 @@ sections:
       items:
         - name: "Formación en Ciencia Abierta"
           description: |
-            <a href="#formacion" class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-100 no-underline">Formación</a>
-
             Talleres y recursos para abrir, compartir y reutilizar conocimiento.
 
-            <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a>
+            <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a><br>
+            <a href="#formacion"
+               class="mt-2 inline-block text-xs font-semibold px-3 py-1 rounded-full no-underline"
+               style="background-color:#C83737;color:#FFFFFF;">Formación</a>
         - name: "Contextualización"
           description: |
-            <a href="#infra" class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-100 no-underline">Infraestructura</a>
-
             Desarrollamos recursos de calidad en español a partir de material originalmente publicado en otro idioma.
 
-            <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a>
+            <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a><br>
+            <a href="#infra"
+               class="mt-2 inline-block text-xs font-semibold px-3 py-1 rounded-full no-underline"
+               style="background-color:#00506F;color:#FFFFFF;">Infraestructura</a>
         - name: "Gobernanza"
           description: |
-            <a href="#comunidad" class="inline-block text-xs font-semibold px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-100 no-underline">Comunidad</a>
-
             Brindamos herramientas y asesoramiento en gobernanza para que personas y organizaciones logren mayor impacto y eficiencia.
 
-            <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a>
+            <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a><br>
+            <a href="#comunidad"
+               class="mt-2 inline-block text-xs font-semibold px-3 py-1 rounded-full no-underline"
+               style="background-color:#F77B20;color:#FFFFFF;">Comunidad</a>
     design:
       columns: 3
       css_class: "text-gray-900 dark:text-gray-100"
