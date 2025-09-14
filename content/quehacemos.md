@@ -154,10 +154,10 @@ sections:
       items:
         - name: "Testimonio 1"
           role: "Organización/Proyecto"
-          text: "La infraestructura nos permitió escalar y compartir datos de forma abierta."
+          text: "Testimonio 1"
         - name: "Testimonio 2"
-          role: "Investigadora/Equipo"
-          text: "Estándares y procesos nos ahorraron tiempo y mejoraron la calidad."
+          role: "Organización/Proyecto"
+          text: "Testimonio 2."
     design:
       spacing:
         padding: ["2rem", 0, "2rem", 0]
