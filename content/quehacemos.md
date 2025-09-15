@@ -55,7 +55,7 @@ sections:
         <h2 class="text-center text-4xl md:text-5xl font-extrabold tracking-tight
                    text-gray-900 dark:text-gray-50 underline decoration-[#00506F]
                    decoration-4 underline-offset-8 my-0">
-          Conocé nuestros proyectos
+          Conoce nuestros proyectos
         </h2>
     design:
       spacing:
