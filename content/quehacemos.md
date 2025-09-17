@@ -207,20 +207,29 @@ sections:
 
             <a class="mt-2 inline-block font-semibold underline underline-offset-4"
                href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a>
+
         - name: "Financiamiento"
           description: |
-            Formación que impulsa la financiación internacional para América Latina.
+            Proyecto que impulsa la financiación internacional para América Latina.
 
             <a class="mt-2 inline-block font-semibold underline underline-offset-4"
                href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a>
+
         - name: "Formación para Formar"
           description: |
             Atendemos la demanda de habilidades pedagógicas prácticas en comunidades hispanohablantes dedicadas a la ciencia y la tecnología.
 
             <a class="mt-2 inline-block font-semibold underline underline-offset-4"
                href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a>
+
+        - name: "Cursos a medida"
+          description: |
+            Diseñamos cursos y formaciones a medida sobre habilidades blandas y técnicas.
+
+            <a class="mt-2 inline-block font-semibold underline underline-offset-4"
+               href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a>
     design:
-      columns: 3
+      columns: 4
 
   - block: stats
     content:
