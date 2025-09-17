@@ -1,8 +1,7 @@
-{{/* Bloque PEOPLE con filtrado por content.user_groups
-     - Lee .block.content.user_groups (o .block.content.groups como alias)
-     - Muestra SOLO autores cuya .Params.user_groups INTERSECTA con esos grupos
-     - Respeta design.columns, design.compact y design.css_class
-     - Mantiene marcado minimal para que funcione tu CSS "people-sm"
+{{/* Bloque PEOPLE con filtrado estricto por user_groups
+     - Compatible con autores en content/authors/<slug>/_index.md
+     - Lee grupos desde block.content.user_groups o block.user_groups
+     - Respeta design.columns, design.compact, design.css_class
 */}}
 
 {{ $b := .block }}
@@ -13,8 +12,18 @@
 {{ $title := or $content.title $b.title | default "Personas" }}
 {{ $text  := $content.text | default "" }}
 
-{{/* Grupos pedidos en el bloque */}}
-{{ $groups := $content.user_groups | default (index $content "groups") | default (slice) }}
+{{/* Grupos pedidos en el bloque (acepta user_groups o groups, en content o en block) */}}
+{{ $groups := slice }}
+{{ with $content.user_groups }}{{ $groups = . }}{{ end }}
+{{ if eq (len $groups) 0 }}
+  {{ with (index $content "groups") }}{{ $groups = . }}{{ end }}
+{{ end }}
+{{ if eq (len $groups) 0 }}
+  {{ with $b.user_groups }}{{ $groups = . }}{{ end }}
+{{ end }}
+{{ if eq (len $groups) 0 }}
+  {{ with (index $b "groups") }}{{ $groups = . }}{{ end }}
+{{ end }}
 
 {{/* Columnas */}}
 {{ $cols := $design.columns | default 4 }}
@@ -29,10 +38,11 @@
 {{/* Compact spacing */}}
 {{ $pad := cond ($design.compact) "py-4" "py-8" }}
 
-{{/* Todas las páginas de autores */}}
-{{ $all := where site.RegularPages "Section" "authors" }}
+{{/* Todas las páginas bajo la sección authors (incluye _index.md) */}}
+{{ $all := where site.Pages "Section" "authors" }}
 
-{{/* Filtrado por grupos (intersección no vacía) */}}
+{{/* Filtrado por grupos (intersección no vacía). 
+      Si no se pasan grupos, mostramos todos (comportamiento por defecto). */}}
 {{ $people := slice }}
 {{ if gt (len $groups) 0 }}
   {{ range $all }}
@@ -42,7 +52,6 @@
     {{ end }}
   {{ end }}
 {{ else }}
-  {{/* Si no se pasaron grupos, mostramos todos (comportamiento por defecto) */}}
   {{ $people = $all }}
 {{ end }}
 
@@ -79,9 +88,15 @@
             {{ end }}
           </div>
         {{ else }}
-          <div class="text-gray-500 dark:text-gray-400">
-            No se encontraron personas en los grupos: {{ delimit $groups ", " " y " }}.
-          </div>
+          {{ if gt (len $groups) 0 }}
+            <div class="text-gray-500 dark:text-gray-400">
+              No se encontraron personas en los grupos: {{ delimit $groups ", " " y " }}.
+            </div>
+          {{ else }}
+            <div class="text-gray-500 dark:text-gray-400">
+              No se encontraron perfiles de autores. Verifica <code>content/authors/&lt;slug&gt;/_index.md</code>.
+            </div>
+          {{ end }}
         {{ end }}
       </div>
     </details>
