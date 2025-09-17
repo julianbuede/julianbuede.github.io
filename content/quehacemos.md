@@ -12,10 +12,10 @@ sections:
       title: '<span class="block text-3xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow">Potenciamos el ecosistema científico latinoamericano con infraestructura, formación y comunidad.</span>'
     design:
       spacing:
-        padding: ["0.75rem", 0, "0.75rem", 0]  # aún más bajo
+        padding: ["0.75rem", 0, "0.75rem", 0]
         margin: [0, 0, 0, 0]
-      css_class: ""                            # sin clases
-      css_style: "min-height: 20vh;"           # altura forzada, no se purga
+      css_class: ""
+      css_style: "min-height: 20vh;"
       background:
         image:
           filename: "1naranjaazul.png"
@@ -34,7 +34,7 @@ sections:
       text: ""
       items:
         - name: "Impulsamos Infraestructura"
-          icon: "cloud"         # Heroicons
+          icon: "cloud"
           icon_pack: "hero"
           icon_color: "#00506F"
           description: |
@@ -72,25 +72,36 @@ sections:
             Bajada.
 
             <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a><br>
+
             <a href="#formacion"
-               class="mt-2 inline-block text-xs font-semibold px-3 py-1 rounded-full no-underline"
-               style="background-color:#C83737;color:#FFFFFF;">Formación</a>
+               class="mt-3 inline-block no-underline font-semibold"
+               style="background-color:#C83737;color:#FFFFFF;padding:0.5rem 0.9rem;border-radius:0.5rem;display:inline-block;">
+               Conoce más proyectos de formación
+            </a>
+
         - name: "Contextualización"
           description: |
             Desarrollamos recursos de calidad en español a partir de material originalmente publicado en otro idioma.
 
             <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a><br>
+
             <a href="#infra"
-               class="mt-2 inline-block text-xs font-semibold px-3 py-1 rounded-full no-underline"
-               style="background-color:#00506F;color:#FFFFFF;">Infraestructura</a>
+               class="mt-3 inline-block no-underline font-semibold"
+               style="background-color:#00506F;color:#FFFFFF;padding:0.5rem 0.9rem;border-radius:0.5rem;display:inline-block;">
+               Conoce más proyectos de infraestructura
+            </a>
+
         - name: "Gobernanza"
           description: |
             Brindamos herramientas y asesoramiento en gobernanza para que personas y organizaciones logren mayor impacto y eficiencia.
 
             <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a><br>
+
             <a href="#comunidad"
-               class="mt-2 inline-block text-xs font-semibold px-3 py-1 rounded-full no-underline"
-               style="background-color:#F77B20;color:#FFFFFF;">Comunidad</a>
+               class="mt-3 inline-block no-underline font-semibold"
+               style="background-color:#F77B20;color:#FFFFFF;padding:0.5rem 0.9rem;border-radius:0.5rem;display:inline-block;">
+               Conoce más proyectos de comunidad
+            </a>
     design:
       columns: 3
       css_class: "text-gray-900 dark:text-gray-100"
