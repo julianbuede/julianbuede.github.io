@@ -19,21 +19,21 @@ sections:
         color: ""
       text_color_light: false
 
-  # Listado tipo tarjetas (2 columnas), con búsqueda y tags
+  # Listado de posts en tarjetas
   - block: collection
     id: blog-list
     content:
       search:
         enabled: true
         placeholder: "Buscar notas…"
-      # Filtra por secciones donde tengas las notas (ajusta según tu repo)
+      # Ajusta según dónde tengas los posts
       filters:
-        folders: ["post", "blog"]   # si tus posts están en content/post/ o content/blog/
-      count: 24                      # cuántas mostrar
+        folders: ["post", "blog"]
+      count: 24
       sort_by: "date"
       sort_ascending: false
-      page_size: 12                  # paginación
-      view: "card"                   # muestra tarjetas
+      page_size: 12
+      view: "card"
       show_image: true
       show_date: true
       show_read_time: true
@@ -44,6 +44,6 @@ sections:
       empty_text: "Pronto publicaremos más notas."
     design:
       columns: 2
-      css_class: "md:columns-2"
       card:
         css_class: "hb-card-article"
+---
