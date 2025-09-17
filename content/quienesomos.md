@@ -22,16 +22,16 @@ sections:
           filename: "quienessomos.jpg"
           filters:
             brightness: 0.3
-        text_color_light: true
+      text_color_light: true
 
   - block: cta-card
-  content:
-    title: "Vamos por 5 años más"
-    text: |
-      {{< youtube Mcq0-4cyGKQ >}}
-  design:
-    card:
-      css_class: "bg-white dark:bg-gray-900"
+    content:
+      title: "Vamos por 5 años más"
+      text: |
+        {{< youtube Mcq0-4cyGKQ >}}
+    design:
+      card:
+        css_class: "bg-white dark:bg-gray-900"
 
   - block: cta-image-paragraph
     id: solutions
