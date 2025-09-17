@@ -89,8 +89,9 @@ sections:
       user_groups: ["Auspiciantes"]
       start_open: false
     design:
-      columns: 4
+      columns: 5
       compact: true
+      css_class: "people-sm"
 
   # --- COMUNIDADES AMIGAS (desplegable, compacto) ---
   - block: people
@@ -101,8 +102,9 @@ sections:
       user_groups: ["Comunidades Amigas"]
       start_open: false
     design:
-      columns: 4
+      columns: 5
       compact: true
+      css_class: "people-sm"
 
   # --- COLABORAN (desplegable, compacto) ---
   - block: people
@@ -113,8 +115,9 @@ sections:
       user_groups: ["Colaboradores Externos"]  # usa este grupo si ya lo venías usando
       start_open: false
     design:
-      columns: 4
+      columns: 5
       compact: true
+      css_class: "people-sm"
 
   # --- CONSEJO ASESOR (desplegable, compacto) ---
   - block: people
@@ -125,8 +128,9 @@ sections:
       user_groups: ["Consejo Asesor"]
       start_open: false
     design:
-      columns: 4
+      columns: 5
       compact: true
+      css_class: "people-sm"
 
   # --- EQUIPO (desplegable, compacto) ---
   - block: people
@@ -137,8 +141,9 @@ sections:
       user_groups: ["Equipo"]
       start_open: false
     design:
-      columns: 4
+      columns: 5
       compact: true
+      css_class: "people-sm"
 
   - block: cta-card
     content:
