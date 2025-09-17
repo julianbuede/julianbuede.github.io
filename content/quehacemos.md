@@ -26,7 +26,7 @@ sections:
           parallax: false
         text_color_light: true
 
-  # ---------- Tres columnas con iconos + CTA "Ver más" ----------
+  # ---------- Tres columnas con colores por pilar + CTA "Ver más" ----------
   - block: features
     id: pilares
     content:
@@ -36,26 +36,41 @@ sections:
         - name: "Impulsamos Infraestructura"
           icon: "cloud"
           icon_pack: "hero"
-          icon_color: "#00506F"
           description: |
-            Promovemos infraestructura científica y tecnológica que soporta la producción, gestión y reutilización de conocimiento.  
-            <a href="#infra" class="btn btn-primary mt-3 inline-block">Ver más</a>
+            <div style="height:4px;background:#00506F;border-radius:6px;margin:0 0 0.75rem 0;"></div>
+            Promovemos infraestructura científica y tecnológica que soporta la producción, gestión y reutilización de conocimiento.
+            <br>
+            <a href="#infra"
+               class="mt-3 inline-block no-underline font-semibold"
+               style="background:#00506F;color:#FFFFFF;padding:0.5rem 0.9rem;border-radius:0.5rem;">
+               Ver más
+            </a>
 
         - name: "Formamos capacidades"
           icon: "academic-cap"
           icon_pack: "hero"
-          icon_color: "#C83737"
           description: |
-            Creamos programas de aprendizaje colaborativo y basados en evidencia, que convierten conocimientos en acción, impulsando una investigación más abierta, eficiente y sostenible.  
-            <a href="#formacion" class="btn btn-primary mt-3 inline-block">Ver más</a>
+            <div style="height:4px;background:#C83737;border-radius:6px;margin:0 0 0.75rem 0;"></div>
+            Creamos programas de aprendizaje colaborativo y basados en evidencia, que convierten conocimientos en acción, impulsando una investigación más abierta, eficiente y sostenible.
+            <br>
+            <a href="#formacion"
+               class="mt-3 inline-block no-underline font-semibold"
+               style="background:#C83737;color:#FFFFFF;padding:0.5rem 0.9rem;border-radius:0.5rem;">
+               Ver más
+            </a>
 
         - name: "Construimos comunidad"
           icon: "user-group"
           icon_pack: "hero"
-          icon_color: "#F77B20"
           description: |
-            Fomentamos redes de apoyo y colaboración que trascienden disciplinas, instituciones y países, para crecer y potenciar la ciencia desde América Latina hacia el mundo.  
-            <a href="#comunidad" class="btn btn-primary mt-3 inline-block">Ver más</a>
+            <div style="height:4px;background:#F77B20;border-radius:6px;margin:0 0 0.75rem 0;"></div>
+            Fomentamos redes de apoyo y colaboración que trascienden disciplinas, instituciones y países, para crecer y potenciar la ciencia desde América Latina hacia el mundo.
+            <br>
+            <a href="#comunidad"
+               class="mt-3 inline-block no-underline font-semibold"
+               style="background:#F77B20;color:#FFFFFF;padding:0.5rem 0.9rem;border-radius:0.5rem;">
+               Ver más
+            </a>
     design:
       columns: 3
       css_class: "text-gray-900 dark:text-gray-100"
