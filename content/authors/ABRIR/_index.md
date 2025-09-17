@@ -19,8 +19,8 @@ social:
   icon_pack: fab
   link: https://www.youtube.com/@abrir-big-teamandopenscien4045/playlists
 superuser: false
-user_groups:
--  Comunidades amigas
+user_groups: ["Comunidades amigas"]
+
 ---
 
 ### Conócela en este video
