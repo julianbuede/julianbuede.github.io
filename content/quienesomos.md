@@ -24,6 +24,7 @@ sections:
             brightness: 0.3
       text_color_light: true
 
+  # --- Video embebido (YouTube) ---
   - block: cta-card
     content:
       title: "Vamos por 5 años más"
