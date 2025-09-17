@@ -163,3 +163,58 @@ section#equipo summary {
     border-bottom-color: #1f2937 !important;
   }
 }
+
+/* ===== Blog cards ===== */
+.hb-card-article {
+  background: #fff;
+  border: 1px solid rgba(17, 24, 39, 0.06);
+  border-radius: 1rem;
+  box-shadow: 0 1px 2px rgba(17,24,39,.04);
+  overflow: hidden;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+.dark .hb-card-article {
+  background: #0b0f19; /* gray-950 aprox */
+  border-color: rgba(255,255,255,0.08);
+}
+.hb-card-article:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(17,24,39,.08);
+}
+
+/* Imagen destacada 16:9 */
+.hb-card-article img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Meta (fecha, lectura) y autores */
+.hb-card-article .meta {
+  color: #6b7280; /* gray-500 */
+  font-size: .85rem;
+}
+.dark .hb-card-article .meta {
+  color: #9ca3af; /* gray-400 */
+}
+
+/* Tags como chips */
+.hb-card-article .tags a,
+.hb-card-article .tags span {
+  display: inline-block;
+  font-size: .75rem;
+  padding: .2rem .5rem;
+  border-radius: 9999px;
+  background: #f3f4f6; /* gray-100 */
+  color: #374151;      /* gray-700 */
+  margin-right: .35rem;
+  margin-top: .35rem;
+  text-decoration: none;
+}
+.dark .hb-card-article .tags a,
+.dark .hb-card-article .tags span {
+  background: rgba(255,255,255,0.08);
+  color: #e5e7eb; /* gray-200 */
+}
