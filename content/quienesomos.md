@@ -22,47 +22,28 @@ sections:
           filename: "quienessomos.jpg"
           filters:
             brightness: 0.3
-      text_color_light: true
+        text_color_light: true
 
-  # --- Video embebido (YouTube) ---
+  # --- Video embebido (YouTube con iframe) ---
   - block: cta-card
     content:
-      title: "Vamos por 5 años más"
+      title: "Conocé MetaDocencia en 2 minutos"
       text: |
-        {{< youtube Mcq0-4cyGKQ >}}
+        <div style="position:relative;padding-top:56.25%;height:0;overflow:hidden;border-radius:14px;">
+          <iframe
+            src="https://www.youtube.com/embed/Mcq0-4cyGKQ"
+            title="Video de MetaDocencia"
+            loading="lazy"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;">
+          </iframe>
+        </div>
     design:
       card:
         css_class: "bg-white dark:bg-gray-900"
 
-  - block: features
-  content:
-    items:
-      - name: "Video"
-        text: |
-          {{< youtube Mcq0-4cyGKQ >}}
-  design:
-    columns: 1
-
-  
-  - block: cta-card
-  content:
-    title: "Conocé MetaDocencia en 2 minutos"
-    text: |
-      <div style="position:relative;padding-top:56.25%;height:0;overflow:hidden;border-radius:14px;">
-        <iframe
-          src="https://youtu.be/Mcq0-4cyGKQ"
-          title="Video de MetaDocencia"
-          loading="lazy"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;">
-        </iframe>
-      </div>
-  design:
-    card:
-      css_class: "bg-white dark:bg-gray-900"
-      
   - block: cta-image-paragraph
     id: solutions
     content:
