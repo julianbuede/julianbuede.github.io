@@ -6,18 +6,27 @@ design:
   spacing: "3rem"
 
 sections:
-  # Intro (imagen + texto)
-  - block: cta-image-paragraph
-    id: solutions
+  # ---------- HERO angosto (imagen de fondo + texto grande) ----------
+  - block: hero
     content:
-      items:
-        - title: "Qué hacemos"
-          text: "Potenciamos el ecosistema científico latinoamericano con infraestructura, formación y comunidad."
-          image: "organigramaapaisado.png"  # asegurate de tenerla en assets/media/
+      title: '<span class="block text-3xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow">Potenciamos el ecosistema científico latinoamericano con infraestructura, formación y comunidad.</span>'
     design:
-      css_class: "bg-gray-100 dark:bg-gray-900"
+      spacing:
+        padding: ["0.75rem", 0, "0.75rem", 0]  # aún más bajo
+        margin: [0, 0, 0, 0]
+      css_class: ""                            # sin clases
+      css_style: "min-height: 20vh;"           # altura forzada, no se purga
+      background:
+        image:
+          filename: "quehacemos-hero.jpg"
+          filters:
+            brightness: 0.45
+          size: cover
+          position: center
+          parallax: false
+        text_color_light: true
 
-  # Tres columnas con iconos + CTA "Ver más" que anclan a cada pilar
+  # ---------- Tres columnas con iconos + CTA "Ver más" ----------
   - block: features
     id: pilares
     content:
@@ -25,20 +34,25 @@ sections:
       text: ""
       items:
         - name: "Impulsamos Infraestructura"
-          icon: "cloud"   # ← icono de nube (Heroicons)
+          icon: "cloud"         # Heroicons
           icon_pack: "hero"
+          icon_color: "#00506F"
           description: |
             Promovemos infraestructura científica y tecnológica que soporta la producción, gestión y reutilización de conocimiento.  
             <a href="#infra" class="btn btn-primary mt-3 inline-block">Ver más</a>
+
         - name: "Formamos capacidades"
           icon: "academic-cap"
           icon_pack: "hero"
+          icon_color: "#C83737"
           description: |
             Creamos programas de aprendizaje colaborativo y basados en evidencia, que convierten conocimientos en acción, impulsando una investigación más abierta, eficiente y sostenible.  
             <a href="#formacion" class="btn btn-primary mt-3 inline-block">Ver más</a>
+
         - name: "Construimos comunidad"
           icon: "user-group"
           icon_pack: "hero"
+          icon_color: "#F77B20"
           description: |
             Fomentamos redes de apoyo y colaboración que trascienden disciplinas, instituciones y países, para crecer y potenciar la ciencia desde América Latina hacia el mundo.  
             <a href="#comunidad" class="btn btn-primary mt-3 inline-block">Ver más</a>
@@ -46,25 +60,7 @@ sections:
       columns: 3
       css_class: "text-gray-900 dark:text-gray-100"
 
-  # Heading centrado (mínimo espaciado y protagonismo)
-  - block: cta-card
-    id: heading-proyectos
-    content:
-      title: ""
-      text: |
-        <h2 class="text-center text-4xl md:text-5xl font-extrabold tracking-tight
-                   text-gray-900 dark:text-gray-50 underline decoration-[#00506F]
-                   decoration-4 underline-offset-8 my-0">
-          Conoce nuestros proyectos
-        </h2>
-    design:
-      spacing:
-        padding: ["0rem", 0, "0rem", 0]
-      card:
-        css_class: "bg-transparent shadow-none p-0 text-center"
-        css_style: "margin:0;"
-
-  # PROYECTOS DESTACADOS (tarjetas con etiqueta de pilar + botón)
+  # ---------- PROYECTOS DESTACADOS ----------
   - block: features
     id: destacados
     content:
@@ -73,7 +69,7 @@ sections:
       items:
         - name: "Formación en Ciencia Abierta"
           description: |
-            Talleres y recursos para abrir, compartir y reutilizar conocimiento.
+            Bajada.
 
             <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a><br>
             <a href="#formacion"
@@ -112,7 +108,6 @@ sections:
         css_class: "shadow-sm"
         css_style: "background-color:#00506F;color:#FFFFFF;"
 
-  # PROYECTOS (Infra)
   - block: features
     id: infra-proyectos
     content:
@@ -137,7 +132,6 @@ sections:
     design:
       columns: 3
 
-  # MÉTRICAS (Infra)
   - block: stats
     content:
       items:
@@ -148,7 +142,6 @@ sections:
     design:
       css_class: "bg-gray-50 dark:bg-gray-900"
 
-  # TESTIMONIOS (Infra)
   - block: testimonials
     content:
       items:
@@ -175,7 +168,6 @@ sections:
         css_class: "shadow-sm"
         css_style: "background-color:#C83737;color:#FFFFFF;"
 
-  # PROYECTOS (Formación)
   - block: features
     id: formacion-proyectos
     content:
@@ -184,23 +176,22 @@ sections:
       items:
         - name: "Formación en Ciencia Abierta"
           description: |
-            Talleres y recursos para abrir, compartir y reutilizar conocimiento.
+            Diseñamos formación en Ciencia Abierta en español, contextualizada a América Latina, para llevar buenas prácticas a la acción.
 
             <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a>
         - name: "Financiamiento"
           description: |
-            Herramientas para identificar, postular y gestionar oportunidades.
+            Formación que impulsa la financiación internacional para América Latina.
 
             <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a>
         - name: "Formación para Formar"
           description: |
-            Programa para multiplicar capacidades de enseñanza y mentoría.
+            Atendemos la demanda de habilidades pedagógicas prácticas en comunidades hispanohablantes dedicadas a la ciencia y la tecnología.
 
             <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a>
     design:
       columns: 3
 
-  # MÉTRICAS (Formación)
   - block: stats
     content:
       items:
@@ -213,7 +204,6 @@ sections:
     design:
       css_class: "bg-gray-50 dark:bg-gray-900"
 
-  # TESTIMONIOS (Formación)
   - block: testimonials
     content:
       items:
@@ -240,7 +230,6 @@ sections:
         css_class: "shadow-sm"
         css_style: "background-color:#F77B20;color:#FFFFFF;"
 
-  # PROYECTOS (Comunidad)
   - block: features
     id: comunidad-proyectos
     content:
@@ -259,13 +248,12 @@ sections:
             <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a>
         - name: "Mapeo de Ciencia Abierta en Latinoamérica"
           description: |
-            Proyecto a incubar
+            Repositorio colaborativo de información sobre Ciencia Abierta en español. Proyecto a incubar.
 
             <a class="mt-2 inline-block font-semibold underline underline-offset-4" href="https://julianbuede.github.io/blog/second-brain/">Ver más →</a>
     design:
       columns: 3
 
-  # MÉTRICAS (Comunidad)
   - block: stats
     content:
       items:
@@ -278,7 +266,6 @@ sections:
     design:
       css_class: "bg-gray-50 dark:bg-gray-900"
 
-  # TESTIMONIOS (Comunidad)
   - block: testimonials
     content:
       items:
