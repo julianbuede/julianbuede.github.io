@@ -6,18 +6,6 @@ design:
   spacing: "3rem"
 
 sections:
-  # Encabezado simple
-  - block: hero
-    content:
-      title: "Notas del Blog"
-      text: "Historias, aprendizajes y recursos de MetaDocencia."
-    design:
-      spacing:
-        padding: ["0.5rem", 0, "0.5rem", 0]
-        margin: [0, 0, 0, 0]
-      background:
-        color: ""
-      text_color_light: false
 
   # Listado de posts en tarjetas
   - block: collection
