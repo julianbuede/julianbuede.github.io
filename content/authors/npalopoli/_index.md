@@ -28,6 +28,7 @@ profiles:
 weight: 2
 user_groups: ["Equipo", "Consejo Asesor"]
 superuser: false
+
 ---
 **Experiencia y trayectoria**
 
