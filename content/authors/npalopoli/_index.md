@@ -1,47 +1,33 @@
 ---
 title: "Nicolás Palopoli"
+
+first_name: "Nicolás"
+last_name: "Palopoli"
+
+role: "Co-Director Ejecutivo y Consejo Asesor"
+
+organizations:
+  - name: "Grupo de Bioinformática Estructural - UNQ"
+    url: "http://ufq.unq.edu.ar/sbg/"
+
 bio: ""
-education:
-  courses:
-  - course: Doctorado en Ciencias Básicas y Aplicadas
-    year: ""
-    institution: Universidad de Quilmes
-  - course: Licenciatura en Biotecnología
-    institution: Universidad de Quilmes
-    year: ""
-email: "npalopoli@metadocencia.org"
-interests:
-- Proteínas
-- Biología Computacional
-- Evolución
-- Ciencia abierta
-- Educación
-- Comunicación de la Ciencia
-name: Nicolás Palopoli
+
+profiles:
+  - icon: at-symbol
+    url: "mailto:npalopoli@metadocencia.org"
+    label: "E-mail"
+  - icon: brands/x
+    url: "https://twitter.com/NPalopoli"
+  - icon: globe
+    url: "https://about.me/npalopoli"
+  - icon: academicons/orcid
+    url: "https://orcid.org/0000-0001-7925-6436"
+  - icon: brands/github
+    url: "https://github.com/npalopoli"
+
 weight: 2
-organizations: 
-- name: Grupo de Bioinformática Estructural - UNQ
-  url: "http://ufq.unq.edu.ar/sbg/"
-role: Co-Director Ejecutivo y Consejo Asesor
-social:
-- icon: envelope
-  icon_pack: fas
-  link: "mailto:npalopoli@metadocencia.org"
-- icon: twitter
-  icon_pack: fab
-  link: https://twitter.com/NPalopoli
-- icon: globe
-  icon_pack: fas
-  link: https://about.me/npalopoli
-- icon: orcid
-  icon_pack: ai
-  link: https://orcid.org/0000-0001-7925-6436
-- icon: github
-  icon_pack: fab
-  link: https://github.com/npalopoli
+user_groups: ["Equipo", "Consejo Asesor"]
 superuser: false
-user_groups:
-- Equipo y Consejo Asesor
 ---
 **Experiencia y trayectoria**
 
