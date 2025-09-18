@@ -1,0 +1,108 @@
+{{/* Bloque: collection-horizontal
+     Lista posts (section: post/blog) en tarjetas horizontales con imagen a la izquierda
+     Compatible con content: filters.folders, count, sort_by, sort_ascending, show_* flags
+*/}}
+
+{{ $b := .block }}
+{{ $c := $b.content | default dict }}
+{{ $d := $b.design  | default dict }}
+
+{{/* Parámetros */}}
+{{ $folders := (index $c "filters" "folders") | default (slice "post" "blog") }}
+{{ $count := $c.count | default 24 }}
+{{ $sortBy := $c.sort_by | default "date" }}
+{{ $asc := $c.sort_ascending | default false }}
+
+{{ $showImage := $c.show_image | default true }}
+{{ $showDate := $c.show_date | default true }}
+{{ $showAuthors := $c.show_authors | default true }}
+{{ $showTags := $c.show_tags | default true }}
+{{ $showExcerpt := $c.show_excerpt | default true }}
+
+{{ $emptyText := $c.empty_text | default "No hay notas aún." }}
+
+{{/* Recolectar páginas por secciones (folders) */}}
+{{ $pages := where site.RegularPages "Draft" "!=" true }}
+{{ $filtered := slice }}
+{{ range $pages }}
+  {{ if in $folders .Section }}
+    {{ $filtered = $filtered | append . }}
+  {{ end }}
+{{ end }}
+
+{{ if gt (len $filtered) 0 }}
+  {{/* Ordenar y limitar */}}
+  {{ $sorted := sort $filtered $sortBy (cond $asc "asc" "desc") }}
+  {{ $limited := first $count $sorted }}
+
+  <div class="container mx-auto px-6">
+    <div class="space-y-6">
+      {{ range $p := $limited }}
+
+        {{/* Imagen destacada: intenta con .Params.image (Hugo Blox), o featured/featured.jpg en carpeta del post */}}
+        {{ $img := "" }}
+        {{ with $p.Params.image }}{{ $img = . }}{{ end }}
+        {{ if and (eq $img "") (fileExists (printf "%s/featured.jpg" $p.File.Dir)) }}
+          {{ $img = (printf "%s/featured.jpg" $p.RelPermalink) | relURL }}
+        {{ else if and (eq $img "") (fileExists (printf "%s/featured.png" $p.File.Dir)) }}
+          {{ $img = (printf "%s/featured.png" $p.RelPermalink) | relURL }}
+        {{ end }}
+
+        <article class="hb-article-card group">
+          {{ if and $showImage $img }}
+          <a class="hb-article-media" href="{{ $p.RelPermalink }}">
+            <img src="{{ $img | relURL }}" alt="{{ $p.Title }}" loading="lazy">
+          </a>
+          {{ end }}
+
+          <div class="hb-article-body">
+            <h3 class="hb-article-title">
+              <a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>
+            </h3>
+
+            {{ if or $showDate $showAuthors }}
+              <div class="hb-article-meta">
+                {{ if $showDate }}
+                  <time datetime="{{ $p.Date }}">{{ $p.Date.Format "2006-01-02" }}</time>
+                {{ end }}
+                {{ if and $showDate $showAuthors }} · {{ end }}
+                {{ if $showAuthors }}
+                  {{ with $p.Params.authors }}
+                    {{- $i := 0 -}}
+                    {{- range . -}}
+                      {{- if gt $i 0 }}, {{ end -}}
+                      <span>{{ . }}</span>
+                      {{- $i = add $i 1 -}}
+                    {{- end -}}
+                  {{ end }}
+                {{ end }}
+              </div>
+            {{ end }}
+
+            {{ if $showExcerpt }}
+              <p class="hb-article-excerpt">
+                {{ with $p.Params.summary }}{{ . | markdownify }}{{ else }}{{ $p.Summary }}{{ end }}
+              </p>
+            {{ end }}
+
+            {{ if $showTags }}
+              {{ with $p.Params.tags }}
+                <div class="hb-article-tags">
+                  {{ range . }}
+                    <span class="hb-tag">{{ . }}</span>
+                  {{ end }}
+                </div>
+              {{ end }}
+            {{ end }}
+
+          </div>
+        </article>
+
+      {{ end }}
+    </div>
+  </div>
+{{ else }}
+  <div class="container mx-auto px-6">
+    <p class="text-gray-500 dark:text-gray-400">{{ $emptyText }}</p>
+  </div>
+{{ end }}
