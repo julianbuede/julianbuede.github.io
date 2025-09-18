@@ -248,3 +248,6 @@ section#equipo summary {
     aspect-ratio:16/9;
   }
 }
+
+/* Ocultar cualquier botón/enlace "read more" que el tema agregue por clase */
+.hb-read-more, a.read-more, .read-more, .post-read-more { display: none !important; }
