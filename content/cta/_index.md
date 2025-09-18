@@ -6,6 +6,140 @@ design:
   spacing: "3rem"
 
 sections:
+  # ---------- NUEVO: Boletín + Formulario embebido (dos columnas) ----------
+  - block: cta-card
+    id: boletin-embed
+    content:
+      title: ""
+      text: |
+        <div class="container mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <!-- Columna izquierda: título + bajada -->
+            <div>
+              <h2 class="text-3xl font-bold mb-3">Boletín MetaDocencia</h2>
+              <p class="text-lg leading-relaxed mb-4">
+                Recibí en tu correo nuestras novedades, propuestas de formación, oportunidades y eventos de interés.
+              </p>
+              <p class="mb-0">
+                <a href="https://www.metadocencia.org/boletines/" class="underline font-semibold" target="_blank" rel="noopener">Ver ediciones anteriores</a>
+              </p>
+            </div>
+
+            <!-- Columna derecha: formulario Mailchimp (versión responsiva sin CSS/JS externos) -->
+            <div>
+              <style>
+                /* Contenedor y tipografía del form */
+                #mc_embed_signup {
+                  background: #fff;
+                  font-size: 16px;
+                  line-height: 1.4;
+                }
+                #mc_embed_signup form {
+                  display: block;
+                  width: 100%;
+                }
+                #mc_embed_signup .mc-field-group {
+                  margin-bottom: 0.75rem;
+                }
+                #mc_embed_signup label {
+                  display: block;
+                  margin-bottom: 0.25rem;
+                  font-weight: 600;
+                }
+                #mc_embed_signup input[type="email"],
+                #mc_embed_signup input[type="text"] {
+                  width: 100%;
+                  padding: 0.6rem 0.75rem;
+                  border: 1px solid #d1d5db; /* gray-300 */
+                  border-radius: 0.5rem;
+                  outline: none;
+                }
+                #mc_embed_signup input[type="email"]:focus,
+                #mc_embed_signup input[type="text"]:focus {
+                  border-color: #9ca3af;     /* gray-400 */
+                  box-shadow: 0 0 0 3px rgba(59,130,246,.15); /* focus ring suave */
+                }
+                #mc_embed_signup .asterisk { color: #ef4444; }   /* rojo */
+                #mc_embed_signup .helper_text { font-size: 0.8rem; color:#6b7280; }
+                #mc_embed_signup .button {
+                  display: inline-block;
+                  background: #C83737;      /* rojo formación */
+                  color: #fff;
+                  border: 0;
+                  border-radius: 0.5rem;
+                  padding: 0.6rem 1rem;
+                  font-weight: 700;
+                  cursor: pointer;
+                }
+                #mc_embed_signup .button:hover { filter: brightness(0.95); }
+                #mc_embed_signup .indicates-required {
+                  font-size: 0.85rem;
+                  color: #6b7280;
+                  margin-bottom: 0.5rem;
+                }
+              </style>
+
+              <div id="mc_embed_shell">
+                <div id="mc_embed_signup">
+                  <form action="https://metadocencia.us19.list-manage.com/subscribe/post?u=92fb89ce82f9689a3b083bb35&amp;id=d8187ceaf7&amp;f_id=00f682e4f0"
+                        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+                    <div id="mc_embed_signup_scroll">
+                      <div class="indicates-required"><span class="asterisk">*</span> campo obligatorio</div>
+
+                      <div class="mc-field-group">
+                        <label for="mce-EMAIL">Correo electrónico <span class="asterisk">*</span></label>
+                        <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required value="">
+                        <span id="mce-EMAIL-HELPERTEXT" class="helper_text">E-mail</span>
+                      </div>
+
+                      <div class="mc-field-group">
+                        <label for="mce-FNAME">Nombre</label>
+                        <input type="text" name="FNAME" id="mce-FNAME" value="">
+                      </div>
+
+                      <div class="mc-field-group">
+                        <label for="mce-LNAME">Apellido</label>
+                        <input type="text" name="LNAME" id="mce-LNAME" value="">
+                      </div>
+
+                      <!-- Campos opcionales (podés dejarlos o quitarlos) -->
+                      <div class="mc-field-group">
+                        <label for="mce-MMERGE7">País</label>
+                        <input type="text" name="MMERGE7" id="mce-MMERGE7" value="">
+                      </div>
+                      <div class="mc-field-group">
+                        <label for="mce-MMERGE9">Comunidad</label>
+                        <input type="text" name="MMERGE9" id="mce-MMERGE9" value="">
+                      </div>
+
+                      <!-- Tags ocultos (se conservan) -->
+                      <div hidden>
+                        <input type="hidden" name="tags" value="6238401,6541797,6397245">
+                      </div>
+
+                      <!-- Honeypot anti-bots (no tocar) -->
+                      <div aria-hidden="true" style="position:absolute; left:-5000px;">
+                        <input type="text" name="b_92fb89ce82f9689a3b083bb35_d8187ceaf7" tabindex="-1" value="">
+                      </div>
+
+                      <div class="optionalParent">
+                        <div class="clear foot" style="margin-top:0.5rem;">
+                          <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Suscribirme">
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+    design:
+      card:
+        css_class: "shadow-sm"
+        css_style: "background-color:#FFFFFF;color:#111827;"
+
   # ---------- Intro compacta ----------
   - block: cta-image-paragraph
     id: intro
@@ -18,7 +152,7 @@ sections:
       css_class: "text-gray-900 dark:text-gray-100"
       css_style: "background-color:#F9FAFB;"
 
-  # ---------- Boletín (ROJO #C83737, texto blanco) ----------
+  # ---------- Boletín (ROJO) — OPCIONAL: eliminá esta sección si no querés duplicar ----------
   - block: cta-card
     id: boletin
     content:
@@ -32,7 +166,7 @@ sections:
         css_class: "text-gray-900 dark:text-gray-100"
         css_style: "background-color:#C83737"
 
-  # ---------- Slack (BLANCO con texto oscuro + link oscuro) ----------
+  # ---------- Slack (ROSA) ----------
   - block: cta-card
     id: slack
     content:
@@ -48,7 +182,7 @@ sections:
         css_class: "shadow-sm"
         css_style: "background-color:#E01E5A;color:#FFFFFF;"
 
-  # ---------- Comunidades amigas (NARANJA #F77B20, logos debajo del texto) ----------
+  # ---------- Comunidades amigas (NARANJA) ----------
   - block: cta-card
     id: comunidades
     content:
@@ -86,7 +220,7 @@ sections:
         css_class: "shadow-sm"
         css_style: "background-color:#F77B20;color:#FFFFFF;"
 
-  # ---------- Auspiciantes / Apoya (AZUL #00506F, logos debajo del texto) ----------
+  # ---------- Auspiciantes (AZUL) ----------
   - block: cta-card
     id: auspiciantes
     content:
@@ -110,7 +244,7 @@ sections:
         css_class: "shadow-sm"
         css_style: "background-color:#00506F;color:#FFFFFF;"
 
-  # ---------- Doná (solo botón, SIN recuadro rojo) ----------
+  # ---------- Doná (solo botón) ----------
   - block: cta-card
     id: dona
     content:
@@ -124,7 +258,7 @@ sections:
         css_class: "border-0 shadow-none p-0"
         css_style: "background-color:transparent;color:#111827;"
 
-  # ---------- Redes (nativo, sin íconos locales) ----------
+  # ---------- Redes ----------
   - block: features
     id: redes
     content:
