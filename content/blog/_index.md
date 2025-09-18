@@ -3,35 +3,39 @@ title: "Blog"
 type: landing
 slug: "blog"
 
-design:
-  spacing: "2rem"
-
 sections:
   # Título simple (sin hero)
-  - block: cta-card
+  - block: markdown
     content:
-      title: "Blog"
-      text: ""
+      text: |
+        # Blog
     design:
-      card:
-        css_class: "bg-transparent p-0 text-left"
+      css_class: "mb-2"
 
-  # Listado horizontal de notas
-  - block: collection-horizontal
-    id: blog-list
+  # Listado de notas
+  - block: collection
     content:
-      filters:
-        folders: ["post", "blog"]   # ajustá si tus posts están en otra sección
+      # Dejamos que apunte a la sección actual (blog) sin filtros raros
       count: 24
+      page_size: 12
       sort_by: "date"
       sort_ascending: false
+
+      # UI de las tarjetas
       show_image: true
       show_date: true
+      show_read_time: true
       show_authors: true
       show_tags: true
       show_excerpt: true
-      page_size: 0                  # 0 = sin paginación en este bloque
-      empty_text: "Pronto publicaremos más notas."
+      link_to_item: true
+
+      # Si tenés posts en `content/post/` además de `content/blog/` y querés incluirlos:
+      # filters:
+      #   folders: ["blog", "post"]
+
     design:
-      css_class: "blog-horizontal"
+      columns: 2
+      card:
+        css_class: "shadow-sm hover:shadow-md transition"
 ---
