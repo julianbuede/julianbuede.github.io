@@ -1,27 +1,28 @@
 {{ define "main" }}
 <section class="container mx-auto px-6 py-6">
-  <!-- Título simple -->
   <h1 class="text-3xl font-bold mb-4">Blog</h1>
 
-  <!-- Selector de etiquetas (chips) -->
+  {{/* Selector de etiquetas (chips) */}}
   {{ with .Site.Taxonomies.tags }}
-  <div class="flex flex-wrap gap-2 mb-6">
-    <a href="{{ "/blog/" | relURL }}"
-       class="px-3 py-1 rounded-full border border-gray-300 text-gray-700 hover:bg-gray-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800">
-       Todas
-    </a>
-    {{ range $tag, $_ := . }}
-      <a href="{{ (printf "/tags/%s/" (urlize $tag)) | relURL }}"
-         class="px-3 py-1 rounded-full bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700">
-         {{ $tag }}
+    <div class="flex flex-wrap gap-2 mb-6">
+      <a href="{{ "/blog/" | relURL }}"
+         class="px-3 py-1 rounded-full border border-gray-300 text-gray-700 hover:bg-gray-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800">
+         Todas
       </a>
-    {{ end }}
-  </div>
+      {{ range $tag, $_ := . }}
+        <a href="{{ (printf "/tags/%s/" (urlize $tag)) | relURL }}"
+           class="px-3 py-1 rounded-full bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700">
+           {{ $tag }}
+        </a>
+      {{ end }}
+    </div>
   {{ end }}
 
-  <!-- Listado de artículos -->
   <div class="space-y-8">
-    {{ $p := .Paginate (sort .Pages "Date" "desc") }}
+    {{/* Paginamos posts de secciones post/blog */}}
+    {{ $posts := where .Site.RegularPages "Type" "in" (slice "post" "blog") }}
+    {{ $p := .Paginate (sort $posts "Date" "desc") }}
+
     {{ range $p.Pages }}
       <article class="border-b border-gray-200 dark:border-gray-800 pb-6">
         <h2 class="text-2xl font-semibold">
@@ -33,21 +34,22 @@
           {{ with .Params.authors }} · {{ delimit . ", " }}{{ end }}
           {{ with .Params.tags }}
             ·
-            {{ $links := slice }}
+            {{/* Construimos links y los unimos correctamente con delimit */}}
+            {{ $anchors := slice }}
             {{ range . }}
-              {{ $links = $links | append (printf `<a class="underline hover:no-underline" href="%s">%s</a>` ((printf "/tags/%s/" (urlize .)) | relURL) .) }}
+              {{ $anchors = $anchors | append (printf `<a class="underline hover:no-underline" href="%s">%s</a>` ((printf "/tags/%s/" (urlize .)) | relURL) .) }}
             {{ end }}
-            {{ $links | delimit ", " | safeHTML }}
+            {{ $anchors | delimit ", " | safeHTML }}
           {{ end }}
         </div>
 
-        {{/* Resumen limpio: quitamos cualquier "Read more / Leer más / Continue reading" que venga incrustado */}}
+        {{/* Resumen limpio SIN "Read more" que inyecta el tema */}}
         {{ $sum := .Summary }}
-        {{/* Anclas aisladas */}}
+        {{/* Enlaces sueltos "read more"/"leer más"/etc. */}}
         {{ $sum = (replaceRE `(?is)<a[^>]*>(\s*(read\s*more|leer\s*m[aá]s|continue\s*reading|seguir\s*leyendo)\s*)</a>` `` $sum) }}
-        {{/* Párrafos completos que sólo contienen el link */}}
+        {{/* Párrafos que sólo contienen ese link */}}
         {{ $sum = (replaceRE `(?is)<p>\s*<a[^>]*>.*?(read\s*more|leer\s*m[aá]s|continue\s*reading|seguir\s*leyendo).*?</a>\s*</p>` `` $sum) }}
-        {{/* Spans/containers con clase "read-more" o similar */}}
+        {{/* Contenedores con clase read-more */}}
         {{ $sum = (replaceRE `(?is)<(span|div)[^>]*read-?more[^>]*>.*?</\1>` `` $sum) }}
 
         {{ with $sum }}
@@ -57,7 +59,6 @@
     {{ end }}
   </div>
 
-  <!-- Paginación -->
   <div class="mt-8">
     {{ template "_internal/pagination.html" . }}
   </div>
