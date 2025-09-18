@@ -6,91 +6,30 @@ design:
   spacing: "3rem"
 
 sections:
-  # ---------- NUEVO: Boletín + Formulario (dos columnas, sin <style>) ----------
-  - block: cta-card
+  # ---------- Boletín + Form (dos columnas con shortcode) ----------
+  - block: features
     id: boletin-embed
     content:
       title: ""
-      text: |
-        <div class="max-w-6xl mx-auto">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-            <!-- Columna izquierda -->
-            <div>
-              <h2 class="text-3xl font-bold mb-3">Boletín MetaDocencia</h2>
-              <p class="text-lg leading-relaxed mb-4">
-                Recibí en tu correo nuestras novedades, propuestas de formación, oportunidades y eventos de interés.
-              </p>
-              <p class="mb-0">
-                <a href="https://www.metadocencia.org/boletines/" class="underline font-semibold" target="_blank" rel="noopener">Ver ediciones anteriores</a>
-              </p>
-            </div>
-
-            <!-- Columna derecha: FORM Mailchimp con clases utilitarias -->
-            <div>
-              <div id="mc_embed_signup" class="bg-white rounded-xl p-5 border border-gray-200">
-                <form action="https://metadocencia.us19.list-manage.com/subscribe/post?u=92fb89ce82f9689a3b083bb35&amp;id=d8187ceaf7&amp;f_id=00f682e4f0"
-                      method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
-                  <div id="mc_embed_signup_scroll">
-                    <div class="text-sm text-gray-500 mb-3">
-                      <span class="text-red-500">*</span> campo obligatorio
-                    </div>
-
-                    <div class="mb-3">
-                      <label for="mce-EMAIL" class="block mb-1 font-semibold">Correo electrónico <span class="text-red-500">*</span></label>
-                      <input type="email" name="EMAIL" id="mce-EMAIL" required
-                             class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-200"
-                             placeholder="tu@email.com">
-                      <div id="mce-EMAIL-HELPERTEXT" class="text-xs text-gray-500 mt-1">E-mail</div>
-                    </div>
-
-                    <div class="mb-3">
-                      <label for="mce-FNAME" class="block mb-1 font-semibold">Nombre</label>
-                      <input type="text" name="FNAME" id="mce-FNAME"
-                             class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-200">
-                    </div>
-
-                    <div class="mb-3">
-                      <label for="mce-LNAME" class="block mb-1 font-semibold">Apellido</label>
-                      <input type="text" name="LNAME" id="mce-LNAME"
-                             class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-200">
-                    </div>
-
-                    <!-- Opcionales -->
-                    <div class="mb-3">
-                      <label for="mce-MMERGE7" class="block mb-1 font-semibold">País</label>
-                      <input type="text" name="MMERGE7" id="mce-MMERGE7"
-                             class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-200">
-                    </div>
-
-                    <div class="mb-4">
-                      <label for="mce-MMERGE9" class="block mb-1 font-semibold">Comunidad</label>
-                      <input type="text" name="MMERGE9" id="mce-MMERGE9"
-                             class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-200">
-                    </div>
-
-                    <!-- Tags ocultos -->
-                    <input type="hidden" name="tags" value="6238401,6541797,6397245">
-
-                    <!-- Honeypot anti-bots -->
-                    <div aria-hidden="true" style="position:absolute; left:-5000px;">
-                      <input type="text" name="b_92fb89ce82f9689a3b083bb35_d8187ceaf7" tabindex="-1" value="">
-                    </div>
-
-                    <div class="pt-1">
-                      <input type="submit" name="subscribe" id="mc-embedded-subscribe"
-                             class="inline-block bg-[#C83737] text-white font-bold px-4 py-2 rounded-lg cursor-pointer hover:opacity-90"
-                             value="Suscribirme">
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
+      text: ""
+      items:
+        - name: "Boletín MetaDocencia"
+          description: |
+            <h2 class="text-3xl font-bold mb-3">Boletín MetaDocencia</h2>
+            <p class="text-lg leading-relaxed mb-4">
+              Recibí en tu correo nuestras novedades, propuestas de formación, oportunidades y eventos de interés.
+            </p>
+            <p class="mb-0">
+              <a href="https://www.metadocencia.org/boletines/" class="underline font-semibold" target="_blank" rel="noopener">
+                Ver ediciones anteriores
+              </a>
+            </p>
+        - name: "Suscribite"
+          description: |
+            {{< mc_form >}}
     design:
-      card:
-        css_class: "shadow-sm"
-        css_style: "background-color:#FFFFFF;color:#111827;"
+      columns: 2
+      css_class: "text-gray-900 dark:text-gray-100 bg-gray-50"
 
   # ---------- Intro compacta ----------
   - block: cta-image-paragraph
