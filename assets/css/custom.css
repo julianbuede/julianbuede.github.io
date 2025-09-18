@@ -164,132 +164,87 @@ section#equipo summary {
   }
 }
 
-/* ====== Blog “Resume Pro” style ====== */
 
-/* Grid respirando un poco entre tarjetas */
-#blog-list .grid {
-  gap: 1.25rem;
+/* ===== Blog Horizontal Cards ===== */
+.hb-article-card{
+  display:flex;
+  gap:1rem;
+  padding:1rem;
+  border:1px solid #e5e7eb;
+  border-radius:1rem;
+  background:#ffffff;
 }
-
-/* Tarjeta base */
-.hb-card-article.procard {
-  background: #fff;
-  border: 1px solid rgba(17,24,39,0.06);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 1px 2px rgba(17,24,39,.04);
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-  display: flex;
-  flex-direction: column;
-}
-.dark .hb-card-article.procard {
-  background: #0b0f19;
-  border-color: rgba(255,255,255,.08);
+.dark .hb-article-card{
+  background:#111827;
+  border-color:#1f2937;
 }
 
-/* Hover con sutil lift */
-.hb-card-article.procard:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(17,24,39,.08);
-  border-color: rgba(17,24,39,.10);
+.hb-article-media{
+  flex:0 0 260px;
+  aspect-ratio:16/9;
+  border-radius:0.75rem;
+  overflow:hidden;
 }
-.dark .hb-card-article.procard:hover {
-  border-color: rgba(255,255,255,.14);
-}
-
-/* Imagen destacada con proporción 16:9 */
-.hb-card-article.procard img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-  aspect-ratio: 16 / 9;
+.hb-article-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 
-/* Contenido interno (título, meta, extracto, tags) */
-.hb-card-article.procard > *:not(img) {
-  padding: 1rem 1.1rem 1.1rem 1.1rem;
+.hb-article-body{
+  flex:1 1 auto;
+  display:flex;
+  flex-direction:column;
+  gap:.4rem;
 }
 
-/* Título grande estilo demo */
-.hb-card-article.procard h3,
-.hb-card-article.procard .title,
-.hb-card-article.procard h2 {
-  font-size: 1.15rem;
-  line-height: 1.3;
-  font-weight: 800;
-  margin: 0.2rem 0 0.35rem 0;
+.hb-article-title a{
+  font-weight:800;
+  font-size:1.25rem;
+  text-decoration:none;
 }
-.hb-card-article.procard h3 a,
-.hb-card-article.procard .title a {
-  text-decoration: none;
+.hb-article-title a:hover{
+  text-decoration:underline;
+  text-underline-offset:4px;
 }
 
-/* Meta (fecha · lectura · autores) en línea y gris */
-.hb-card-article.procard .meta,
-.hb-card-article.procard .article-metadata,
-.hb-card-article.procard .text-muted {
-  color: #6b7280; /* gray-500 */
-  font-size: .85rem;
-  display: flex;
-  gap: .5rem;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-bottom: .45rem;
-}
-.dark .hb-card-article.procard .meta,
-.dark .hb-card-article.procard .article-metadata,
-.dark .hb-card-article.procard .text-muted {
-  color: #9ca3af; /* gray-400 */
+.hb-article-meta{
+  font-size:.9rem;
+  opacity:.75;
 }
 
-/* Separadores con punto medio si hay varios ítems meta */
-.hb-card-article.procard .meta > * + *::before,
-.hb-card-article.procard .article-metadata > * + *::before {
-  content: "·";
-  margin: 0 .25rem;
-  opacity: .65;
+.hb-article-excerpt{
+  margin:.25rem 0 .5rem 0;
 }
 
-/* Extracto legible */
-.hb-card-article.procard p,
-.hb-card-article.procard .excerpt {
-  color: #374151; /* gray-700 */
-  margin: .35rem 0 .6rem 0;
+.hb-article-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.4rem;
 }
-.dark .hb-card-article.procard p,
-.dark .hb-card-article.procard .excerpt {
-  color: #e5e7eb;
+.hb-tag{
+  display:inline-block;
+  font-size:.75rem;
+  line-height:1;
+  padding:.35rem .55rem;
+  border-radius:9999px;
+  background:#f3f4f6;
+  color:#374151;
 }
-
-/* Chips de tags */
-.hb-card-article.procard .tags a,
-.hb-card-article.procard .tags span {
-  display: inline-block;
-  font-size: .75rem;
-  padding: .25rem .55rem;
-  border-radius: 9999px;
-  background: #f3f4f6; /* gray-100 */
-  color: #374151; /* gray-700 */
-  margin: .25rem .35rem 0 0;
-  text-decoration: none;
-}
-.dark .hb-card-article.procard .tags a,
-.dark .hb-card-article.procard .tags span {
-  background: rgba(255,255,255,.08);
-  color: #e5e7eb;
+.dark .hb-tag{
+  background:#1f2937;
+  color:#e5e7eb;
 }
 
-/* Link del título con subrayado suave al hover */
-.hb-card-article.procard h3 a:hover,
-.hb-card-article.procard .title a:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-/* Ajuste de columnas en pantallas grandes (si tu tema no lo hace solo) */
-@media (min-width: 1024px) {
-  /* suele venir desde el bloque, pero por si acaso */
-  #blog-list .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+/* Responsive: en móviles, disposición en columna */
+@media (max-width: 900px){
+  .hb-article-card{
+    flex-direction:column;
+  }
+  .hb-article-media{
+    flex:0 0 auto;
+    width:100%;
+    aspect-ratio:16/9;
   }
 }
