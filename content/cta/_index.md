@@ -59,9 +59,6 @@ sections:
         Amplificamos el trabajo de organizaciones que hacen de la ciencia abierta un esfuerzo global, colectivo y comunitario.
 
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center mt-4">
-          <img src="content/authors/2i2c-sponsor/avatar.png" alt="2i2c" class="max-h-10 w-auto opacity-95">
-          <img src="/media/logos/comunidades/logo02.png" alt="Comunidad 2" class="max-h-10 w-auto opacity-95">
-          <img src="/media/logos/comunidades/logo03.png" alt="Comunidad 3" class="max-h-10 w-auto opacity-95">
           <img src="/media/logos/comunidades/logo04.png" alt="Comunidad 4" class="max-h-10 w-auto opacity-95">
           <img src="/media/logos/comunidades/logo05.png" alt="Comunidad 5" class="max-h-10 w-auto opacity-95">
           <img src="/media/logos/comunidades/logo06.png" alt="Comunidad 6" class="max-h-10 w-auto opacity-95">
@@ -96,13 +93,21 @@ sections:
       text: |
         Nuestro trabajo es posible gracias al apoyo de instituciones y organizaciones que comparten nuestra misión.
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 items-center mt-4">
-          <img src="/media/logos/auspiciantes/logo01.png" alt="Auspiciante 1" class="max-h-10 w-auto opacity-95">
-          <img src="/media/logos/auspiciantes/logo02.png" alt="Auspiciante 2" class="max-h-10 w-auto opacity-95">
-          <img src="/media/logos/auspiciantes/logo03.png" alt="Auspiciante 3" class="max-h-10 w-auto opacity-95">
-          <img src="/media/logos/auspiciantes/logo04.png" alt="Auspiciante 4" class="max-h-10 w-auto opacity-95">
-          <img src="/media/logos/auspiciantes/logo05.png" alt="Auspiciante 5" class="max-h-10 w-auto opacity-95">
-          <img src="/media/logos/auspiciantes/logo06.png" alt="Auspiciante 6" class="max-h-10 w-auto opacity-95">
+        <!-- Logos auspiciantes -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center mt-4">
+          <img src="/authors/2i2c-sponsor/avatar.png" alt="2i2c" class="max-h-10 w-auto opacity-95">
+          <img src="/authors/CSS_sponsor/avatar.png" alt="Center for Scientific Software" class="max-h-10 w-auto opacity-95">
+          <img src="/authors/NASA_sponsor/avatar.png" alt="NASA" class="max-h-10 w-auto opacity-95">
+          <img src="/authors/arecibo-sponsor/avatar.jpg" alt="Arecibo" class="max-h-10 w-auto opacity-95">
+          <img src="/authors/czi_sponsor/avatar.png" alt="Chan Zuckerberg Initiative" class="max-h-10 w-auto opacity-95">
+          <img src="/authors/gbmf_sponsor/avatar.png" alt="Gordon and Betty Moore Foundation" class="max-h-10 w-auto opacity-95">
+          <img src="/authors/ioi_sponsor/avatar.png" alt="Invest in Open Infrastructure" class="max-h-10 w-auto opacity-95">
+          <img src="/authors/inta_sponsor/avatar.jpg" alt="INTA" class="max-h-10 w-auto opacity-95">
+          <img src="/authors/labi-sponsor/avatar.jpg" alt="Latin American Bioimaging" class="max-h-10 w-auto opacity-95">
+          <img src="/authors/obf_sponsor/avatar.png" alt="Open Bioinformatics Foundation" class="max-h-10 w-auto opacity-95">
+          <img src="/authors/ols-sponsor/avatar.jpg" alt="Open Life Science" class="max-h-10 w-auto opacity-95">
+          <img src="/authors/quest_sponsor/avatar.jpg" alt="QUEST" class="max-h-10 w-auto opacity-95">
+          <img src="/authors/rladiesba_sponsor/avatarj.jpg" alt="RLadies Buenos Aires" class="max-h-10 w-auto opacity-95">
         </div>
 
         <!-- Botones centrados -->
@@ -127,8 +132,9 @@ sections:
   - block: cta-card
     id: redes
     content:
-      title: "Escribe a info@metadocencia.org o súmate al intercambio en redes sociales: @metadocencia"
+      title: "Sigue el intercambio"
       text: |
+        Escribe a info@metadocencia.org o súmate al intercambio en redes sociales: @metadocencia
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 mt-3">
           <a class="inline-block text-center no-underline font-semibold px-3 py-2 rounded-full"
              href="https://twitter.com/metadocencia" target="_blank" rel="noopener"
@@ -163,5 +169,6 @@ sections:
         </div>
     design:
       card:
-        css_class: "text-white"
+        css_class: "shadow-sm"
+        css_style: "background-color:#C83737;color:#FFFFFF;"
 ---
