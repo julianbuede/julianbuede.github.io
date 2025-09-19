@@ -6,6 +6,7 @@ design:
   spacing: "3rem"
 
 sections:
+
   # ---------- Boletín + Form (dos columnas con shortcode) ----------
   - block: features
     id: boletin-embed
@@ -15,55 +16,31 @@ sections:
       items:
         - name: "Boletín MetaDocencia"
           description: |
-            <h2 class="text-3xl font-bold mb-3">Boletín MetaDocencia</h2>
             <p class="text-lg leading-relaxed mb-4">
-              Recibí en tu correo nuestras novedades, propuestas de formación, oportunidades y eventos de interés.
+              Recibe en tu correo nuestras novedades, propuestas de formación, oportunidades y eventos de interés.
             </p>
             <p class="mb-0">
               <a href="https://www.metadocencia.org/boletines/" class="underline font-semibold" target="_blank" rel="noopener">
                 Ver ediciones anteriores
               </a>
             </p>
-        - name: "Suscribite"
+        - name: "Suscríbite"
           description: |
             {{< mc_form >}}
     design:
       columns: 2
       css_class: "text-gray-900 dark:text-gray-100 bg-gray-50"
-
-  # ---------- Intro compacta ----------
-  - block: cta-image-paragraph
-    id: intro
-    content:
-      items:
-        - title: "Súmate y apoya a nuestra comunidad"
-          text: "Suscríbete al boletín, únete a Slack, conecta con comunidades amigas y apoya a MetaDocencia. Potenciemos a América Latina en el mapa de la investigación global."
-          image: "quienessomos.jpg"
-    design:
-      css_class: "text-gray-900 dark:text-gray-100"
-      css_style: "background-color:#F9FAFB;"
-
-  # ---------- Boletín (ROJO) — OPCIONAL: eliminá si no querés duplicar ----------
-  - block: cta-card
-    id: boletin
-    content:
-      title: "Boletín MetaDocencia"
-      text: "Recibí en tu correo nuestras novedades, propuestas de formación, oportunidades y eventos de interés. **[Ver ediciones anteriores](https://www.metadocencia.org/boletines/)**"
-      button:
-        text: "Suscribite acá: Formulario de suscripción"
-        url: "https://www.metadocencia.org/contacto/"
-    design:
-      card:
-        css_class: "text-gray-900 dark:text-gray-100"
-        css_style: "background-color:#C83737"
+      spacing:
+        padding: ["0.75rem", 0, "0.75rem", 0]
+        margin: [0, 0, 0, 0]
 
   # ---------- Slack ----------
   - block: cta-card
     id: slack
     content:
-      title: "Sumate a nuestro Slack"
+      title: "Súmate a nuestro Slack"
       text: |
-        Conectá con más de **+1000 personas** que comparten interés por la educación, la ciencia abierta y la colaboración.
+        Conecta con más de **+1000 personas** que comparten interés por la educación, la ciencia abierta y la colaboración.
         <a href="https://zenodo.org/records/10028136" style="color:#1F2937;text-decoration:underline;">Qué es Slack y cómo puedo sumarme a la conversación</a>
       button:
         text: "Unirme al espacio de Slack de MetaDocencia"
@@ -82,7 +59,7 @@ sections:
         Amplificamos el trabajo de organizaciones que hacen de la ciencia abierta un esfuerzo global, colectivo y comunitario.
 
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center mt-4">
-          <img src="/media/logos/comunidades/logo01.png" alt="Comunidad 1" class="max-h-10 w-auto opacity-95">
+          <img src="content/authors/2i2c-sponsor/avatar.png" alt="2i2c" class="max-h-10 w-auto opacity-95">
           <img src="/media/logos/comunidades/logo02.png" alt="Comunidad 2" class="max-h-10 w-auto opacity-95">
           <img src="/media/logos/comunidades/logo03.png" alt="Comunidad 3" class="max-h-10 w-auto opacity-95">
           <img src="/media/logos/comunidades/logo04.png" alt="Comunidad 4" class="max-h-10 w-auto opacity-95">
@@ -104,14 +81,14 @@ sections:
           <img src="/media/logos/comunidades/logo20.png" alt="Comunidad 20" class="max-h-10 w-auto opacity-95">
         </div>
       button:
-        text: "Sumá tu comunidad"
+        text: "Suma tu comunidad"
         url: "mailto:info@metadocencia.org?subject=Sumar%20mi%20comunidad"
     design:
       card:
         css_class: "shadow-sm"
         css_style: "background-color:#F77B20;color:#FFFFFF;"
 
-  # ---------- Auspiciantes ----------
+  # ---------- Auspiciantes / Apoya (botones centrados) ----------
   - block: cta-card
     id: auspiciantes
     content:
@@ -127,46 +104,64 @@ sections:
           <img src="/media/logos/auspiciantes/logo05.png" alt="Auspiciante 5" class="max-h-10 w-auto opacity-95">
           <img src="/media/logos/auspiciantes/logo06.png" alt="Auspiciante 6" class="max-h-10 w-auto opacity-95">
         </div>
-      button:
-        text: "Acompañanos"
-        url: "https://www.metadocencia.org/contacto/"
+
+        <!-- Botones centrados -->
+        <div class="mt-6 flex flex-wrap justify-center gap-3">
+          <a href="https://www.metadocencia.org/contacto/"
+             class="inline-block no-underline font-semibold px-4 py-2 rounded-md"
+             style="background:#FFFFFF;color:#00506F;">
+             Acompáñanos
+          </a>
+          <a href="https://www.metadocencia.org/contacto/"
+             class="inline-block no-underline font-semibold px-4 py-2 rounded-md"
+             style="background:transparent;border:1px solid #FFFFFF;color:#FFFFFF;">
+             Dona
+          </a>
+        </div>
     design:
       card:
         css_class: "shadow-sm"
         css_style: "background-color:#00506F;color:#FFFFFF;"
 
-  # ---------- Doná ----------
+  # ---------- Redes (botones clicables en grid) ----------
   - block: cta-card
-    id: dona
-    content:
-      title: ""
-      text: ""
-      button:
-        text: "Doná — Formulario de donación"
-        url: "https://www.metadocencia.org/contacto/"
-    design:
-      card:
-        css_class: "border-0 shadow-none p-0"
-        css_style: "background-color:transparent;color:#111827;"
-
-  # ---------- Redes ----------
-  - block: features
     id: redes
     content:
-      title: "Seguí la conversación"
-      text: "@metadocencia · Sumate al intercambio en redes sociales."
-      items:
-        - name: "X (Twitter) →"
-          link: "https://twitter.com/metadocencia"
-        - name: "LinkedIn →"
-          link: "https://www.linkedin.com/company/metadocencia/"
-        - name: "YouTube →"
-          link: "https://www.youtube.com/@metadocencia"
-        - name: "Instagram →"
-          link: "https://www.instagram.com/metadocencia/"
-        - name: "Mastodon →"
-          link: "https://mastodon.social/@metadocencia"
+      title: "Escribe a info@metadocencia.org o súmate al intercambio en redes sociales: @metadocencia"
+      text: |
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 mt-3">
+          <a class="inline-block text-center no-underline font-semibold px-3 py-2 rounded-full"
+             href="https://twitter.com/metadocencia" target="_blank" rel="noopener"
+             style="background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.35);color:#FFFFFF;">
+             Twitter
+          </a>
+          <a class="inline-block text-center no-underline font-semibold px-3 py-2 rounded-full"
+             href="https://www.linkedin.com/company/metadocencia/" target="_blank" rel="noopener"
+             style="background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.35);color:#FFFFFF;">
+             LinkedIn
+          </a>
+          <a class="inline-block text-center no-underline font-semibold px-3 py-2 rounded-full"
+             href="https://www.youtube.com/@metadocencia" target="_blank" rel="noopener"
+             style="background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.35);color:#FFFFFF;">
+             YouTube
+          </a>
+          <a class="inline-block text-center no-underline font-semibold px-3 py-2 rounded-full"
+             href="https://www.instagram.com/metadocencia/" target="_blank" rel="noopener"
+             style="background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.35);color:#FFFFFF;">
+             Instagram
+          </a>
+          <a class="inline-block text-center no-underline font-semibold px-3 py-2 rounded-full"
+             href="https://mastodon.social/@metadocencia" target="_blank" rel="me noopener"
+             style="background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.35);color:#FFFFFF;">
+             Mastodon
+          </a>
+          <a class="inline-block text-center no-underline font-semibold px-3 py-2 rounded-full"
+             href="https://bsky.app/profile/metadocencia.org" target="_blank" rel="noopener"
+             style="background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.35);color:#FFFFFF;">
+             Bluesky
+          </a>
+        </div>
     design:
-      columns: 5
-      css_class: "text-gray-900 dark:text-gray-100"
+      card:
+        css_class: "text-white"
 ---
